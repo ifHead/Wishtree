@@ -22,7 +22,6 @@ function setup() {
 }
 
 function draw() {
-  
   if(drawloopcount%2 == 0) {
     fill(0, 2);
     rect(0, 0, width, height);
