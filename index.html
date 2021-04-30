@@ -39,6 +39,20 @@
         </style>
     </head> 
     <body onscroll="change_scroll()">
+        <div class="container">
+            <div>
+                <input type="text" id="input-get" placeholder="Get Value">
+                <button id="btn-get">GET</button>
+            </div>
+            <div id="result">
+                Result
+            </div>
+            <div>
+                <input type="text" id="input-set" placeholder="Set Value">
+                <button id="btn-set">SET</button>
+            </div>
+        </div>
+
         <div id="printer">0</div>
         <div id="back"></div>
         <div class="block" style="top:500px">block</div>
@@ -46,7 +60,9 @@
         <div class="block" style="top:1500px">block</div>
         <div class="block" style="top:2000px">block</div>
         <div class="block" style="top:2500px">block</div>
+
         <script src="js/p5.js/wish_tree.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/blocks.js"></script>
+        <script src="js/textInput.js"></script>
     </body>
 </html>

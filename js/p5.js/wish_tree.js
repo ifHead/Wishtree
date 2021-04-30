@@ -57,7 +57,6 @@ function draw() {
     direction = 1;
     growth = random(20,50);
     
-    
     loopCount++;
     
     switch(loopCount){

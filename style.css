@@ -6,3 +6,17 @@ html, body {
 canvas {
   display: block;
 }
+
+.container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+input, button{
+  height: 25px;
+}
+
+#result{
+  font-size: 25px;
+  font-weight: bold;
+}
