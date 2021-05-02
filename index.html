@@ -4,21 +4,24 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>wish_tree</title>
+        <title>Wishtree</title>
 
         <link rel="stylesheet" type="text/css" href="style.css">
 
         <script src="libraries/p5.min.js"></script>
         <script src="libraries/p5.sound.min.js"></script>
-        
+
         <style>
+            body{
+                background: black;
+            }
             #back{
             height: 3000px;
             }
             #printer{
                 position: fixed;
                 background-color: white;
-                border: black solid 1px;
+                border: white solid 1px;
                 right: 0px;
             }
             .block{
@@ -44,9 +47,7 @@
                 <input type="text" id="input-get" placeholder="Get Value">
                 <button id="btn-get">GET</button>
             </div>
-            <div id="result">
-                Result
-            </div>
+            <div style="color: white" id="result">Result</div>
             <div>
                 <input type="text" id="input-set" placeholder="Set Value">
                 <button id="btn-set">SET</button>
@@ -61,8 +62,29 @@
         <div class="block" style="top:2000px">block</div>
         <div class="block" style="top:2500px">block</div>
 
+        
         <script src="js/p5.js/wish_tree.js"></script>
         <script src="js/blocks.js"></script>
         <script src="js/textInput.js"></script>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://wishtree.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <script id="dsq-count-scr" src="//wishtree.disqus.com/count.js" async></script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </body>
 </html>

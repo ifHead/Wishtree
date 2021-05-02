@@ -1,10 +1,8 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 canvas {
-  display: block;
+  display: flex;
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
 }
 
 .container{
@@ -15,6 +13,7 @@ canvas {
 input, button{
   height: 25px;
 }
+
 
 #result{
   font-size: 25px;

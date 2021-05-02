@@ -13,15 +13,18 @@ let displaySize = 500;
 let drawloopcount = 0;
 
 function setup() {
-  createCanvas(displaySize, displaySize);
+  createCanvas(windowWidth, displaySize);
   background(0);
-  stroke(255);
-  strokeWeight(2);
-  frameRate(90);
   growth = random(20, 50);
+  frameRate(90);
+}
+
+function windowResized(){
+  resizeCanvas(windowWidth, displaySize);
 }
 
 function draw() {
+  noStroke();
   if(drawloopcount%2 == 0) {
     fill(0, 2);
     rect(0, 0, width, height);
@@ -29,7 +32,9 @@ function draw() {
     fill(0, random(5,40));
     rect(0, 0, width, height);
   }
-  
+  stroke(255);
+  strokeWeight(2);
+
   translate(translateX,translateY);
   
   if (random() > p) {
@@ -55,36 +60,14 @@ function draw() {
     y = 0;
     stepRight = 0;
     direction = 1;
-    growth = random(20,50);
+    growth = random(30,100);
     
-    loopCount++;
+    loopCount = 1;
     
-    switch(loopCount){
-      case 1 :
-        translateX = 0;
-        translateY = 0;
-        rotateMatrix = 0;
-        break;
-      
-      case 2 :
-        translateX = displaySize;
-        translateY = 0;
-        rotateMatrix = 90;
-        break;
-      
-      case 3 :
-        translateX = displaySize;
-        translateY = displaySize;
-        rotateMatrix = 180;
-        break;
-        
-      case 4 :
-        translateX = 0;
-        translateY = displaySize;
-        rotateMatrix = 270;
-        loopCount = 0; // Next loop, case 1 will run
-        break;
-    }
+
+    translateX = 0;
+    translateY = 0;
+    rotateMatrix = 0;
   }
   
   drawloopcount ++;
