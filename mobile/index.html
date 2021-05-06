@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xml:lang>
+<head>
+	<meta charset ="utf-8">
+	<title>Wishtree</title>
+	<meta name ="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="../detectmobilebrowser.js"></script>
+  <script>
+		console.log(jQuery.browser.mobile);
+		console.log(location.href);
+		if(jQuery.browser.mobile == false){
+				location.href = "../";
+		}
+  </script>
+</head>
+<body>
+	<h1>Mobile Site</h1>
+</body>
+</html>

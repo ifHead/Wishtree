@@ -1,109 +1,116 @@
 <!DOCTYPE html>
 <html xml:lang>
-    <head>
-        <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="detectmobilebrowser.js"></script>
+    <script>
+        console.log(jQuery.browser.mobile);
+        console.log(location.href);
+        if(jQuery.browser.mobile == true){
+            location.href = "/mobile/";
+        }
+    </script>
+    <!-- start custom head snippets -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon.ico/apple-icon-57x57.png?">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon.ico/apple-icon-60x60.png?">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon.ico/apple-icon-72x72.png?">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon.ico/apple-icon-76x76.png?">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon.ico/apple-icon-114x114.png?">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon.ico/apple-icon-120x120.png?">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon.ico/apple-icon-144x144.png?">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon.ico/apple-icon-152x152.png?">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.ico/apple-icon-180x180.png?">
+    <link rel="icon" type="image/png?" sizes="192x192" href="assets/favicon.ico/android-icon-192x192.png?">
+    <link rel="icon" type="image/png?" sizes="32x32" href="assets/favicon.ico/favicon-32x32.png?">
+    <link rel="icon" type="image/png?" sizes="96x96" href="assets/favicon.ico/favicon-96x96.png?">
+    <link rel="icon" type="image/png?" sizes="16x16" href="assets/favicon.ico/favicon-16x16.png?">
+    <link rel="manifest" href="assets/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon.ico/ms-icon-144x144.png?">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- end custom head snippets -->
 
-        <!-- start custom head snippets -->
-        <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon.ico/apple-icon-57x57.png?">
-        <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon.ico/apple-icon-60x60.png?">
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon.ico/apple-icon-72x72.png?">
-        <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon.ico/apple-icon-76x76.png?">
-        <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon.ico/apple-icon-114x114.png?">
-        <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon.ico/apple-icon-120x120.png?">
-        <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon.ico/apple-icon-144x144.png?">
-        <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon.ico/apple-icon-152x152.png?">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.ico/apple-icon-180x180.png?">
-        <link rel="icon" type="image/png?" sizes="192x192" href="assets/favicon.ico/android-icon-192x192.png?">
-        <link rel="icon" type="image/png?" sizes="32x32" href="assets/favicon.ico/favicon-32x32.png?">
-        <link rel="icon" type="image/png?" sizes="96x96" href="assets/favicon.ico/favicon-96x96.png?">
-        <link rel="icon" type="image/png?" sizes="16x16" href="assets/favicon.ico/favicon-16x16.png?">
-        <link rel="manifest" href="assets/favicon.ico/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="assets/favicon.ico/ms-icon-144x144.png?">
-        <meta name="theme-color" content="#ffffff">
-        <!-- end custom head snippets -->
+    <title>Wishtree</title>
 
-        <title>Wishtree</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-        <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="libraries/p5.min.js"></script>
 
-        <script src="libraries/p5.min.js"></script>
-        <script src="libraries/p5.sound.min.js"></script>
-
-        <style>
-            body{
-                background: black;
-            }
-            #back{
-            height: 3000px;
-            }
-            #printer{
-                position: fixed;
-                background-color: white;
-                border: white solid 1px;
-                right: 0px;
-            }
-            .block{
-                background-color: red;
-                width: 100px;
-                height: 100px;
-                position: absolute;
-                top: 200px;
-                left: 0px;
-                transition: background-color 1s, left 1s, width 1s, height 1s;
-            }
-            .blue{
-                background-color: blue;
-                left: 300px;
-                width: 500px;
-                height: 500px;
-            }
-        </style>
-    </head> 
-    <body onscroll="change_scroll()">
-        <div class="container">
-            <div>
-                <input type="text" id="input-get" placeholder="Get Value">
-                <button id="btn-get">GET</button>
-            </div>
-            <div style="color: white" id="result">Result</div>
-            <div>
-                <input type="text" id="input-set" placeholder="Set Value">
-                <button id="btn-set">SET</button>
-            </div>
+    <style>
+        body{
+            background: black;
+        }
+        #back{
+        height: 3000px;
+        }
+        #printer{
+            position: fixed;
+            background-color: white;
+            border: white solid 1px;
+            right: 0px;
+        }
+        .block{
+            background-color: red;
+            width: 20%;
+            height: 20%;
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            transition: background-color 1s, width 1s, height 1s;
+        }
+        .blue{
+            background-color: blue;
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head> 
+<body onscroll="change_scroll()">
+    <div class="container">
+        <div>
+            <input type="text" id="input-get" placeholder="Get Value">
+            <button id="btn-get">GET</button>
         </div>
+        <div style="color: white" id="result">Result</div>
+        <div>
+            <input type="text" id="input-set" placeholder="Set Value">
+            <button id="btn-set">SET</button>
+        </div>
+    </div>
 
-        <div id="printer">0</div>
-        <div id="back"></div>
-        <div class="block" style="top:500px">block</div>
-        <div class="block" style="top:1000px">block</div>
-        <div class="block" style="top:1500px">block</div>
-        <div class="block" style="top:2000px">block</div>
-        <div class="block" style="top:2500px">block</div>
+    <div id="printer">0</div>
+    <div id="back"></div>
+    <div class="block" style="top:500px">block</div>
+    <div class="block" style="top:1000px">block</div>
+    <div class="block" style="top:1500px">block</div>
+    <div class="block" style="top:2000px">block</div>
+    <div class="block" style="top:2500px">block</div>
 
-        
-        <script src="js/p5.js/wish_tree.js"></script>
-        <script src="js/blocks.js"></script>
-        <script src="js/textInput.js"></script>
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://wishtree.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <script id="dsq-count-scr" src="//wishtree.disqus.com/count.js" async></script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </body>
+    
+    <script src="js/p5.js/wish_tree.js"></script>
+    <script src="js/blocks.js"></script>
+    <script src="js/textInput.js"></script>
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://wishtree.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <script id="dsq-count-scr" src="//wishtree.disqus.com/count.js" async></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
 </html>
