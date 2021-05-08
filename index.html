@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xml:lang>
 <head>
+    <title>Wishtree</title>
     <meta charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="detectmobilebrowser.js"></script>
@@ -32,10 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- end custom head snippets -->
 
-    <title>Wishtree</title>
-
     <link rel="stylesheet" type="text/css" href="style.css">
-
     <script src="libraries/p5.min.js"></script>
 
     <style>
@@ -93,6 +91,22 @@
     <script src="js/blocks.js"></script>
     <script src="js/textInput.js"></script>
     <div id="disqus_thread"></div>
+    
+    <button id="vplay">play video</button>
+    <button id="vpause">pause video</button>
+    <video src="../assets/test_train.webm/" id="trainVideoLoop" preload="metadata" autoplay muted loop></video>
+    <video src="../assets/test_train.webm" id="trainVideo" preload="metadata"muted></video>
+    <script>
+        $(function(){
+            let trainVideo = $('#trainVideo');
+            $('#vplay').click(function(){
+                trainVideo.get(0).play();
+            });
+            $('#vpause').click(function(){
+                trainVideo.get(0).pause();
+            });
+        });
+    </script>
     <script>
         /**
         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -108,7 +122,7 @@
         (d.head || d.body).appendChild(s);
         })();
     </script>
-    <script id="dsq-count-scr" src="//wishtree.disqus.com/count.js" async></script>
+    < id="dsq-count-scr" src="//wishtree.disqus.com/count.js" async></>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
 </html>
