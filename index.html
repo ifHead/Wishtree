@@ -10,7 +10,7 @@
         console.log(location.href);
         if(jQuery.browser.mobile == true){
             console.log(location.href);
-            location.href = "/m";
+            location.href = "m/index.html";
         }
     </script>
     <!-- start custom head snippets -->
@@ -95,8 +95,8 @@
     
     <button id="vplay">play video</button>
     <button id="vpause">pause video</button>
-    <video src="../assets/test_train.webm/" id="trainVideoLoop" preload="metadata" autoplay muted loop></video>
-    <video src="../assets/test_train.webm" id="trainVideo" preload="metadata"muted></video>
+    <video src="assets/test_train.webm" id="trainVideoLoop" preload="metadata" autoplay muted loop></video>
+    <video src="assets/test_train.webm" id="trainVideo" preload="metadata"muted></video>
     <script>
         $(function(){
             let trainVideo = $('#trainVideo');
