@@ -1,3 +1,22 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+header,
+footer{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header h1{
+  font-size: 60px;
+}
+
 canvas {
   display: flex;
   margin: 0 auto;
@@ -5,17 +24,78 @@ canvas {
   outline: 0;
 }
 
+input, button{
+  height: 25px;
+}
+
+body{
+  background: black;
+}
+
+.wrapper {
+  margin: 0 auto;
+  background: white;
+}
+
+.wrapper p {
+  font-size: 1.3em;
+  font-family: 'Tahoma';
+}
+
+.animation{
+  height: 500px;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.paper-plane{
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+}
+
 .container{
   display: flex;
   justify-content: space-evenly;
 }
 
-input, button{
-  height: 25px;
+.block{
+  background-color: red;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  transition: background-color 1s, width 1s, height 1s;
 }
 
+.blue{
+  background-color: blue;
+  width: 50%;
+  height: 50%;
+}
+
+#wishtreep5Div{
+  position:fixed;
+  top: 100px;
+  align-content: center;
+
+}
 
 #result{
   font-size: 25px;
   font-weight: bold;
+}
+
+#back{
+  height: 3000px;
+}
+
+#printer{
+  position: fixed;
+  background-color: white;
+  border: white solid 1px;
+  right: 0px;
 }
