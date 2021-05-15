@@ -27,5 +27,5 @@ const controller = new ScrollMagic.Controller();
 const scene = new ScrollMagic.Scene({ 
 	triggerElement: ".animation",
 	duration: 1500,
-	triggerHook: 0
+	triggerHook: 0.2
 }).setTween(tween).addIndicators().setPin('.animation').addTo(controller);

@@ -4,7 +4,7 @@
     <title>Wishtree</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=no"/>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="libraries/detectmobilebrowser.js"></script>
@@ -12,7 +12,8 @@
     <script src="libraries/p5.min.js"></script>
     <script src="js/blocks.js"></script>
     <script src="js/textInput.js"></script>
-
+    
+    <link rel="stylesheet" hef="style.css">
     <script>
         console.log(jQuery.browser.mobile);
         console.log(location.href);
@@ -21,6 +22,9 @@
             location.href = "m/";
         }
     </script>
+
+    <!-- for parallax fullpage -->
+    
 
     <!-- start custom head snippets -->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon.ico/apple-icon-57x57.png?">
@@ -52,17 +56,84 @@
 </head> 
 
 
-
 <body>
     <div class="wrapper">
-        <header>
-            <h1>Scroll Animation</h1>
-        </header>
+        <img src="assets/hamburger.png" id="hamburger_menu">
+
+        <div id="verytoplogo"></div>
+
+        <div id="parallax_cover">
+            <img src="assets/parallax_cover.png">
+        </div>
+
+        <div id="first_scene">
+            <img src="scene/SCENE_1.png" width=750px>
+            <img id="first_scene_textbox" src="scene/SCENE_1_TEXTBOX.png">
+        </div>
+
+        <div id="second_scene">
+            <img src="scene/SCENE_2.png" width=1000px>
+            <img id="second_scene_textbox" src="scene/SCENE_2_TEXTBOX.png">
+        </div>
+
+        <div id="third_scene">
+            <img src="scene/SCENE_3.png" width=1000px>
+            <img id="third_scene_textbox" src="scene/SCENE_3_TEXTBOX.png">
+        </div>
+
+        <div id="fourth_scene">
+            <img id="fourth_scene_left_tree" src="scene/SCENE_4_LEFTSIDE_TREE.png">
+            <img id="fourth_scene_top_textbox" src="scene/SCENE_4_TOP_TEXTBOX.png">
+            <img id="fourth_scene_bottom_textbox" src="scene/SCENE_4_BOTTOM_TEXTBOX.png">
+        </div>
+
+        <div id="fifth_scene">
+            <img id="fifth_scene_right_post"src="scene/SCENE_5_RIGHTSIDE_POST.png" width=400px;>
+            <img id="fifth_scene_textbox" src="scene/SCENE_5_TEXTBOX.png">
+        </div>
+
+        <div id="sixth_scene">
+            <img src="scene/SCENE_6.png">
+            <img id="sixth_scene_textbox" src="scene/SCENE_6_TEXTBOX.png">
+        </div>
+
+        <div id="seventh_scene">
+            <img id="seventh_scene_textbox" src="scene/SCENE_7_TEXTBOX.png">
+            <img id="seventh_scene_sketch" src="scene/SCENE_7.png">
+        </div>
+
+        <div id="eighth_scene">
+            <img src="scene/SCENE_8.png">
+            <img id="eighth_scene_textbox" src="scene/SCENE_8_TEXTBOX.png">
+        </div>
+
+        <div id="ninth_scene">
+            <img src="scene/SCENE_9.png">
+            <img id="ninth_scene_textbox" src="scene/SCENE_9_TEXTBOX.png">
+        </div>
+
+        <div id="tenth_scene">
+            <img src="scene/SCENE_10.png">
+            <img id="tenth_scene_parallax" src="scene/SCENE_10_PARALLAX.png">
+            <img id="tenth_scene_textbox" src="scene/SCENE_10_TEXTBOX.png">
+        </div>
+
+        <div id="eleventh_scene">
+            <img src="scene/SCENE_11.png">
+            <img id="eleventh_scene_textbox" src="scene/SCENE_11_TEXTBOX.png">
+        </div>
         
-        <section class="animation">
+        <div class="animation">
             <img class="paper-plane" src="assets/plane.png" alt="paper-plane">
-        </section>
+        </div>
+
+        <div id="twelfth_scene">
+            <img src="scene/SCENE_12.png"width="800px">
+            <img id="twelfth_scene_top_textbox" src="scene/SCENE_12_TOP_TEXTBOX.png">
+            <img id="twelfth_scene_bottom_textbox" src="scene/SCENE_12_BOTTOM_TEXTBOX.png">
+        </div>
         
+        <!-- 
         <div id="wishtreep5Div"></div>
 
         <div class="container">
@@ -77,16 +148,15 @@
             </div>
         </div>
 
-        <div id="printer">0</div>
-        <div id="back"></div>
         <div id="A">
             <img src="assets/a.png" alt="assets/b.png">
         </div>  
         <button id="vplay">play video</button>
         <button id="vpause">pause video</button>
-        <video src="assets/test_train.webm" id="trainVideoLoop" preload="metadata" autoplay muted loop></video>
-        <video src="assets/test_train.webm" id="trainVideo" preload="metadata"muted></video>
-
+        <div id = videodivtest>
+            <video src="assets/test_train.webm" id="trainVideoLoop" preload="metadata" autoplay muted loop></video>
+            <video src="assets/test_train.webm" id="trainVideo" preload="metadata"muted></video>
+        </div>
         <div id="disqus_thread"></div>  
         <script> /*videoplayer*/
             $(function(){
@@ -113,7 +183,7 @@
                 (d.head || d.body).appendChild(s);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
     </div>
 
     <script src="main.js"></script>
@@ -128,6 +198,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"></script>
     <script src="/animations/scrollMagicAnimation.js"></script> <!--애니메이션 파일을 불러오는 순서는 반드시 플러그인 이후여야 함-->
 
-    <script src="js/p5.js/wish_tree.js"></script>
+    <script src="js/p5.js/wish_tree.js"></script> 
+
 </body>
 </html>
