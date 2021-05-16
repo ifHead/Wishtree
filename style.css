@@ -77,6 +77,10 @@ body{
   height: 50%;
 }
 
+#disqus_thread {
+  border: 1px solid red;
+}
+
 #verytoplogo {
   /* transform: translate(-50%, 0px) */
   background-image: url("assets/very_top_logo.png");
@@ -332,10 +336,3 @@ body{
   height: 3000;
 }
 
-#disqus_thread {
-  position: fixed;
-  background-color: white;
-  border: white solid 1px;
-  right: 0px;
-  z-index: 10;
-}
