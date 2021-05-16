@@ -331,3 +331,11 @@ body{
   width: 1000;
   height: 3000;
 }
+
+#disqus_thread {
+  position: fixed;
+  background-color: white;
+  border: white solid 1px;
+  right: 0px;
+  z-index: 10;
+}
