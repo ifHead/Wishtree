@@ -4,8 +4,44 @@
   box-sizing: border-box
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden; /*firefox*/
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* safari and chromium */
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+} /* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  overflow-x: hidden;
+  transition: background 1s ease;
+}
+
+.content {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+h2 {
+  color: #fff;
+  font-size: 90px;
+  text-align: center;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  clear: both;
+}
+
 header,
-footer{
+footer {
   height: 400px;
   display: flex;
   justify-content: center;
@@ -13,83 +49,65 @@ footer{
   font-family: 'Montserrat', sans-serif;
 }
 
-header h1{
+header h1 {
   font-size: 60px;
 }
 
-canvas {
-  display: flex;
-  margin: 0 auto;
-  border: 0;
-  outline: 0;
-}
-
-input, button{
-  height: 25px;
-}
-
-body{
-  background: white;
-  overflow-x: hidden;
-}
-
-.wrapper {
-  margin: 0 auto;
-  background: white;
-}
-
-.wrapper p {
-  font-size: 1.3em;
-  font-family: 'Tahoma';
-}
-
-.animation{
-  position: absolute;
-  
-  z-index: -1;
-}
-
-.paper-plane{
-  height: 100px;
-  position: absolute;
-  top: 500px;
-  left: 100px;
-}
-
-.container{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.block{
-  background-color: red;
-  width: 20%;
-  height: 20%;
+/* --------------------------------------------all triggers position */
+#trigger_reveal_verytoplogo {
   position: absolute;
   top: 200px;
   left: 0px;
-  transition: background-color 1s, width 1s, height 1s;
-}
-
-.blue{
-  background-color: blue;
-  width: 50%;
-  height: 50%;
-}
-
-#disqus_thread {
-  border: 1px solid red;
-}
-
-#verytoplogo {
-  /* transform: translate(-50%, 0px) */
-  background-image: url("assets/very_top_logo.png");
+  background-color: red;
+  height: 3px;
   width: 100vw;
-  height: 1750px; /*specific size needed*/
+}
+#trigger_hide_verytoplogo {
+  position: absolute;
+  top: 500px;
+  left: 0px;
+  background-color: red;
+  height:3px;
+  width:100vw;
+}
+/* --------------------------------------------- triggers end */
+
+
+/* --------------------------------------------- hamburger menu */
+#hamburger_menu {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  margin: 50px 50px;
+  z-index: 100;
+}
+/* --------------------------------------------- hamburger menu end */
+
+
+/* -------------------- disqus menu */
+#disqus_thread {
+  margin: 100px 50% 100px 50%;
+  position: absolute;
+  width: 90vw;
+  top: 25000px;
+  left: 0px;
+  transform: translate(-50%, 0px);
+}
+/* -------------------- disqus menu end */
+
+
+/* --------------------------------------------- image elements */
+#verytoplogo {
+  position: fixed;
+  opacity: 0;
+  top:0px;
+  left: 50%;
+  width: 500px;
+  transform: translate(-50%, 0px);
   overflow: visible;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  /* background-position: center;  */
   border: 1px solid red;
 }
 
@@ -124,7 +142,7 @@ body{
   width: 1000px;
   transform: translate(-50%, 0%);
 }
-#second_scene_textbox{
+#second_scene_textbox {
   position: absolute;
   top: 850px;
   left: 50%;
@@ -139,7 +157,7 @@ body{
   width: 1000px;
   transform: translate(-50%, 0%);
 }
-#third_scene_textbox{
+#third_scene_textbox {
   position: absolute;
   top: 700px;
   left: 50%;
@@ -159,13 +177,13 @@ body{
   top: 0px;
   left: -900px;
 }
-#fourth_scene_top_textbox{
+#fourth_scene_top_textbox {
   position: absolute;
   left: 300px;
   top: 300px;
   transform: translate(-50%, 0%);
 }
-#fourth_scene_bottom_textbox{
+#fourth_scene_bottom_textbox {
   position: absolute;
   width: 1000px;
   top: 700px;
@@ -181,7 +199,7 @@ body{
   width: 1000px;
   transform: translate(200px, 0px);
 }
-#fifth_scene_textbox{
+#fifth_scene_textbox {
   position: absolute;
   top: 100px;
   left: -50%;
@@ -189,92 +207,92 @@ body{
   transform: translate(-50%, 0%);
 }
 
-#sixth_scene{
+#sixth_scene {
   position: absolute;
   left: 50%;
   top: 9200px;
   transform: translate(-50%, 0%);
 }
-#sixth_scene_textbox{
+#sixth_scene_textbox {
   position: absolute;
   top: 800px;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
-#seventh_scene{
+#seventh_scene {
   position: absolute;
   left: 50%;
   top: 10300px;
   transform: translate(-50%, 0%);
 }
-#seventh_scene_textbox{
+#seventh_scene_textbox {
   position: absolute;
   top: 800px;
   left: 50%;
   transform: translate(-50%, 0%);
 }
-#seventh_scene_sketch{
+#seventh_scene_sketch {
   position: absolute;
   top: 2000px;
   width: 2000px;
   transform: translate(-50%, 0%);
 }
 
-#eighth_scene{
+#eighth_scene {
   position: absolute;
   left: 50%;
   width: 800px;
   top: 14500px;
   transform: translate(-50%, 0%);
 }
-#eighth_scene_textbox{
+#eighth_scene_textbox { 
   position: absolute;
   top: 1300px;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
-#ninth_scene{
+#ninth_scene {
   position: absolute;
   left: 50%;
   top: 16500px;
   transform: translate(-50%, 0%);
 }
-#ninth_scene_textbox{
+#ninth_scene_textbox {
   position: absolute;
   top: 1100px;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
-#tenth_scene{
+#tenth_scene {
   position: absolute;
   left: 40%;
   width: 800px;
   top: 18500px;
   transform: translate(-50%, 0%);
 }
-#tenth_scene_textbox{
+#tenth_scene_textbox {
   position: absolute;
   top: 900px;
   left: 80%;
   transform: translate(-50%, 0%);
 }
-#tenth_scene_parallax{
+#tenth_scene_parallax {
   position: absolute;
   top: 400px;
   left: 120%;
   transform: translate(-50%, 0%);
 }
 
-#eleventh_scene{
+#eleventh_scene {
   position: absolute;
   left: 50%;
   top: 20500px;
   transform: translate(-50%, 0%);
 }
-#eleventh_scene_textbox{
+#eleventh_scene_textbox {
   position: absolute;
   top: 900px;
   left: 50%;
@@ -302,32 +320,11 @@ body{
   transform: translate(-50%, 0%);
 }
 
+/* --------------------------------------------- image elements ends */
 
 
-#hamburger_menu {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  margin: 50px 50px;
-  z-index: 100;
-}
 
-#result{
-  font-size: 25px;
-  font-weight: bold;
-}
-
-#back{
-  height: 3000px;
-}
-
-#printer{
-  position: fixed;
-  background-color: white;
-  border: white solid 1px;
-  right: 0px;
-}
-
+/* --------------------------------------------- video elements */
 #videodivtest{
   position: absolute;
   justify-content: center;
@@ -335,4 +332,4 @@ body{
   width: 1000;
   height: 3000;
 }
-
+/* --------------------------------------------- video elements ends */

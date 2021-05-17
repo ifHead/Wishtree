@@ -4,12 +4,12 @@
     <title>Wishtree</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="libraries/detectmobilebrowser.js"></script>
-    <!-- <script src="libraries/p5.min.js"></script> -->
-    
+    <script src="libraries/p5.min.js"></script>
+
     <link rel="stylesheet" hef="style.css">
     <script>
         console.log(jQuery.browser.mobile);
@@ -19,9 +19,6 @@
             location.href = "m/";
         }
     </script>
-
-    <!-- for parallax fullpage -->
-    
 
     <!-- start custom head snippets -->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon.ico/apple-icon-57x57.png?">
@@ -42,161 +39,104 @@
     <meta name="msapplication-TileImage" content="assets/favicon.ico/ms-icon-144x144.png?">
     <meta name="theme-color" content="#ffffff">
     <!-- end custom head snippets -->
-    
+
     <link rel="stylesheet" type="text/css" href="style.css">
 </head> 
 
 
 <body>
-    <!-- <img src="assets/hamburger.png" id="hamburger_menu">
+    <!-- positions of all triggers -->
+    <div id="reveal_verytoplogo">reveal_verytoplogo</div>
+    <div id="hide_verytoplogo">hide_verytoplogo</div>
+    <!-- triggers end -->
+    <img src="assets/hamburger.png" id="hamburger_menu" alt="assets/error.jpg">
 
-    <div id="verytoplogo"></div>
-
-    <div id="parallax_cover">
-        <img src="assets/parallax_cover.png">
-    </div>
-
-    <div id="first_scene">
-        <img src="scene/SCENE_1.png">
-        <img id="first_scene_textbox" src="scene/SCENE_1_TEXTBOX.png">
-    </div>
-
-    <div id="second_scene">
-        <img src="scene/SCENE_2.png" width=1000px>
-        <img id="second_scene_textbox" src="scene/SCENE_2_TEXTBOX.png">
-    </div>
-
-    <div id="third_scene">
-        <img src="scene/SCENE_3.png" width=1000px>
-        <img id="third_scene_textbox" src="scene/SCENE_3_TEXTBOX.png">
-    </div>
-
-    <div id="fourth_scene">
-        <img id="fourth_scene_left_tree" src="scene/SCENE_4_LEFTSIDE_TREE.png">
-        <img id="fourth_scene_top_textbox" src="scene/SCENE_4_TOP_TEXTBOX.png">
-        <img id="fourth_scene_bottom_textbox" src="scene/SCENE_4_BOTTOM_TEXTBOX.png">
-    </div>
-
-    <div id="fifth_scene">
-        <img id="fifth_scene_right_post"src="scene/SCENE_5_RIGHTSIDE_POST.png" width=400px;>
-        <img id="fifth_scene_textbox" src="scene/SCENE_5_TEXTBOX.png">
-    </div>
-
-    <div id="sixth_scene">
-        <img src="scene/SCENE_6.png">
-        <img id="sixth_scene_textbox" src="scene/SCENE_6_TEXTBOX.png">
-    </div>
-
-    <div id="seventh_scene">
-        <img id="seventh_scene_textbox" src="scene/SCENE_7_TEXTBOX.png">
-        <img id="seventh_scene_sketch" src="scene/SCENE_7.png">
-    </div>
-
-    <div id="eighth_scene">
-        <img src="scene/SCENE_8.png">
-        <img id="eighth_scene_textbox" src="scene/SCENE_8_TEXTBOX.png">
-    </div>
-
-    <div id="ninth_scene">
-        <img src="scene/SCENE_9.png">
-        <img id="ninth_scene_textbox" src="scene/SCENE_9_TEXTBOX.png">
-    </div>
-
-    <div id="tenth_scene">
-        <img src="scene/SCENE_10.png">
-        <img id="tenth_scene_parallax" src="scene/SCENE_10_PARALLAX.png">
-        <img id="tenth_scene_textbox" src="scene/SCENE_10_TEXTBOX.png">
-    </div>
-
-    <div id="eleventh_scene">
-        <img src="scene/SCENE_11.png">
-        <img id="eleventh_scene_textbox" src="scene/SCENE_11_TEXTBOX.png">
-    </div>
-    
     <div class="animation">
         <img class="paper-plane" src="assets/plane.png" alt="paper-plane">
     </div>
 
+    <img src="assets/very_top_logo.png" alt="assets/error.jpg" id="verytoplogo"></img>
+
+    <div id="parallax_cover">
+        <img src="assets/parallax_cover.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="first_scene">
+        <img src="scene/SCENE_1.png" alt="assets/error.jpg">
+        <img id="first_scene_textbox" src="scene/SCENE_1_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="second_scene">
+        <img src="scene/SCENE_2.png" width=1000px alt="assets/error.jpg">
+        <img id="second_scene_textbox" src="scene/SCENE_2_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="third_scene">
+        <img src="scene/SCENE_3.png" width=1000px alt="assets/error.jpg">
+        <img id="third_scene_textbox" src="scene/SCENE_3_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="fourth_scene">
+        <img id="fourth_scene_left_tree" src="scene/SCENE_4_LEFTSIDE_TREE.png" alt="assets/error.jpg">
+        <img id="fourth_scene_top_textbox" src="scene/SCENE_4_TOP_TEXTBOX.png" alt="assets/error.jpg">
+        <img id="fourth_scene_bottom_textbox" src="scene/SCENE_4_BOTTOM_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="fifth_scene">
+        <img id="fifth_scene_right_post"src="scene/SCENE_5_RIGHTSIDE_POST.png" width=400px; alt="assets/error.jpg">
+        <img id="fifth_scene_textbox" src="scene/SCENE_5_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="sixth_scene">
+        <img src="scene/SCENE_6.png" alt="assets/error.jpg">
+        <img id="sixth_scene_textbox" src="scene/SCENE_6_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="seventh_scene">
+        <img id="seventh_scene_textbox" src="scene/SCENE_7_TEXTBOX.png" alt="assets/error.jpg">
+        <img id="seventh_scene_sketch" src="scene/SCENE_7.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="eighth_scene">
+        <img src="scene/SCENE_8.png" alt="assets/error.jpg">
+        <img id="eighth_scene_textbox" src="scene/SCENE_8_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="ninth_scene">
+        <img src="scene/SCENE_9.png" alt="assets/error.jpg">
+        <img id="ninth_scene_textbox" src="scene/SCENE_9_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="tenth_scene">
+        <img src="scene/SCENE_10.png" alt="assets/error.jpg">
+        <img id="tenth_scene_parallax" src="scene/SCENE_10_PARALLAX.png" alt="assets/error.jpg">
+        <img id="tenth_scene_textbox" src="scene/SCENE_10_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
+    <div id="eleventh_scene">
+        <img src="scene/SCENE_11.png" alt="assets/error.jpg">
+        <img id="eleventh_scene_textbox" src="scene/SCENE_11_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
+
     <div id="twelfth_scene">
-        <img src="scene/SCENE_12.png"width="800px">
-        <img id="twelfth_scene_top_textbox" src="scene/SCENE_12_TOP_TEXTBOX.png">
-        <img id="twelfth_scene_bottom_textbox" src="scene/SCENE_12_BOTTOM_TEXTBOX.png">
-    </div> -->
+        <img src="scene/SCENE_12.png"width="800px" alt="assets/error.jpg">
+        <img id="twelfth_scene_top_textbox" src="scene/SCENE_12_TOP_TEXTBOX.png" alt="assets/error.jpg">
+        <img id="twelfth_scene_bottom_textbox" src="scene/SCENE_12_BOTTOM_TEXTBOX.png" alt="assets/error.jpg">
+    </div>
 
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://wishtree.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <!-- <div id="wishtreep5Div"></div>
-
-        <div class="container">
-            <div>
-                <input type="text" id="input-get" placeholder="Get Value">
-                <button id="btn-get">GET</button>
-            </div>
-            <div style="color: white" id="result">Result</div>
-            <div>
-                <input type="text" id="input-set" placeholder="Set Value">
-                <button id="btn-set">SET</button>
-            </div>
-        </div>
-
-        <div id="A">
-            <img src="assets/a.png" alt="assets/b.png">
-        </div>  
-        <button id="vplay">play video</button>
-        <button id="vpause">pause video</button>
-        <div id = videodivtest>
-            <video src="assets/test_train.webm" id="trainVideoLoop" preload="metadata" autoplay muted loop></video>
-            <video src="assets/test_train.webm" id="trainVideo" preload="metadata"muted></video>
-        </div>
-        <div id="disqus_thread"></div>  
-        <script> /*videoplayer*/
-            $(function(){
-                let trainVideo = $('#trainVideo');
-                $('#vplay').click(function(){
-                    trainVideo.get(0).play();
-                });
-                $('#vpause').click(function(){
-                    trainVideo.get(0).pause();
-                });
-            });
-        </script>
-        
-        <script id="dsq-count-scr" src="//wishtree.disqus.com/count.js" async></script>
-        <script> /*disqus*/
-            var disqus_config = function () {
-                this.page.url = `{{ page.url | absolute_url }}`;
-                this.page.identifier = `{{ page.url | absolute_url }}`;
-            }; 
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://wishtree.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div id="disqus_thread"></div>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://wishtree.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
-
     <script src="main.js"></script>
-    <script src="libraries/scrooth.js"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
@@ -204,9 +144,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"></script>
-    <script src="/animations/scrollMagicAnimation.js"></script> <!--애니메이션 파일을 불러오는 순서는 반드시 플러그인 이후여야 함-->
-    <script src="js/p5.js/wish_tree.js"></script>-->
+    <script src="animations/scrollMagicAnimation.js"></script> <!--애니메이션 파일을 불러오는 순서는 반드시 플러그인 이후여야 함-->
 </body>
 </html>
-        
-      
