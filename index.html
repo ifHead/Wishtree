@@ -40,22 +40,109 @@
     <meta name="theme-color" content="#ffffff">
     <!-- end custom head snippets -->
 
+    <script src="dist/smooth-scrollbar.js"></script>
+    <script>
+        var Scrollbar = window.Scrollbar;
+        Scrollbar.init(document.body, {
+            damping: 0.01,
+            renderByPixels: true,
+            alwaysShowTracks: true
+        });
+    </script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head> 
 
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+    <!-- remove index.html from URL -->
+    <frameset rows="0, 1*" border="0">
+        <frame>
+        <frame scrolling="yes" marginwidth="0" marginheight="0" src="/index.html/">
+    </frameset> 
+    <!-- end of : remove index.html from URL -->
+    
+    <div style="top: 3000px;">
+        <video src="assets/video/rain.webm" muted autoplay loop style="top: 3200px; width: 1000px; 
+        z-index: -1; position: absolute; left: 50%;"></video>
+    </div>
 
-<body>
+    <!-- loading screen -->
+    <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
+    <div class="loadingwhite"></div>
+    <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p>
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                $('#loadingicon').delay(2500).fadeOut(500);
+                $('.loadingwhite').delay(2500).fadeOut(500);
+                $('#loadingtext').delay(2500).fadeOut(500);
+            })
+        });
+    </script>
+    <!-- loading screen end -->
+
+    <!-- text area  -->
+    <!-- <span>
+        <input type="text" placeholder="입력하세요!" 
+            style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;
+                    width:300px;height:200px;font-size:30px;"
+                    word-break: break-all; word-wrap:break-word;
+                    maxlength: 10;>
+    </span> -->
+    <script>
+        let errorCount = 0;
+        function limitLines(obj, e) { // row 수 넘을 시 엔터키 제한
+            let value = $(this).val(); // 입력된 내용
+            let numberOfLines = (obj.value.match(/\n/g) || []).length + 1; // 현재 textarea에 입력된 /n 수
+            let maxRows = obj.rows; // textarea에 선언된 rows 수
+            var rows = value.split('\n').length;
+            if (e.which === 13 && numberOfLines === maxRows) {
+                if(errorCount == 0){
+                    alert('여백이 부족할 만큼 멋진 소망이네요!');
+                    $(this).val(value.substr(0, max-1));
+                    errorCount++;
+                } 
+                else if(errorCount == 1) {
+                    alert('다음에는 더 큰 종이를 준비할게요!');
+                    $(this).val(value.substr(0, max-1));
+                    errorCount++;
+                } else {
+                    alert(maxRows + '줄까지 적으실 수 있어요!');
+                    $(this).val(value.substr(0, max-1));
+                    errorCount = 0;
+                }
+                return false;
+            }
+        }
+    </script>
+    <div style="position: absolute; top: 500px; left:800px; z-index: 50;">
+        <textarea id="wish"
+            rows=10;
+            onkeydown="limitLines(this, event)";
+            required=1;
+            maxlength=80;
+            placeholder="당신의 소망을 입력하세요";
+            wrap=hard;
+            style="
+                position: absolute; top: 45px; left: 100px;
+                border:none; border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
+                width: 350px;
+                resize: none;
+                height: 500px;
+                background-color: transparent;
+            "
+        ></textarea>
+        <img src="assets/textarea.png" alt="error.jpg">
+    </div>
+    <!-- text area end -->
+
     <!-- positions of all triggers -->
     <div id="reveal_verytoplogo">reveal_verytoplogo</div>
     <div id="hide_verytoplogo">hide_verytoplogo</div>
     <!-- triggers end -->
-    <img src="assets/hamburger.png" id="hamburger_menu" alt="assets/error.jpg">
 
-    <div class="animation">
-        <img class="paper-plane" src="assets/plane.png" alt="paper-plane">
-    </div>
-
-    <img src="assets/very_top_logo.png" alt="assets/error.jpg" id="verytoplogo"></img>
+    <img src="assets/UI/hamburger.png" id="hamburger_menu" alt="assets/error.jpg">
+    
+    <img src="assets/very_top_logo.png" alt="assets/error.jpg" id="verytoplogo">
 
     <div id="parallax_cover">
         <img src="assets/parallax_cover.png" alt="assets/error.jpg">
@@ -124,15 +211,30 @@
         <img id="twelfth_scene_bottom_textbox" src="scene/SCENE_12_BOTTOM_TEXTBOX.png" alt="assets/error.jpg">
     </div>
 
-    <div id="disqus_thread"></div>
-    <script>
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://wishtree.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
+    <div id="disqus_thread">
+        <script>
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://wishtree.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </div>
+
+    <!-- <script type="text/javascript">  
+        $(window).scroll(function () { 
+            var scrollValue = $(document).scrollTop(); 
+            console.log(scrollValue); 
+            if(scrollValue > 5000){
+                window.scrollTo({
+                    left: 0, 
+                    top: 5000
+                });
+            }
+        });
+    </script>  -->
+        
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
     <script src="main.js"></script>
