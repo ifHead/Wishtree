@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="libraries/detectmobilebrowser.js"></script>
     <script src="libraries/p5.min.js"></script>
+    <script src="js/text.js"></script>
 
     <link rel="stylesheet" hef="style.css">
     <script>
@@ -40,7 +42,6 @@
     <meta name="theme-color" content="#ffffff">
     <!-- end custom head snippets -->
 
-    <script src="dist/smooth-scrollbar.js"></script>
     <script>
         var Scrollbar = window.Scrollbar;
         Scrollbar.init(document.body, {
@@ -49,24 +50,46 @@
             alwaysShowTracks: true
         });
     </script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head> 
-
-<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
-    <!-- remove index.html from URL -->
-    <frameset rows="0, 1*" border="0">
-        <frame>
-        <frame scrolling="yes" marginwidth="0" marginheight="0" src="/index.html/">
-    </frameset> 
-    <!-- end of : remove index.html from URL -->
     
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript">
+        var omitformtags=["input", "textarea", "select"]
+        omitformtags=omitformtags.join("|")
+        function disableselect(e){
+        if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+        return false
+        }
+        function reEnable(){
+        return true
+        }
+        if (typeof document.onselectstart!="undefined")
+        document.onselectstart=new Function ("return false")
+        else{
+        document.onmousedown=disableselect
+        document.onmouseup=reEnable
+        }
+    </script>
+</head>
+
+
+
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>  
+    <!-- hamburger menu -->
+    <img src="assets/UI/hamburger.png" id="hamburger_menu" alt="assets/error.jpg">
+    
+    
+    <!-- -------------------hamburger menu end-------------------  -->
+
     <div style="top: 3000px;">
         <video src="assets/video/rain.webm" muted autoplay loop style="top: 3200px; width: 1000px; 
         z-index: -1; position: absolute; left: 50%;"></video>
     </div>
-
+    <div class="icon">
+        <div class="hamburger"></div>
+    </div>
     <!-- loading screen -->
-    <video src="assets/loading.webm" autoplay style="z-index: 10001;"></video>
+    <!-- <video src="assets/loading.webm" autoplay style="z-index: 10001;"></video>
     <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
     <div class="loadingwhite"></div>
     <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p>
@@ -78,70 +101,14 @@
                 $('#loadingtext').delay(2500).fadeOut(500);
             })
         });
-    </script>
+    </script> -->
     <!-- loading screen end -->
 
-    <!-- text area  -->
-    <!-- <span>
-        <input type="text" placeholder="입력하세요!" 
-            style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;
-                    width:300px;height:200px;font-size:30px;"
-                    word-break: break-all; word-wrap:break-word;
-                    maxlength: 10;>
-    </span> -->
-    <script>
-        let errorCount = 0;
-        function limitLines(obj, e) { // row 수 넘을 시 엔터키 제한
-            let value = $(this).val(); // 입력된 내용
-            let numberOfLines = (obj.value.match(/\n/g) || []).length + 1; // 현재 textarea에 입력된 /n 수
-            let maxRows = obj.rows; // textarea에 선언된 rows 수
-            var rows = value.split('\n').length;
-            if (e.which === 13 && numberOfLines === maxRows) {
-                if(errorCount == 0){
-                    alert('여백이 부족할 만큼 멋진 소망이네요!');
-                    $(this).val(value.substr(0, max-1));
-                    errorCount++;
-                } 
-                else if(errorCount == 1) {
-                    alert('다음에는 더 큰 종이를 준비할게요!');
-                    $(this).val(value.substr(0, max-1));
-                    errorCount++;
-                } else {
-                    alert(maxRows + '줄까지 적으실 수 있어요!');
-                    $(this).val(value.substr(0, max-1));
-                    errorCount = 0;
-                }
-                return false;
-            }
-        }
-    </script>
-    <div style="position: absolute; top: 500px; left:800px; z-index: 50;">
-        <textarea id="wish"
-            rows=10;
-            onkeydown="limitLines(this, event)";
-            required=1;
-            maxlength=80;
-            placeholder="당신의 소망을 입력하세요";
-            wrap=hard;
-            style="
-                position: absolute; top: 45px; left: 100px;
-                border:none; border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
-                width: 350px;
-                resize: none;
-                height: 500px;
-                background-color: transparent;
-            "
-        ></textarea>
-        <img src="assets/textarea.png" alt="error.jpg">
-    </div>
-    <!-- text area end -->
 
     <!-- positions of all triggers -->
     <div id="reveal_verytoplogo">reveal_verytoplogo</div>
     <div id="hide_verytoplogo">hide_verytoplogo</div>
     <!-- triggers end -->
-
-    <img src="assets/UI/hamburger.png" id="hamburger_menu" alt="assets/error.jpg">
     
     <img src="assets/very_top_logo.png" alt="assets/error.jpg" id="verytoplogo">
 
@@ -160,9 +127,45 @@
     </div>
 
     <div id="third_scene">
-        <img src="scene/SCENE_3.png" width=1000px alt="assets/error.jpg">
-        <img id="third_scene_textbox" src="scene/SCENE_3_TEXTBOX.png" alt="assets/error.jpg">
-    </div>
+        <div style="position: absolute;  left: -270px; z-index: 2;">
+            <textarea id="wishtext"
+                rows="7"
+                maxlength="108"
+                onkeydown="limitTextareaLine(event)"
+                required="1"
+                placeholder="당신의 소망을 입력하세요";
+                wrap="hard"
+                style="
+                    position: absolute; top: 45px; left: 100px;
+                    border:none; border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
+                    width: 350px;
+                    resize: none;
+                    height: 320px;
+                    background-color: transparent;
+                "
+            ></textarea>
+            <img src="assets/textarea.png" alt="error.jpg">
+        </div>
+        <button onclick="inputButton()" style="width: 100px; height: 50px; position: absolute; top: 500px; transform: translate(-50%, 0%); z-index: 2;">소망 걸기</button>
+        <!-------------------- text area end ---------------------------->
+        <!-- prevent scroll -->
+        <script type="text/javascript">
+                $(window).scroll(function () { 
+                    if(isTextExist == false){
+                        var scrollValue = $(document).scrollTop(); 
+                        console.log(scrollValue); 
+                        if(scrollValue > 5400){
+                            alert('소망을 적어주셔야 해요!');
+                            window.scrollTo({
+                                left: 0, 
+                                top: 4700 //소망 있는 곳으로
+                            });
+                        }
+                    }
+                });
+        </script> 
+        <!-- prevent scroll end -->
+    </div> <!-----------------------------------------third scene end------------------------------------------->
 
     <div id="fourth_scene">
         <img id="fourth_scene_left_tree" src="scene/SCENE_4_LEFTSIDE_TREE.png" alt="assets/error.jpg">
@@ -222,24 +225,11 @@
             })();
         </script>
     </div>
-
-    <!-- <script type="text/javascript">  
-        $(window).scroll(function () { 
-            var scrollValue = $(document).scrollTop(); 
-            console.log(scrollValue); 
-            if(scrollValue > 5000){
-                window.scrollTo({
-                    left: 0, 
-                    top: 5000
-                });
-            }
-        });
-    </script>  -->
-        
+    
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
     <script src="main.js"></script>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>

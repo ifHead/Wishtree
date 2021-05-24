@@ -4,7 +4,7 @@
   box-sizing: border-box
 }
 
-html {  이거 빼고 테스트돌려야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+html {  
   overflow: scroll;
   overflow-x: hidden; /*firefox*/
   -ms-overflow-style: none; /* IE 10+ */
@@ -210,16 +210,7 @@ textarea {
   left: 50%;
   top: 4900px;
   width: 1000px;
-  transform: translate(-50%, 0%);
 }
-#third_scene_textbox {
-  position: absolute;
-  top: 700px;
-  left: 50%;
-  width: 1200px;
-  transform: translate(-50%, 0%);
-}
-
 
 #fourth_scene {
   position: absolute;
