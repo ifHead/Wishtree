@@ -13,29 +13,22 @@ const flightPath = {
   ]
 }
 
-const controller = new ScrollMagic.Controller();
-var body_elem = document.querySelector("body");
-const timeline = new TimelineLite();
+$('document').ready(function(){
+  var controller = new ScrollMagic.Controller();
+  var hide_verytoplogo_anim = TweenMax.to('#verytoplogo', 4, {
+    opacity: 0.0,
+    height: "450px"
+  });
 
-timeline.add(
-  TweenLite.to('#verytoplogo', 2, {
-    opacity: 1
+  var scene = new ScrollMagic.Scene({
+    triggerElement: '#trigger_hide_verytoplogo',
+    duration: '120%',
+    offset: 0,
+    triggerHook: 0.2
   })
-)
-const reveal_verytoplogo_scrollmagic = new ScrollMagic.Scene({
-  triggerElement: "#trigger_reveal_verytoplogo",
-  duration: 100,
-  triggerHook: 0.2
-}).setTween(reveal_verytoplogo_timeline).addIndicators().addTo(controller);
-
-
-timeline.add(
-  TweenLite.to('#verytoplogo', 2, {
-    opacity: 0
-  })
-)
-const hide_verytoplogo_scrollmagic = new ScrollMagic.Scene({
-  triggerElement: "#trigger_hide_verytoplogo",
-  duration: 100,
-  triggerHook: 0.2
-}).setTween(hide_verytoplogo_timeline).addIndicators().addTo(controller);
+  .setTween(hide_verytoplogo_anim)
+  .addTo(controller)
+  .addIndicators({
+    name: "hide_verytoplogo"
+  });
+});
