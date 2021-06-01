@@ -52,14 +52,14 @@
     <meta name="theme-color" content="#ffffff">
     <!-- end custom head snippets -->
 
-    <script>
+    <!-- <script>
         var Scrollbar = window.Scrollbar;
         Scrollbar.init(document.body, {
             damping: 0.01,
             renderByPixels: true,
             alwaysShowTracks: true
         });
-    </script>
+    </script> -->
     
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -67,17 +67,18 @@
         var omitformtags=["input", "textarea", "select"]
         omitformtags=omitformtags.join("|")
         function disableselect(e){
-            if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
-            return false
-        }
-        function reEnable(){
-        return true
-        }
-        if (typeof document.onselectstart!="undefined")
-            document.onselectstart=new Function ("return false")
-        else{
-            document.onmousedown=disableselect
-            document.onmouseup=reEnable
+            if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1){
+                return false
+            }
+            function reEnable(){
+                return true
+            }
+            if (typeof document.onselectstart!="undefined"){
+                document.onselectstart=new Function ("return false")
+            } else {
+                document.onmousedown=disableselect
+                document.onmouseup=reEnable
+            }
         }
     </script>
 
@@ -99,6 +100,7 @@
         })
     </script>
 
+
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
         <span></span>
@@ -109,24 +111,82 @@
     <div class="sidebar_content">
         <ul>
             <li class="with_margin" style="margin-top: 3px;"><a></a></li>
-            <li><a>  웹아트</a></li>
-            <li><a>  작가의 말</a></li>
-            <li><a>  등장인물 소개</a></li>
-            <li><a>  개발자 프로필</a></li>
+            <li><a href="#myHTMLvideo">  이번엔</a></li>
+            <li><a>  내가</a></li>
+            <li><a>  사는걸로</a></li>
+            <li><a>  해요</a></li>
         </ul>
-        <label for="sidebar"></label>
+        <label for="menuicon" ></label>
     </div>       
-    <label for="sidebar" class="background"></label>
+    <label for="menuicon" class="background"></label>
     <!-- -------------------hamburger menu end-------------------  -->
 
+    <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; left: 60px;"></video>
+    <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; right: 60px;"></video>
     <div style="top: 3000px;">
         <video src="assets/video/rain.webm" muted autoplay loop style="top: 3200px; width: 1000px; 
         z-index: -1; position: absolute; left: 50%;"></video>
     </div>
     
+    <script>
+        const cosX = new Float32Array([0.5, 0.46,  0.35, 0.19,  0,
+                                    -0.19, -0.35, -0.46, -0.5, -0.46,
+                                    -0.35, -0.19,  0,    0.19,  0.35,
+                                    0.46]);
+        const sinY = new Float32Array([0, 0.19, 0.35, 0.46, 0.5,
+                                    0.46, 0.35, 0.19, 0,   -0.19,
+                                    -0.35, -0.46, -0.5, -0.46, -0.35,
+                                    -0.19]);
+        let firstchoice = false;
+        
+        function setup() {
+            let cnv = createCanvas(500, 500);
+            cnv.position(300, 300);
+        }
+
+        class Ink{
+            constructor(_x, _y){
+                this.five_track = new Int8Array(5);
+                this.x = _x;
+                this.y = _y;
+                this.alpha = 255;
+                this.branchTime = 0;
+                this.choice = 1;// floor(random(0,17));
+                for(let i = 0; i < 5; i++){
+                    this.five_track[i] = this.choice + i;
+                    if(this.five_track[i] > 15) { this.five_track[i] += -16; }
+                }
+            }
+            drop(){
+                this.branchTime++;
+                let k = this.five_track[floor(random(0,5))];
+                this.x += cosX[k];
+                this.y += sinY[k];
+                strokeWeight(3);
+                this.alpha-=0.1;
+                if(this.branchTime % 5 == 0){
+                    drop();
+                }
+                console.log(this.alpha);
+                stroke(0, this.alpha);
+                point(this.x,this.y);
+
+            }
+        }
+        
+        let ink = new Ink(200,200);
+
+        function draw() {
+            ink.drop();
+            ink.drop();
+            noFill();
+            rect(0,0,500,500);
+        }
+    </script>
+
     <!-- loading screen -->
-    <!-- <video src="assets/loading.webm" autoplay style="z-index: 10001;"></video>
-    <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
+    <!-- <video src="assets/loading.webm" autoplay style="z-index: 10001;"></video> -->
+    <!-- <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
     <div class="loadingwhite"></div>
     <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p>
     <script>
@@ -146,7 +206,7 @@
     <!-- triggers end -->
 
     <!-- video player -->
-    <video id="myHTMLvideo" src="assets/surprised_eye_2.webm" mute paused style="position:fixed; top:500px; left:50%; transform:translateX(-50%); z-index: 100;"></video>
+    <video id="myHTMLvideo" src="assets/surprised_eye_2.webm" mute paused style="position:fixed; top:500px; left:50%; transform:translateX(-50%); z-index: 1;"></video>
     <script type="text/javascript">
         var vidZone = {
             start: 1000,
@@ -159,7 +219,7 @@
             if((scrollTopVal > vidZone.start && scrollTopVal < vidZone.end) && vidVisit == false){
                 vidVisit = true;
                 $("#myHTMLvideo").get(0).play();
-            } else {
+            } else if(!(scrollTopVal > vidZone.start && scrollTopVal < vidZone.end)) {
                 vidVisit = false;
             }
         })
@@ -184,7 +244,7 @@
     </div>
 
     <div id="third_scene">
-        <div style="position: absolute;  left: -270px; z-index: 2;">
+        <div style="position: absolute;  left: -270px; z-index: 1;">
             <textarea id="wishtext"
                 rows="7"
                 maxlength="108"
@@ -282,5 +342,15 @@
         </script>
     </div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <script>
+        $(window).scroll(function () { 
+            if($("#menuicon").is(":checked")){
+                $('body').addClass('stop-scroll');
+            } else {
+                $('body').removeClass('stop-scroll');
+            }
+        });
+    </script>
 </body>
 </html>

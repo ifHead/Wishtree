@@ -24,7 +24,7 @@ $('document').ready(function(){
     triggerElement: '#trigger_hide_verytoplogo',
     duration: '120%',
     offset: 0,
-    triggerHook: 0.2
+    triggerHook: 0.4
   })
   .setTween(hide_verytoplogo_anim)
   .addTo(controller)
