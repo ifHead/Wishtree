@@ -31,4 +31,12 @@ $('document').ready(function(){
   .addIndicators({
     name: "hide_verytoplogo"
   });
+
+
+  var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger_body_to_black'})
+  .setVelocity('.body_color', {opacity:0}, {duration:400, easing: 'linear'})
+  .addTo(controller)
+  .addIndicators({
+    name: "background_to_black"
+  });
 });

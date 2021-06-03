@@ -24,6 +24,9 @@ body {
   overflow-x: hidden;
   transition: background 1s ease;
 }
+.body_color {
+  background: white;
+}
 
 .stop-scroll {
   overflow-y: hidden;
@@ -92,8 +95,11 @@ header h1 {
   font-weight: normal;
   font-style: normal;
 }
-p{
+span{
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: left;
 }
 textarea {
   font-family: 'UhBeeJjipungding';
@@ -102,14 +108,20 @@ textarea {
 }
 
 /* --------------------------------------------all triggers position */
+.trigger_style {
+  left: 0px;
+  background-color: blue;
+  border: 1px solid blue;
+  height:3px;
+  width:100vw;
+}
 #trigger_hide_verytoplogo {
   position: absolute;
   top: 600px;
-  left: 0px;
-  background-color: red;
-  border: 1px solid red;
-  height:3px;
-  width:100vw;
+}
+#trigger_body_to_black {
+  position: absolute;
+  top: 1000px;
 }
 /* --------------------------------------------- triggers end */
 
@@ -281,198 +293,274 @@ input#menuicon {display:none;}
   overflow-x: hidden;
 }
 
-#first_scene {
-  position: absolute;
-  left: 50%;
+#A1_S {
   top: 1890px;
-  transform: translate(-50%, 0%);
-}
-#first_scene_textbox {
   position: absolute;
-  top: 800px;
   left: 50%;
-  width: 1200px;
+  transform: translate(-50%, 0%);
+  
+  /* border:red solid 3px; */
+  height: 600px;
+  width: 90%;
+}
+#A1_P {
+  top: 2580px;
+  position: absolute;
+  line-height: 168%;
+  width: 1060px;
+  left: 50%;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
-#second_scene {
+#A2_S {
+  top: 3480px;
   position: absolute;
   left: 50%;
-  top: 3490px;
-  width: 1000px;
   transform: translate(-50%, 0%);
+
+  /* border:red solid 3px; */
+  height: 600px;
+  width: 90%;
 }
-#second_scene_textbox {
+#A2_P {
+  top: 4180px;
   position: absolute;
-  top: 850px;
+  width: 1060px;
   left: 50%;
-  width: 1200px;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
-#third_scene {
+#A3_S {
+  top: 4800px;
   position: absolute;
   left: 50%;
-  top: 4900px;
-  width: 1000px;
-}
-
-#fourth_scene {
-  position: absolute;
-  top: 6200px;
-  left: 50%;
-  transform: translate(60%, 0%);
-}
-#fourth_scene_left_tree {
-  position: absolute;
-  top: 0px;
-  left: -900px;
-}
-#fourth_scene_top_textbox {
-  position: absolute;
-  left: 300px;
-  top: 300px;
   transform: translate(-50%, 0%);
+
+  /* border:red solid 3px; */
+  height: 600px;
+  width: 90%;
 }
-#fourth_scene_bottom_textbox {
+#A3_P {
+  top: 5500px;
   position: absolute;
-  width: 1000px;
-  top: 700px;
-  left: 200px;
+  width: 1060px;
+  left: 50%;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
-
-#fifth_scene {
+#A4_S {
+  top: 6000px;
   position: absolute;
   left: 50%;
-  top: 7900px;
-  width: 1000px;
-  transform: translate(200px, 0px);
-}
-#fifth_scene_textbox {
-  position: absolute;
-  top: 100px;
-  left: -50%;
-  width: 700px;
   transform: translate(-50%, 0%);
-}
 
-#sixth_scene {
-  position: absolute;
-  left: 50%;
-  top: 9200px;
-  transform: translate(-50%, 0%);
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
 }
-#sixth_scene_textbox {
+#A4_P {
+  top: 6300px;
   position: absolute;
-  top: 800px;
+  white-space: pre-line;
+  width: 1060px;
   left: 50%;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
-#seventh_scene {
+#A5_S {
+  top: 8500px;
   position: absolute;
   left: 50%;
-  top: 10300px;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 0px);
+
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
 }
-#seventh_scene_textbox {
+#A5_P {
+  top: 8200px;
   position: absolute;
-  top: 800px;
+  width: 1060px;
   left: 50%;
-  transform: translate(-50%, 0%);
-}
-#seventh_scene_sketch {
-  position: absolute;
-  top: 2000px;
-  width: 2000px;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
-#eighth_scene {
+#B1_S {
+  top: 10200px;
   position: absolute;
   left: 50%;
-  width: 800px;
-  top: 14500px;
   transform: translate(-50%, 0%);
+
+  /* border:red solid 3px; */
+  height: 600px;
+  width: 90%;
 }
-#eighth_scene_textbox { 
+#B1_P {
+  top: 10860px;
   position: absolute;
-  top: 1000px;
-  left: 50%;
+  width: 1060px;
+  left: 1090px;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
-#ninth_scene {
+#B2_S {
+  top: 12200px;
   position: absolute;
   left: 50%;
-  top: 16500px;
   transform: translate(-50%, 0%);
-}
-#ninth_scene_textbox {
-  position: absolute;
-  top: 1100px;
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
 
-#tenth_scene {
-  position: absolute;
-  left: 40%;
-  width: 800px;
-  top: 18500px;
-  transform: translate(-50%, 0%);
+  border:red solid 3px;
+  height: 600px;
+  width: 110%;
 }
-#tenth_scene_textbox {
+#B2_P {
+  top: 12200px;
   position: absolute;
-  top: 900px;
-  left: 80%;
-  transform: translate(-50%, 0%);
-}
-#tenth_scene_parallax {
-  position: absolute;
-  top: 400px;
-  left: 120%;
-  transform: translate(-50%, 0%);
-}
-
-#eleventh_scene {
-  position: absolute;
-  left: 50%;
-  top: 20500px;
-  transform: translate(-50%, 0%);
-}
-#eleventh_scene_textbox {
-  position: absolute;
-  top: 900px;
+  width: 1060px;
+  white-space: pre-line;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
-#twelfth_scene{
+#B3_S {
+  top: 14200px;
   position: absolute;
-  left: 45%;
-  width: 800px;
-  height: 1700px;
-  top: 22500px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
+}
+#B3_P {
+  top: 14200px;
+  position: absolute;
+  width: 1060px;
+  left: 50%;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
-#twelfth_scene_top_textbox{
+
+#B4_S {
+  top: 16200px;
   position: absolute;
-  top: 500px;
-  left: 130%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
+}
+#B4_P {
+  top: 16200px;
+  position: absolute;
+  width: 1060px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  white-space: pre-line;
+}
+
+#C1_S {
+  top: 18200px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
+}
+#C1_P {
+  top: 18200px;
+  position: absolute;
+  width: 1060px;
+  left: 50%;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
-#twelfth_scene_bottom_textbox{
+
+#C2_S {
+  top: 20200px;
   position: absolute;
-  top: 800px;
-  left: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
+}
+#C2_P {
+  top: 20200px;
+  position: absolute;
+  width: 1060px;
+  left: 50%;
+  white-space: pre-line;
+  transform: translate(-50%, 0%);
+}
+
+#C3_S {
+  top: 21200px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
+}
+#C3_P {
+  top: 21200px;
+  position: absolute;
+  width: 1060px;
+  left: 50%;
+  white-space: pre-line;
+  transform: translate(-50%, 0%);
+}
+
+#D1_S {
+  top: 22200px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
+}
+#D1_P {
+  top: 22200px;
+  position: absolute;
+  left: 50%;
+  width: 1060px;
+  white-space: pre-line;
+  transform: translate(-50%, 0%);
+}
+
+#D2_S {
+  top: 24200px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  border:red solid 3px;
+  height: 600px;
+  width: 90%;
+}
+#D2_P {
+  top: 24200px;
+  position: absolute;
+  width: 1060px;
+  left: 50%;
+  white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 /* --------------------------------------------- image elements ends */
-
-
 
 /* --------------------------------------------- video elements */
 #videodivtest{
