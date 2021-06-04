@@ -24,8 +24,9 @@ body {
   overflow-x: hidden;
   transition: background 1s ease;
 }
+
 .body_color {
-  background: white;
+  background-color: #fff;
 }
 
 .stop-scroll {
@@ -429,17 +430,17 @@ input#menuicon {display:none;}
 }
 
 #B3_S {
-  top: 14200px;
+  top: 13900px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
 
-  border:red solid 3px;
+  /* border:red solid 3px; */
   height: 600px;
   width: 90%;
 }
 #B3_P {
-  top: 14200px;
+  top: 14500px;
   position: absolute;
   width: 1060px;
   left: 50%;
