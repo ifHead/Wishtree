@@ -13,29 +13,35 @@ const flightPath = {
   ]
 }
 
-$('document').ready(function(){
-  var controller = new ScrollMagic.Controller();
-  var hide_verytoplogo_anim = TweenMax.to('#verytoplogo', 4, {
-    opacity: 0.0,
-    height: "450px"
-  });
 
-  var scene = new ScrollMagic.Scene({
-    triggerElement: '#trigger_hide_verytoplogo',
-    duration: '120%',
-    offset: 0,
-    triggerHook: 0.4
-  })
-  .setTween(hide_verytoplogo_anim)
-  .addTo(controller)
-  .addIndicators({
-    name: "hide_verytoplogo"
-  });
+var controller = new ScrollMagic.Controller();
+var hide_verytoplogo_anim = TweenMax.to('#verytoplogo', 4, {
+  opacity: 0.0,
+  height: "450px"
+});
 
-  var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger_body_to_black"})
-  .setVelocity("#black_bg", {opacity: 0}, {duration:400})
-  .addTo(controller)
-  .addIndicators({
-    name: "background_to_black"
-  });
+var background_to_black = TweenMax.to('#white_bg', 1, {
+  opacity: 0.0
+});
+
+var scene = new ScrollMagic.Scene({
+  triggerElement: '#trig_hide_verytoplogo',
+  duration: '120%',
+  offset: 0,
+  triggerHook: 0.4
+})
+.setTween(hide_verytoplogo_anim)
+.addTo(controller)
+.addIndicators({
+  name: "trig_hide_verytoplogo"
+});
+
+var scene2 = new ScrollMagic.Scene({
+  triggerElement: '#trig_bg_to_black',
+  triggerHook: 0.6
+})
+.setTween(background_to_black)
+.addTo(controller)
+.addIndicators({
+  name: "trig_bg_to_black"
 });

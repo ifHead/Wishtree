@@ -26,15 +26,13 @@ body {
   transition: background 1s ease;
 }
 
-#black_bg {
-  background:#222;
+#white_bg {
   opacity: 1;
-  position:fixed;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  position:fixed; top:0; left:0; width:300%; height:200%; z-index: -2;
+}
+
+#black_bg {
+  position:fixed; top:0; left:0; width:300%; height:200%; z-index: -3;
 }
 
 
@@ -118,20 +116,20 @@ textarea {
 }
 
 /* --------------------------------------------all triggers position */
-.trigger_style {
+.trig_style {
   left: 0px;
   background-color: blue;
   border: 1px solid blue;
   height:3px;
   width:100vw;
 }
-#trigger_hide_verytoplogo {
+#trig_hide_verytoplogo {
   position: absolute;
   top: 600px;
 }
-#trigger_body_to_black {
+#trig_bg_to_black {
   position: absolute;
-  top: 1000px;
+  top: 3000px;
 }
 /* --------------------------------------------- triggers end */
 
@@ -141,51 +139,48 @@ input[id="menuicon"]{
   display:none;
 }
 input[id="menuicon"] + label {
+  mix-blend-mode: difference;
   isolation: initial;
   display:block;
-  width:25px;
-  height:28px;
   top: 30px;
   left: 30px;
+  height: 30px;
+  opacity: 0.7;
+  background: rgba(0,0,0,0);
+  width: 50px;
   position:fixed;
   cursor:pointer;
   z-index: 12;
 }
-input[id="menuicon"] + label span {
-  mix-blend-mode: difference;
+input[id="menuicon"] + label img {
   display:block;
   position:absolute;
-  width:26px;
-  height:4px;
-  background-color: rgba(255,0,0,1);
-  box-shadow: 0px 0px 2px rgba(0,0,0,.3);
-  border-radius:2px;
   transition:all .6s;
   transition-delay: .1s;
 }
-input[id="menuicon"] + label span:nth-child(1) {
-  top: 15%; z-index: 12;
+input[id="menuicon"] + label img:nth-child(1) {
+  top: 20%; z-index: 12;
 }
-input[id="menuicon"] + label span:nth-child(2) {
+input[id="menuicon"] + label img:nth-child(2) {
   top: 50%; z-index: 12;
   transform:translateY(-50%);
 }
-input[id="menuicon"] + label span:nth-child(3) {
-  bottom: 15%; z-index: 12;
+input[id="menuicon"] + label img:nth-child(3) {
+  bottom: 20%; z-index: 12;
 }
-input[id="menuicon"]:checked + label span:nth-child(1) {
-  top: 50%; background-color:rgba(180,180,180);
+input[id="menuicon"]:checked + label img:nth-child(1) {
+  top: 50%;
+  opacity: 1;
   transform:translateY(-50%) rotate(45deg);
+}
+input[id="menuicon"]:checked + label img:nth-child(2) {
+  opacity: 0; 
   box-shadow: 0px 0px 3px rgba(255,255,255,.4);
 }
-input[id="menuicon"]:checked + label span:nth-child(2) {
-  opacity: 0; background-color:rgba(180,180,180);
-  box-shadow: 0px 0px 3px rgba(255,255,255,.4);
-}
-input[id="menuicon"]:checked + label span:nth-child(3) {
-  bottom: 50%; background-color:rgba(180,180,180);
+input[id="menuicon"]:checked + label img:nth-child(3) {
+  bottom: 50%;
+  opacity: 1;
   transform:translateY(50%) rotate(-45deg);
-  box-shadow: 0px 0px 3px rgba(255,255,255,.4);
 } 
 
 /* div[class="sidebar"] {
@@ -298,7 +293,6 @@ input#menuicon {display:none;}
 #parallax_cover {
   background: url('assets/parallax_cover.png');
   position: absolute;
-  /* border: 1px solid red; */
   left: 50%;
   top: 1100px;
   transform: translate(-50%, 0%);
