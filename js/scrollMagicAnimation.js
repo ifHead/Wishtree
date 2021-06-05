@@ -32,9 +32,8 @@ $('document').ready(function(){
     name: "hide_verytoplogo"
   });
 
-
-  var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger_body_to_black'})
-  .setVelocity('.body_color', {background:'#000'}, {duration:400, easing: 'linear'})
+  var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger_body_to_black"})
+  .setVelocity("#black_bg", {opacity: 0}, {duration:400})
   .addTo(controller)
   .addIndicators({
     name: "background_to_black"

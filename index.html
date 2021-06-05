@@ -89,7 +89,7 @@
     </script> -->
 </head>
 
-<body class="body_color" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>  
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>  
     <!-- hamburger menu -->
     <script type="text/javascript">
         $(document).ready(function(){
@@ -99,13 +99,16 @@
         })
     </script>
 
-
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
         <span></span>
         <span></span>
         <span></span>
     </label>
+    
+    <div style="position: fixed; width:100%; height:100%; background-color: blue; "></div>
+    <div style="position: absolute; width:100%; height:20%; background-color: red; "></div>
+    <img src="assets/Logo/favicon.png" style="position: fixed; top:100px; left: 100px; mix-blend-mode: difference;">
 
     <div class="sidebar_content">
         <ul>
@@ -119,7 +122,7 @@
     </div>       
     <label for="menuicon" class="background"></label>
     <!-- -------------------hamburger menu end-------------------  -->
-
+    <video src="assets/bigTest.webm" autoplay loop style="position: fixed; bottom: 50px; left: 60px;"></video>
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; left: 60px;"></video>
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; right: 60px;"></video>
     <div style="top: 3000px;"></div>
@@ -141,7 +144,7 @@
         });
     </script> -->
     <!-- loading screen end -->
-
+    
 
     <!-- positions of all triggers -->
     <div class="trigger_style" id="trigger_hide_verytoplogo">trigger_hide_verytoplogo</div>
@@ -264,7 +267,6 @@
         A5_P 
         국수는 맛있게 드셨나요? 저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. 손님의 소망은 무엇인가요?
     </span>
-    
 
     <div id="B1_S">b1
         <img src="assets/Story/B1_0 - 소망나무.jpg" style="left:150px; transform: translate(-50%, 0%); position:absolute; width:800px; top:0px;" alt="error1.jpg">
@@ -379,5 +381,6 @@
             }
         });
     </script>
+    <!-- <div id="black_bg"></div> -->
 </body>
 </html>
