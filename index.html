@@ -122,15 +122,13 @@
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; left: 60px;"></video>
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; right: 60px;"></video>
     <div style="top: 3000px;"></div>
-    
-    <script style="position: absolute;" src="js/p5.js/ink.js"></script>
 
     <!-- loading screen -->
     <!-- <video src="assets/loading.webm" autoplay style="z-index: 10001;"></video> -->
     <div class="loadingwhite"></div>
     <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
     <!-- <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p> -->
-    <video id="loadingVid" src="assets/loadingText.webm" autoplay style="position:fixed; top:60%; width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
+    <video id="loadingVid" autoplay src="assets/loadingText.webm" style="position:fixed; top:60%; width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
     <script>
         $('#loadingicon').fadeTo(1000, 1);
         $(window).on("load", function(){
@@ -385,5 +383,29 @@
         });
     </script>
     <script src="js/scrollMagicAnimation.js"></script> <!--애니메이션 파일을 불러오는 순서는 반드시 플러그인 이후여야 함-->
+
+
+    <!-- -=-------------------------------- firebase ------------------------------ -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAADRvSuIsu2goGziC7qYW9BBzW43w_h-s",
+            authDomain: "wishtree-f4fc4.firebaseapp.com",
+            databaseURL: "https://wishtree-f4fc4-default-rtdb.firebaseio.com",
+            projectId: "wishtree-f4fc4",
+            storageBucket: "wishtree-f4fc4.appspot.com",
+            messagingSenderId: "805037767612",
+            appId: "1:805037767612:web:8af525548c577f352709b9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script style="position: absolute;" src="js/p5.js/ink.js"></script>
 </body>
 </html>

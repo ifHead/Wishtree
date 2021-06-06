@@ -22,6 +22,8 @@ const sinY = new Float32Array([
 let ink = new Array(300);
 
 function setup() {
+    console.log(firebase);
+
     let cnv = createCanvas(500, 500);
     cnv.position(200, 200);
     frameRate(30);
