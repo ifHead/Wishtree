@@ -40,7 +40,7 @@ function setup() {
     
     var data = {
       name: "DTS",
-      score: 43
+      score: 598
     }
     ref.push(data);
 
