@@ -22,7 +22,27 @@ const sinY = new Float32Array([
 let ink = new Array(300);
 
 function setup() {
+    var firebaseConfig = {
+        apiKey: "AIzaSyAADRvSuIsu2goGziC7qYW9BBzW43w_h-s",
+        authDomain: "wishtree-f4fc4.firebaseapp.com",
+        databaseURL: "https://wishtree-f4fc4-default-rtdb.firebaseio.com",
+        projectId: "wishtree-f4fc4",
+        storageBucket: "wishtree-f4fc4.appspot.com",
+        messagingSenderId: "805037767612",
+        appId: "1:805037767612:web:8af525548c577f352709b9"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
     console.log(firebase);
+    
+    var database = firebase.database();
+    var ref = database.ref('scores');
+    
+    var data = {
+      name: "DTS",
+      score: 43
+    }
+    ref.push(data);
 
     let cnv = createCanvas(500, 500);
     cnv.position(200, 200);
