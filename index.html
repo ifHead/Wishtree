@@ -119,8 +119,8 @@
     </div>       
     <label for="menuicon" class="background"></label>
     <!-- -------------------hamburger menu end-------------------  -->
-    <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; left: 60px;"></video>
-    <video src="assets/scrollDownGuide_3_2.webm" autoplay loop style="position: absolute; bottom: 50px; right: 60px;"></video>
+    <video src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; bottom: 50px; left: 60px;"></video>
+    <video src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; bottom: 50px; right: 60px;"></video>
     <div style="top: 3000px;"></div>
 
     <!-- loading screen -->
@@ -128,7 +128,7 @@
     <div class="loadingwhite"></div>
     <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
     <!-- <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p> -->
-    <video id="loadingVid" autoplay src="assets/loadingText.webm" style="position:fixed; top:60%; width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
+    <video id="loadingVid" autoplay muted src="assets/loadingText.webm" style="position:fixed; top:60%; width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
     <script>
         $('#loadingicon').fadeTo(1000, 1);
         $(window).on("load", function(){
@@ -146,7 +146,7 @@
 
     <!-- video player -->
     <!-- <video id="myHTMLvideo" src="assets/surprised_eye_2.webm" mute paused style="position:fixed; top:500px; left:50%; transform:translateX(-50%); z-index: 1;"></video> -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var vidZone = {
             start: 1000,
             end: 2000
@@ -162,7 +162,7 @@
                 vidVisit = false;
             }
         })
-    </script>
+    </script> -->
     <!-- eye surprise test end -->
 
     <div id="verytoplogo">
