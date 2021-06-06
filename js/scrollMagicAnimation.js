@@ -20,10 +20,6 @@ var hide_verytoplogo_anim = TweenMax.to('#verytoplogo', 4, {
   height: "450px"
 });
 
-var background_to_black = TweenMax.to('#white_bg', 1, {
-  opacity: 0.0
-});
-
 var scene = new ScrollMagic.Scene({
   triggerElement: '#trig_hide_verytoplogo',
   duration: '120%',
@@ -36,12 +32,17 @@ var scene = new ScrollMagic.Scene({
   name: "trig_hide_verytoplogo"
 });
 
-var scene2 = new ScrollMagic.Scene({
-  triggerElement: '#trig_bg_to_black',
-  triggerHook: 0.6
-})
-.setTween(background_to_black)
-.addTo(controller)
-.addIndicators({
-  name: "trig_bg_to_black"
-});
+// ---------- 배경 어둡게 ------------
+// var background_to_black = TweenMax.to('#white_bg', 1, {
+//   opacity: 0.0
+// });
+// var scene2 = new ScrollMagic.Scene({
+//   triggerElement: '#trig_bg_to_black',
+//   triggerHook: 0.6
+// })
+// .setTween(background_to_black)
+// .addTo(controller)
+// .addIndicators({
+//   name: "trig_bg_to_black"
+// });
+// ------------------------------------

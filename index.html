@@ -127,18 +127,23 @@
 
     <!-- loading screen -->
     <!-- <video src="assets/loading.webm" autoplay style="z-index: 10001;"></video> -->
-    <!-- <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
     <div class="loadingwhite"></div>
-    <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p>
+    <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
+    <!-- <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p> -->
+    <video id="loadingVid" src="assets/loadingText.webm" autoplay style="position:fixed; top:60%; width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
     <script>
-        $(document).ready(function(){
-            setTimeout(function(){
-                $('#loadingicon').delay(2500).fadeOut(500);
-                $('.loadingwhite').delay(2500).fadeOut(500);
-                $('#loadingtext').delay(2500).fadeOut(500);
-            })
+        $('#loadingicon').fadeTo(1000, 1);
+        $(window).on("load", function(){
+            $(document).ready(function(){
+                setTimeout(function(){
+                    $('#loadingicon').delay(6900).fadeOut(800);
+                    $('.loadingwhite').delay(8300).fadeOut(500);
+                    // $('#loadingtext').delay(6500).fadeOut(500);
+                    $('#loadingVid').delay(8300).fadeOut(300);
+                })
+            });
         });
-    </script> -->
+    </script>
     <!-- loading screen end -->
 
     <!-- video player -->
@@ -363,15 +368,22 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
     <script>
-        $(window).scroll(function () { 
+        
+        $("body").click(function(){console.log($("#menuicon").is(":checked"))});
+        
+        $("#menuicon").click(function () { 
             if($("#menuicon").is(":checked")){
-                $('body').addClass('stop-scroll');
+                $('html, body').css({
+                    overflow: 'hidden',
+                    height: 'auto'
+                });
             } else {
-                $('body').removeClass('stop-scroll');
+                $('html, body').css(
+                    'overflow-x', 'hidden'
+                ).css('overflow-y', 'auto');
             }
         });
     </script>
-
-<script src="js/scrollMagicAnimation.js"></script> <!--애니메이션 파일을 불러오는 순서는 반드시 플러그인 이후여야 함-->
+    <script src="js/scrollMagicAnimation.js"></script> <!--애니메이션 파일을 불러오는 순서는 반드시 플러그인 이후여야 함-->
 </body>
 </html>
