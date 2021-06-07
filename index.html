@@ -405,8 +405,10 @@
 
         var rootRef = firebase.database().ref().child('infos');
 
-        let today = new Date();   
-        document.write(today);
+        let dt = new Date();
+        var str1 = dt.getFullYear()+'년 '+(dt.getMonth()+1)+'월 '+dt.getDate()+'일';
+
+        document.write(str1);
     </script>
     <script style="position: absolute;" src="js/p5.js/ink.js"></script>
 </body>
