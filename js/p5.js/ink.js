@@ -20,15 +20,15 @@ const sinY = new Float32Array([
 
 let ink = new Array(300);
 let init = 0;
+let mySound;
 
 function get_currentWishText(){
   console.log(currentWishText);
 }
 
-let mySound;
 function preload(){
   soundFormats('ogg');
-  mySound = loadSound('/assets/le_festin.ogg');
+  mySound = loadSound('../../assets/le_festin.ogg');
 }
 
 function setup() {
