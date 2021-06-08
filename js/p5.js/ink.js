@@ -28,7 +28,7 @@ function get_currentWishText(){
 let mySound;
 function preload(){
   soundFormats('ogg');
-  mySound = loadSound('../../assets/le_festin.ogg');
+  mySound = loadSound('/assets/le_festin.ogg');
 }
 
 function setup() {
@@ -48,7 +48,7 @@ function draw() {
     }
     noFill();
     rect(0,0,500,500);
-    if(frameCount % 10 == 0){
+    if(frameCount % 100 == 0){
       get_currentWishText();
     }
     
