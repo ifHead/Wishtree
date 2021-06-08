@@ -28,7 +28,7 @@ function get_currentWishText(){
 
 function preload(){
   soundFormats('ogg');
-  mySound = loadSound('innerAssets/le_festin.ogg');
+  mySound = loadSound('../../assets/le_festin.ogg');
 }
 
 function setup() {
@@ -62,7 +62,6 @@ function draw() {
     else {
       mySound.setVolume(0);
     }
-    console.log(mySound.volume);
 }
 
 
