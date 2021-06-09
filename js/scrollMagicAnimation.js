@@ -33,16 +33,35 @@ var scene = new ScrollMagic.Scene({
 });
 
 // ---------- 배경 어둡게 ------------
-// var background_to_black = TweenMax.to('#white_bg', 1, {
-//   opacity: 0.0
-// });
-// var scene2 = new ScrollMagic.Scene({
-//   triggerElement: '#trig_bg_to_black',
-//   triggerHook: 0.6
-// })
-// .setTween(background_to_black)
-// .addTo(controller)
-// .addIndicators({
-//   name: "trig_bg_to_black"
-// });
+var background_to_black = TweenMax.to('#white_bg', 1, {
+  opacity: 0.0
+});
+var scene2 = new ScrollMagic.Scene({
+  triggerElement: '#trig_bg_to_black',
+  triggerHook: 0.6,
+  // offset: 0,
+  // duration: '120%'
+})
+.setTween(background_to_black)
+.addTo(controller)
+.addIndicators({
+  name: "trig_bg_to_black"
+});
+// ------------------------------------
+
+// ---------- 배경 밝게 ------------
+var background_to_white = TweenMax.to('#white_bg', 1, {
+  opacity: 1.0
+});
+var scene2 = new ScrollMagic.Scene({
+  triggerElement: '#trig_bg_to_white',
+  triggerHook: 0.5,
+  // offset: 0,
+  // duration: '120%'
+})
+.setTween(background_to_white)
+.addTo(controller)
+.addIndicators({
+  name: "trig_bg_to_white"
+});
 // ------------------------------------

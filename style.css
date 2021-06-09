@@ -118,8 +118,8 @@ textarea {
 /* --------------------------------------------all triggers position */
 .trig_style {
   left: 0px;
-  background-color: blue;
-  border: 1px solid blue;
+  background-color: purple;
+  border: 1px solid purple;
   height:3px;
   width:100vw;
 }
@@ -130,6 +130,10 @@ textarea {
 #trig_bg_to_black {
   position: absolute;
   top: 3000px;
+}
+#trig_bg_to_white {
+  position: absolute;
+  top: 6000px;
 }
 /* --------------------------------------------- triggers end */
 
@@ -227,7 +231,7 @@ input#menuicon {display:none;}
   color:#fff;
   padding: 30px 10px;
   background:rgba(0,0,0,0);
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   z-index: 11;
   cursor: pointer;
 }

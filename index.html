@@ -89,10 +89,11 @@
 <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
 <div style="position:absolute; top:0; width:100%; height:100%;">
     <!-- <video src="assets/bigTest.webm?" autoplay muted style="position: absolute; top:100px; left: 50px; transform: translate-translateX(-50%);"></video> -->
-    <!-- positions of all triggers -->
-    <div class="trig_style" id="trig_hide_verytoplogo">trigger_hide_verytoplogo</div>
-    <div class="trig_style" id="trig_bg_to_black">trigger_bg_to_black</div>
-    <!-- triggers end -->
+    <!--------------------------- positions of all triggers -->
+    <div class="trig_style" id="trig_hide_verytoplogo">trig_hide_verytoplogo</div>
+    <div class="trig_style" id="trig_bg_to_black">trig_bg_to_black</div>
+    <div class="trig_style" id="trig_bg_to_white">trig_bg_to_white</div>
+    <!---------------------------- triggers end -->
     
     <img id="black_bg" src="assets/background_black.jpg">
     <img id="white_bg" src="assets/background_white.jpg">
@@ -114,10 +115,11 @@
     <div class="sidebar_content">
         <ul>
             <li class="with_margin" style="margin-top: 3px;"><a></a></li>
-            <li><a>  이번엔</a></li>
-            <li><a>  내가</a></li>
-            <li><a>  사는걸로</a></li>
-            <li><a>  해요</a></li>
+            <li><a>  디지털아트 페스티벌</a></li>
+            <li><a>  작가의 말</a></li>
+            <li><a>  등장인물 소개</a></li>
+            <li><a>  개발자 프로필</a></li>
+            <li style ="border-top: 0.5px solid #444; border-bottom: none; position:absolute; bottom: 50px;"><a>  벨로그</a></li>
         </ul>
         <label for="menuicon" ></label>
     </div>       
@@ -221,27 +223,29 @@
     </span>
     
     <div id="A5_S">a5
-        <div>
-            <textarea id="wishtext"
-                rows="7"
-                maxlength="108"
-                required="1"
-                placeholder="당신의 소망을 입력하세요";
-                wrap="hard"
-                style="
-                    position: absolute; top: 45px; left: 100px;
-                    border:none; border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
-                    width: 350px;
-                    resize: none;
-                    height: 320px;
-                    background-color: transparent;
-                "
-            ></textarea>
-            <img  src="assets/textarea.png" alt="error.jpg">
-        </div>
-
-        <button id="wishbutton" onclick="inputButton()" style="width: 100px; height: 50px; position: absolute; top: 500px; transform: translate(-50%, 0%); z-index: 2; cursor:pointer;">소망 걸기</button>
+        <textarea id="wishtext"
+            rows="7"
+            maxlength="108"
+            required="1"
+            placeholder="당신의 소망을 입력하세요";
+            wrap="hard"
+            style="
+                position: absolute; top: 45px; left: 50%; transform: translateX(-140px);
+                border:none; border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
+                width: 350px;
+                resize: none;
+                height: 320px;
+                background-color: transparent;
+                z-index: 2
+            "
+        ></textarea>
+        <img src="assets/textarea.png" alt="error.jpg" style="position: absolute; left: 50%; transform: translateX(-50%);">
+        <button id="wishbutton" onclick="inputButton()" 
+        style="width: 100px; height: 50px; position: absolute; left:50%;
+        top: 500px; transform: translateX(-50%); z-index: 2; cursor:pointer;">소망 걸기</button>
         <!-------------------- text area end ---------------------------->
+
+
         <!-- prevent scroll -->
         <script type="text/javascript">
             let isFirstVisit = true;
