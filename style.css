@@ -285,7 +285,8 @@ input#menuicon {display:none;}
   opacity: 1.0;
   top: 380px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  width:100%;
+  transform: translate(-65%, -540px);
   overflow: visible;
   z-index: -1;
   /* background-repeat: no-repeat; */
@@ -298,6 +299,7 @@ input#menuicon {display:none;}
   position: absolute;
   left: 50%;
   top: 1500px;
+  box-shadow: ;
   transform: translate(-50%, 0%);
   overflow-x: hidden;
 }

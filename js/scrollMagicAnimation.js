@@ -16,8 +16,7 @@ const flightPath = {
 
 var controller = new ScrollMagic.Controller();
 var hide_verytoplogo_anim = TweenMax.to('#verytoplogo', 4, {
-  opacity: 0.0,
-  top:'300px'
+  brightness: '0.5'
 });
 
 var scene = new ScrollMagic.Scene({
