@@ -1,7 +1,0 @@
-{
-  "include": [
-    "*.js",
-    "libraries/*.js",
-    "c:\\Users\\san\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.6\\p5types\\global.d.ts"
-, "js/wish_tree.js", "js/detectmobilebrowser.js", "animations/app.js", "semantic/semantic.js", "libraries/velocity.min.js"  ]
-}

@@ -125,7 +125,7 @@ textarea {
 }
 #trig_hide_verytoplogo {
   position: absolute;
-  top: 600px;
+  top: 1000px;
 }
 #trig_bg_to_black {
   position: absolute;
@@ -279,9 +279,8 @@ input#menuicon {display:none;}
 #verytoplogo {
   position: fixed;
   opacity: 1.0;
-  top: 50%;
+  top: 380px;
   left: 50%;
-  width: 500px;
   transform: translate(-50%, -50%);
   overflow: visible;
   z-index: -1;
@@ -294,7 +293,7 @@ input#menuicon {display:none;}
   background: url('assets/parallax_cover.png');
   position: absolute;
   left: 50%;
-  top: 1100px;
+  top: 1500px;
   transform: translate(-50%, 0%);
   overflow-x: hidden;
 }

@@ -10,3 +10,4 @@ function inputButton(){
 		isTextExist = true;
 	}
 }
+

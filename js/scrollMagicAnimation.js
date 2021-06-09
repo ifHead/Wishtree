@@ -17,7 +17,7 @@ const flightPath = {
 var controller = new ScrollMagic.Controller();
 var hide_verytoplogo_anim = TweenMax.to('#verytoplogo', 4, {
   opacity: 0.0,
-  height: "450px"
+  top:'300px'
 });
 
 var scene = new ScrollMagic.Scene({
@@ -33,16 +33,16 @@ var scene = new ScrollMagic.Scene({
 });
 
 // ---------- 배경 어둡게 ------------
-var background_to_black = TweenMax.to('#white_bg', 1, {
-  opacity: 0.0
-});
-var scene2 = new ScrollMagic.Scene({
-  triggerElement: '#trig_bg_to_black',
-  triggerHook: 0.6
-})
-.setTween(background_to_black)
-.addTo(controller)
-.addIndicators({
-  name: "trig_bg_to_black"
-});
+// var background_to_black = TweenMax.to('#white_bg', 1, {
+//   opacity: 0.0
+// });
+// var scene2 = new ScrollMagic.Scene({
+//   triggerElement: '#trig_bg_to_black',
+//   triggerHook: 0.6
+// })
+// .setTween(background_to_black)
+// .addTo(controller)
+// .addIndicators({
+//   name: "trig_bg_to_black"
+// });
 // ------------------------------------
