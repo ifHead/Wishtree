@@ -79,13 +79,27 @@
             }
         }
     </script>
-
+    <script type="text/javascript">
+        // 안드로이드 우측 버튼 비활성
+        $(document).bind("contextmenu", function (e) {
+            return false;
+        });
+        document.oncontextmenu=function(){return false;}
+        document.onselectstart=function(){return false;}
+        document.ondragstart=function(){return false;}
+        document.onmousedown=function(){return false;}
+    </script>
     <!-- <script type="text/javascript">
         var scrollTopVal = document.querySelector('html').scrollTop;
     </script> -->
 </head>
 
-<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>  
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<script>
+    $(document).bind("contextmenu", function (e) {
+        return false;
+    });
+</script>
 <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
 <div style="position:absolute; top:0; width:100%; height:100%;">
     <video src="assets/video/opqr.webm?" autoplay muted loop style="position: fixed; z-index: 10; width:100%;top:0px; left: 0px;
