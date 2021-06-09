@@ -12,20 +12,22 @@ const flightPath = {
     {x: window.innerWidth, y: -250}
   ]
 }
-
-
+// hide_verytoplogo_anim = 
+//------------첫 로고화면-------------
 var controller = new ScrollMagic.Controller();
-var hide_verytoplogo_anim = TweenMax.to('#verytoplogo', 4, {
-  brightness: '0.5'
-});
+var tl_1 = new TimelineMax()
+.add(TweenMax.to('#verytoplogo', 1, 
+{  filter: "brightness(0.2)" }))
+.add(TweenMax.to('#verytoplogo', 0, 
+{ visibility: 'hidden' }));
 
 var scene = new ScrollMagic.Scene({
   triggerElement: '#trig_hide_verytoplogo',
-  duration: '120%',
+  duration: '150%',
   offset: 0,
-  triggerHook: 0.4
+  triggerHook: 0.8
 })
-.setTween(hide_verytoplogo_anim)
+.setTween(tl_1)
 .addTo(controller)
 .addIndicators({
   name: "trig_hide_verytoplogo"

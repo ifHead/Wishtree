@@ -122,10 +122,11 @@ textarea {
   border: 1px solid purple;
   height:3px;
   width:100vw;
+  z-index: 10;
 }
 #trig_hide_verytoplogo {
   position: absolute;
-  top: 1000px;
+  top: 1500px;
 }
 #trig_bg_to_black {
   position: absolute;
@@ -283,12 +284,13 @@ input#menuicon {display:none;}
 #verytoplogo {
   position: fixed;
   opacity: 1.0;
-  top: 380px;
+  top: 320px;
   left: 50%;
-  width:100%;
-  transform: translate(-65%, -540px);
+  height:140vh;
+  transform: translate(-50%, -500px);
   overflow: visible;
   z-index: -1;
+  filter: brightness(1.0);
   /* background-repeat: no-repeat; */
   /* background-attachment: fixed; */
   /* background-position: center;  */
@@ -297,15 +299,14 @@ input#menuicon {display:none;}
 #parallax_cover {
   background: url('assets/parallax_cover.png');
   position: absolute;
-  left: 50%;
   top: 1500px;
-  box-shadow: ;
-  transform: translate(-50%, 0%);
+  left: 50%;
+  transform: translateX(-50%);
   overflow-x: hidden;
 }
 
 #A1_S {
-  top: 1890px;
+  top: 2090px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -315,7 +316,7 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #A1_P {
-  top: 2580px;
+  top: 2780px;
   position: absolute;
   line-height: 168%;
   width: 1060px;
