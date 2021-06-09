@@ -1,15 +1,11 @@
 let test_sketch = function(p){
   p.setup = function(){
-		p.noCursor();
-    p.cnv = p.createCanvas(window.innerWidth, window.innerHeight);
-    p.cnv.position(200, 200);
+    p.canva = createCanvas(300, 300);
+		p.canva.position(100,100);
   }
   p.draw = function(){
-    p.noFill();
-    p.stroke(255,0,0);
-    p.strokeWeight(10);
-    p.rect(0,0,width,height);
+		p.background(0);
   }
 }
 
-let superP5_1 = new p5(ink_sketch);
+let superP5_1 = new p5(test_sketch);

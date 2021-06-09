@@ -24,6 +24,23 @@ body {
   background-color: white;
   overflow-x: hidden;
   transition: background 1s ease;
+  -webkit-user-select: none !important;  /*드래그 방지*/
+  -moz-user-select: -moz-none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+code {  /*드래그 방지*/
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+img { /*드래그 방지*/
+  -webkit-user-select: none !important;
+  -moz-user-select: -moz-none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
 }
 
 .stop-scrolling {
