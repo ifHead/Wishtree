@@ -56,7 +56,7 @@ var background_to_white = TweenMax.to('#white_bg', 1, {
   ease: Power1.easeIn,
   opacity: 1.0
 });
-var scene2 = new ScrollMagic.Scene({
+var scene3 = new ScrollMagic.Scene({
   triggerElement: '#trig_bg_to_white',
   triggerHook: 0.5,
   
@@ -69,3 +69,51 @@ var scene2 = new ScrollMagic.Scene({
   name: "trig_bg_to_white"
 });
 // ------------------------------------
+
+//----------소망나무 핀-------------
+var tl_2 = new TimelineMax()
+.add(TweenMax.to('#wt_2', 2, 
+{ opacity: 1.0 }))
+.add(TweenMax.to('#wt_3', 2, 
+{ opacity: 1.0 }))
+.add(TweenMax.to('#wt_4', 2, 
+{ opacity: 1.0 }));
+	
+for(let i = 0; i < 5; i++){
+  let pinObj = ["#wt_1", "#wt_2", "#wt_3", "#wt_4", "#B1_P"];
+  var scene4 = new ScrollMagic.Scene({
+    triggerElement: "#trig_wishtree_pin",
+    duration: '410%',
+    triggerHook: 0.1,
+    offset: 0
+  })
+  .setPin(pinObj[i])
+  .addTo(controller)
+  .setTween(tl_2)
+  .addIndicators({
+    name: "trig_wishtree_pin"
+  });
+}
+//---------------------------------
+
+//----------우체통-----------------
+for(let i = 0; i < 4; i++){
+  let pinObj2 = ['#ut_1','#ut_2','#B2_S', '#B2_P']
+  var tl_3 = new TimelineMax()
+  .add(TweenMax.to('#ut_1', 1, 
+  { opacity: 0 }));
+  var scene5 = new ScrollMagic.Scene({
+    triggerElement: "#trig_postbox_pin",
+    duration: '210%',
+    triggerHook: 0.6,
+    offset: 0
+  })
+  .setPin(pinObj2[i])
+  .addTo(controller)
+  .setTween(tl_3)
+  .addIndicators({
+    name: "trig_postbox_pin"
+  });
+}
+
+//----------------------------------

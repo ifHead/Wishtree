@@ -118,33 +118,6 @@ let sound_sketch = function(p){
 }
 
 
-// let sound_sketch = function(p){
-//   var mySound;
-//   p.preload = function (){
-//     p.soundFormats('ogg');
-//     mySound = loadSound('../../assets/le_festin.ogg');
-//   }
-
-//   p.setup = function (){
-//     p.noCanvas();
-//     mySound.p.setVolume(0);
-//     mySound.p.play();
-//   }
-
-//   p.draw = function (){
-//     p.scrollValue = $(document).scrollTop();
-//       if(p.scrollValue > 1000 && p.scrollValue < 5000){
-//         mySound.p.setVolume(p.map(p.scrollValue, 1000, 5000, 0, 1));
-//       } 
-//       else if(scrollValue > 5000 && scrollValue < 9000) {
-//         mySound.p.setVolume(p.map(p.scrollValue, 5000, 9000, 1, 0));
-//       }
-//       else {
-//         mySound.p.setVolume(0);
-//       }
-//   }
-// }
-
 let superP5_3 = new p5(sound_sketch);
 let superP5_2 = new p5(ink_sketch); // 스케치의 레이어를 결정함, 선입선출
 let superP5_1 = new p5(test_sketch);

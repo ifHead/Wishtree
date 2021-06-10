@@ -14,11 +14,11 @@
     <link rel="stylesheet" hef="style.css">
     <script src="js/text.js"></script>
     <script src="main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     
 
     <script>
@@ -102,13 +102,15 @@
 </script>
 <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
 <div style="position:absolute; top:0; width:100%; height:100%;">
-    <video src="assets/video/opqr.webm?" autoplay muted loop style="position: fixed; z-index: 10; width:100%;top:0px; left: 0px;
-    filter: brightness(4);"></video>
+    <!-- <video src="assets/video/opqr.webm?" autoplay muted loop style="position: fixed; z-index: 10; width:100%;top:0px; left: 0px;
+    filter: brightness(4);"></video> -->
     <!-- <video src="assets/bigTest.webm?" autoplay muted style="position: absolute; top:100px; left: 50px; transform: translate-translateX(-50%);"></video> -->
     <!-- positions of all triggers -->
     <div class="trig_style" id="trig_hide_verytoplogo">trigger_hide_verytoplogo</div>
     <div class="trig_style" id="trig_bg_to_black">trigger_bg_to_black</div>
     <div class="trig_style" id="trig_bg_to_white">trigger_bg_to_white</div>
+    <div class="trig_style" id="trig_wishtree_pin">trigger_wishtree_pin</div>
+    <div class="trig_style" id="trig_postbox_pin">trigger_postbox_pin</div>
     <!-- triggers end -->
     
     <img id="black_bg" src="assets/background_black.jpg">
@@ -229,7 +231,7 @@
     </span>
 
     <div id="A4_S">
-        
+        <video src="assets/Story/A4 우체통.webm" style="position:absolute; left:50%; transform: translateX(-50%);"></video>
     </div>
     <span id="A4_P">            
         소망나무가 여느 때와 다름없이 행복하게 웃으며 하루를 보내고 있는데, 어디선가 외마디 비명소리가 들려왔다. 우체통에 편지를 넣으려던 사람이 너무 꽉 닫혀버린 편지 투입구에 손을 찧은 것이다. 사람이 투덜거리며 이 앞을 떠나자, 우체통이 서서히 얼굴을 드러낸다.
@@ -237,7 +239,7 @@
 우체통은 소망나무와 눈이 마주친다. 소망나무를 볼 때마다 우체통은 어릴 적의 자신이 떠올랐다. 사람들의 편지마다 나던 다른 향기, 편지를 넣기 전의 설렘 가득한 표정과 그 모든 것들을 사랑했던 자신이 그려진다. 우체통은 어린 소망나무가 사람들의 소망을 받고는 기쁨에 차 재잘대는 모습을 바라본다.
     </span>
     
-    <div id="A5_S">a5
+    <div id="A5_S">
         <div>
             <textarea id="wishtext"
                 rows="7"
@@ -246,18 +248,23 @@
                 placeholder="당신의 소망을 입력하세요";
                 wrap="hard"
                 style="
-                    position: absolute; top: 45px; left: 100px;
+                    position: absolute; top: 45px; left: 50%;
+                    transform:translateX(-170px);
                     border:none; border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
                     width: 350px;
                     resize: none;
                     height: 320px;
                     background-color: transparent;
+                    z-index: 3;
                 "
             ></textarea>
-            <img  src="assets/textarea.png" alt="error.jpg">
+            <img  src="assets/textarea.png" style="position: absolute; left:50%; transform: translateX(-275px);" alt="error.jpg">
         </div>
 
-        <button id="wishbutton" onclick="inputButton()" style="width: 100px; height: 50px; position: absolute; top: 500px; transform: translate(-50%, 0%); z-index: 2; cursor:pointer;">소망 걸기</button>
+        <button id="wishbutton" onclick="inputButton()" 
+        style="width: 100px; height: 50px; position: absolute; left:50%; 
+       top: 530px; transform: translateX(-55px); 
+        z-index: 2; cursor:pointer;">소망 걸기</button>
         <!-------------------- text area end ---------------------------->
         <!-- prevent scroll -->
         <script type="text/javascript">
@@ -280,30 +287,28 @@
         </script> 
         <!-- prevent scroll end -->
     </div>
-    <span id="A5_P">
-        A5_P 
-        국수는 맛있게 드셨나요? 저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. 손님의 소망은 무엇인가요?
+    <span id="A5_P" style="text-align: center;"> 
+        국수는 맛있게 드셨나요? 저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. 
+        손님의 소망은 무엇인가요?
     </span>
 
-    <div id="B1_S">b1
-        <img src="assets/Story/B1_0 - 소망나무.jpg" style="left:150px; transform: translate(-50%, 0%); position:absolute; width:800px; top:0px;" alt="error1.jpg">
-        <img src="assets/Story/B1_1 - 소망나무.jpg" style="left:150px; transform: translate(-50%, 0%); position:absolute; width:800px; top:0px;" alt="error2.jpg">
-        <img src="assets/Story/B1_2 - 소망나무.jpg" style="left:150px; transform: translate(-50%, 0%); position:absolute; width:800px; top:0px;" alt="error3.jpg">
-        <img src="assets/Story/B1_3 - 소망나무.jpg" style="left:150px; transform: translate(-50%, 0%); position:absolute; width:800px; top:0px;" alt="error4.jpg">
-    </div>
-    <span id="B1_P">
+    <!-- <div id="B1_S"> -->
+    <img id="wt_1" src="assets/Story/B1_0 - 소망나무 Glow.jpg" style="left:100px; position:absolute; width:550px; top:9050px;" alt="error1.jpg">
+    <img id="wt_2" src="assets/Story/B1_1 - 소망나무 Glow.jpg" style="left:100px; position:absolute; width:550px; top:9050px;" alt="error2.jpg">
+    <img id="wt_3" src="assets/Story/B1_2 - 소망나무 Glow.jpg" style="left:100px; position:absolute; width:550px; top:9050px;" alt="error3.jpg">
+    <img id="wt_4" src="assets/Story/B1_3 - 소망나무.jpg" style="left:100px; position:absolute; width:550px; top:9050px;" alt="error4.jpg">
+    <!-- </div> -->
+    <span id="B1_P" style="position: absolute; top: 9290px; left:1140px;">
         또 하나의 소망이 나무에게 걸린다. 소망나무가 새로운 소망을 바라보며 활짝 미소짓는다. 우체통이 소망이 걸리는 게 그렇게 좋냐고 묻자 소망나무가 말한다. 
 
 “응! 사람들은 따듯한 소망을 걸어주며 나를 의미있게 해. 내가 공장에서 본 사람들은 모두 냉랭했는데 소망국수가 있는 이 곳은 달라. 소망이 하나 걸릴 때마다 내가 축복받았다는 생각이 들어. 이렇게 따듯한 사람들 사이에서 나도 따듯한 존재가 되어 내 역할을 하며 살아갈 수 있다는 게 말이야.” 
     </span>
 
-    <div id="B2_S">
-        b2
-        <img src="assets/Story/B2_1 - 어린 우체통.jpg" style="right:0px; transform: translate(-50%, 0%); position:absolute; width: 500px; top:0px;" alt="error1.jpg">
-        <img src="assets/Story/B2_2 - 불타는 우체통.jpg" style="right:0px; transform: translate(-50%, 0%); position:absolute; width:500px; top:0px;" alt="error1.jpg">   
-    </div>
+    <!-- <div id="B2_S"> -->
+    <img id="ut_2" src="assets/Story/B2_2 - 불타는 우체통.jpg" style="position:absolute; width:360px; top:13600px; right: 100px; z-index: 2;" alt="error1.jpg">   
+    <img id="ut_1" src="assets/Story/B2_1 - 어린 우체통.jpg" style="position:absolute; width: 360px; top:13600px; right: 100px; z-index: 3;" alt="error1.jpg">
+    <!-- </div> -->
     <span id="B2_P">
-        B2_P
         소망나무의 이야기를 듣는 우체통의 표정이 점점 어두워진다. 우체통이 차분하게 입을 뗀다. 
 
 “소망나무야. 이곳의 사람들을 너무 믿기만 해선 안돼. 전엔 내 안에도 편지들이 가득했고, 그때까지만 해도 난 소중한 존재였어. 내 안에 소중히 준비해온 편지를 넣으며 활짝 웃던 아이도 있었어. 그 아이가 나를 보며 짓던 웃음은 아직도 내 기억 속에 생생한데, 지금의 나를 봐. 이제 아이들은 내가 왜 존재하는지도 몰라. 내 몸엔 장난삼아 그려진 낙서와 스티커들이 가득해. 옆면의 철거 안내문이 보이니? 결국 사람들은 자신에게 필요가 없으면 널 버리고 말거야. 네가 경험했던 공장의 차가운 사람들도, 지금 웃으며 따듯한 말을 해대는 이 사람들도 결국엔 똑같은 거야. 처음의 따듯한 모습은 그냥 일부야. 믿으면 안돼.
@@ -316,8 +321,7 @@
     </span>
 
     <div id="B3_S">
-        b3
-        <img src="assets/Story/B3 - 사장.jpg" style="transform: translate(-50%, 0%); position:absolute; width:500px; top:0px; left:50%;" alt="error1.jpg">   
+        <img src="assets/Story/B3 - 사장.jpg" style="transform: translate(-50%, 0%); position:absolute; width:500px; top:px; left:50%;" alt="error1.jpg">   
     </div>
     <span id="B3_P">
         B3_P
@@ -442,7 +446,6 @@
     </script>
     <script src="js/p5.js/canvas.js"></script>
 </div>
-</body>
 <script>
     $(document).keydown(function(event) {
     if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
@@ -460,4 +463,5 @@
         }
     });
 </script>
+</body>
 </html>/
