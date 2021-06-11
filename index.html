@@ -92,12 +92,42 @@
 </head>
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
-<script>
-    $(document).bind("contextmenu", function (e) {
-        return false;
-    });
-</script>
-<!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
+    <!-- loading screen -->
+    <div id="loadingwhite"></div>
+    <img id="browser1" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(-97px); width: 28px; z-index: 11000;" src="assets/Logo/chrome.jpg"></img>
+    <img id="browser2" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(-39px); width: 28px; z-index: 11000;" src="assets/Logo/edge.jpg"></img>
+    <img id="browser3" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(17px); width: 28px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
+    <img id="browser4" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(72px); width: 28px; z-index: 11000;" src="assets/Logo/whale.jpg"></img>
+    <img id="loadingicon" style="position: absolute; top:50%; left: 50%; transform: translate(-50%, -170px);" src="assets/UI/loadingicon.svg"></img>
+    <div id="a" style="position: absolute; bottom: 93px; width: 350px; height: 25px; transform:translateX(-50%); 
+    left: 50%; background-image: linear-gradient(20deg, #24b1ca 0%, #330867 100%); opacity: 70%; z-index: 11001;"></div>
+    <p id="loadingtext" style="color: #fff; z-index: 11002;">크롬 브라우저와 전체화면을 권장합니다</p>
+    <video id="loadingVid" autoplay muted src="assets/loadingText.webm" style="position:fixed; top:50%; 
+    width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
+    <script>
+        $('#loadingicon').fadeTo(1000, 1);
+        $(window).on("load", function(){
+            $('html, body').css({overflow: 'hidden', height: 'auto'});
+            $(document).ready(function(){
+                setTimeout(function(){
+                    $('#loadingicon').delay(6900).fadeOut(800);
+                    $('#loadingwhite').delay(8300).fadeOut(500);
+                    $('#loadingtext').delay(6500).fadeOut(500);
+                    $('#loadingVid').delay(8300).fadeOut(300);
+                    $('#browser1').delay(6900).fadeOut(800);
+                    $('#browser2').delay(6900).fadeOut(800);
+                    $('#browser3').delay(6900).fadeOut(800);
+                    $('#browser4').delay(6900).fadeOut(800);
+                    $('#a').delay(6300).fadeOut(500);
+                })
+                setTimeout(function(){
+                    $('html, body').delay(16500).css('overflow-x', 'hidden').css('overflow-y', 'auto');
+                }, 8300);
+            });
+        });
+    </script>
+    <!-- loading screen end -->
+    <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
     <!-- <video src="assets/video/opqr.webm?" autoplay muted loop style="position: fixed; z-index: 10; width:100%;top:0px; left: 0px;
     filter: brightness(4);"></video> -->
     <!-- <video src="assets/bigTest.webm?" autoplay muted style="position: absolute; top:100px; left: 50px; transform: translate-translateX(-50%);"></video> -->
@@ -142,26 +172,6 @@
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; bottom: 50px; right: 60px;"></video>
     <div style="top: 3000px;"></div>
 
-    <!-- loading screen -->
-    <!-- <video src="assets/loading.webm" autoplay style="z-index: 10001;"></video> -->
-<!--<div class="loadingwhite"></div>
-    <img id="loadingicon" src="assets/UI/loadingicon.svg"></img>
-    <!-- <p id="loadingtext">크롬 브라우저와 전체화면을 권장합니다<br>아래로 스크롤하며 감상하세요!</p> -->
-    <!-- <video id="loadingVid" autoplay muted src="assets/loadingText.webm" style="position:fixed; top:60%; width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video> -->
-    <script>
-        $('#loadingicon').fadeTo(1000, 1);
-        $(window).on("load", function(){
-            $(document).ready(function(){
-                setTimeout(function(){
-                    $('#loadingicon').delay(6900).fadeOut(800);
-                    $('.loadingwhite').delay(8300).fadeOut(500);
-                    // $('#loadingtext').delay(6500).fadeOut(500);
-                    $('#loadingVid').delay(8300).fadeOut(300);
-                })
-            });
-        });
-    </script>
-    <!-- loading screen end -->
 
     <!-- video player -->
     <!-- <video id="myHTMLvideo" src="assets/surprised_eye_2.webm" mute paused style="position:fixed; top:500px; left:50%; transform:translateX(-50%); z-index: 1;"></video> -->
@@ -183,7 +193,6 @@
         })
     </script>
     <!-- eye surprise test end -->
-
 
     <img id="verytoplogo" src="assets/Page/메인 페이지 배경.jpg" alt="assets/error.jpg">
 
@@ -333,12 +342,15 @@
             let anoYear_calc = 0;
             let dt = new Date();
             
-            let destinDay = (dt.getDate());
+            let destinDay = (dt.getDate()+3);
+            if(destinDay > 28){
+                
+            }
             let destinMon = (dt.getMonth()+1);
             let destinYear = dt.getFullYear();
 
             let anoDay = 15;
-            let anoMon = destinMon - 2;
+            let anoMon = destinMon - 1;
             if(anoMon < 1){
                 anoMon = 12;
                 anoYear_calc = 1;
@@ -359,7 +371,7 @@
     </div>
 
     <div id="B3_S">
-        <img src="assets/Story/B3 - 사장.jpg" style="transform: translate(-50%, 0%); position:absolute; width:500px; left:50%;" alt="error1.jpg">   
+        <img src="assets/Story/B3 - 사장.jpg" style="transform: translate(-50%, 0%); position:absolute; left:50%;" alt="error1.jpg">   
     </div>
     <span id="B3_P">
         소망나무가 마음 아파하며 가지를 떨고 있다. 우체통이 다시 말을 시작한다.
@@ -379,7 +391,7 @@
     
 
     <div id="C1_S">
-        <img src="assets/Story/C1 - 소망 사슬.jpg" style="transform: translate(-50%, 0%); position:absolute; width:500px; top:0px; left:50%;" alt="error1.jpg">   
+        <img src="assets/Story/C1 - 소망 사슬.jpg" style="transform: translate(-50%, 0%); position:absolute; top:0px; left:50%;" alt="error1.jpg">   
     </div>
     <span id="C1_P">
         소망나무는 창에 비친 자신을 본다. 물에 젖어 검게 번져버린 사람들의 소망이 자신에게 매달려 있는 모양을 본다. 소망들이 닿아 있는 가지 하나하나에 한기가 스며든다. 여기저기에서 배어나온 한기가 서로 질기게 이어져있는 듯 하다. 문득 두려워진다.
@@ -388,7 +400,7 @@
     </span>
 
     <div id="C2_S">
-        <img src="assets/Story/C2 - 소망 적는 누군가.jpg" style="transform: translate(-50%, 0%); position:absolute; width:500px; top:0px; left:50%;" alt="error1.jpg">   
+        <img src="assets/Story/C2 - 소망 적는 누군가.jpg" style="transform: translate(-50%, 0%); position:absolute; top:0px; left:50%;" alt="error1.jpg">   
     </div>
     <span id="C2_P">창밖으로 아이들이 보인다. 우체통 주위를 돌아다니며 술래잡기를 하고 있다. 우체통 옆에 쪼그려 숨어있던 한 아이가 우체통에 붙은 종이를 물끄러미 바라보다가 술래에게 잡히고 만다. 아이가 깜짝 놀라며 벌떡 일어서자 우체통에 붙은 철거 안내문이 팔랑거린다. 이내 문에 달린 종이 요란스럽게 울리며 아이들이 쏟아져 들어온다. 아이들이 조잘조잘 이야기하며 소망나무의 앞을 빠르게 스쳐 지나간다. 아까 우체통 옆에 쪼그려 있던 아이가 나무 앞에 멈춰선다. 
 
@@ -402,15 +414,15 @@
     </span>
     
     <div id="C3_S">
-        <img src="assets/Story/C3 - 사장의 과거.jpg" style="transform: translate(-50%, 0%); position:absolute; width:500px; top:0px; left:50%;" alt="error1.jpg">   
+        <img src="assets/Story/C3 - 사장의 과거.jpg" style="transform: translate(-50%, 0%); position:absolute; top:0px; left:50%;" alt="error1.jpg">   
     </div>
     <span id="C3_P">
         사장은 가만히 생각에 잠긴다. 빨간 우체통, 그리고 없어짐. 유난히 차갑고 건조한 공기가 흐르던 그 날이 떠오른다. 인생에서 가장 끔찍했지만 또한 따듯했던 그 날.
 
-  사장이 기억하는 그 날의 첫 번째 감각은 공허감이었다. 어린 시절, 아이는 정말 자주 편지를 썼다. 보육원에서 알려줬던 엄마의 미국 주소로 아이는 열심히 편지를 보냈다. 고사리손으로 써낸 편지에 답장이 오지 않는 까닭은 글씨가 알아보기 힘들어서겠지, 엄마가 한국말을 잊어버려서 그런 거겠지 생각했다. 아이는 조금만 자라면, 꼭 편지의 주소로 가서 엄마를 만날거라고 다짐했다. 머리가 좀 자라고, 보육원에서 독립한 후에는 답장이 오지 않는 편지를 보내지 않았지만 하나의 목표는 변하지 않았다. 
+    사장이 기억하는 그 날의 첫 번째 감각은 공허감이었다. 어린 시절, 아이는 정말 자주 편지를 썼다. 보육원에서 알려줬던 엄마의 미국 주소로 아이는 열심히 편지를 보냈다. 고사리손으로 써낸 편지에 답장이 오지 않는 까닭은 글씨가 알아보기 힘들어서겠지, 엄마가 한국말을 잊어버려서 그런 거겠지 생각했다. 아이는 조금만 자라면, 꼭 편지의 주소로 가서 엄마를 만날거라고 다짐했다. 머리가 좀 자라고, 보육원에서 독립한 후에는 답장이 오지 않는 편지를 보내지 않았지만 하나의 목표는 변하지 않았다. 
 
-  밥을 굶어 가면서 돈을 모아 미국으로 떠날 티켓을 어떻게든 마련했다. 떠나기 전, 확인차 잠시 들른 보육원에서 이상한 이야기를 들었다. 분명히 미국 땅 어딘가에 존재한다고 생각했던 엄마가, 마음 속으론 항상 살아 숨쉬고 있던 엄마가 없다고 한다. 이젠 기억 속 희미해진 잔상으로만 남은 엄마의 모습이 마지막 자취였다고 한다. 사장은 그동안 수없이 오발송되었을 편지들을 떠올렸다. 보육원에서 비틀거리며 나와 마주한 빨간 우체통. 너는 내 편지들을 어디로 보내주었니. 존재하지도 않는 것에 대한 사랑을 담아 설레는 마음으로 마주했던 그 우체통이 순간 시뻘겋고 끔찍한 괴물로 보였다. 처음 피워 본 맛도 더럽게 매운 그 담배를 우체통 안으로 던져 버린 건 한순간이었다. 연기가 피어올랐다. 그리고 할머니를 만났다. 없어짐에 대한 마음의 공허를 국수에서 피어오르는 따듯한 김이 조금이나마 채워주었다.
- 
+    밥을 굶어 가면서 돈을 모아 미국으로 떠날 티켓을 어떻게든 마련했다. 떠나기 전, 확인차 잠시 들른 보육원에서 이상한 이야기를 들었다. 분명히 미국 땅 어딘가에 존재한다고 생각했던 엄마가, 마음 속으론 항상 살아 숨쉬고 있던 엄마가 없다고 한다. 이젠 기억 속 희미해진 잔상으로만 남은 엄마의 모습이 마지막 자취였다고 한다. 사장은 그동안 수없이 오발송되었을 편지들을 떠올렸다. 보육원에서 비틀거리며 나와 마주한 빨간 우체통. 너는 내 편지들을 어디로 보내주었니. 존재하지도 않는 것에 대한 사랑을 담아 설레는 마음으로 마주했던 그 우체통이 순간 시뻘겋고 끔찍한 괴물로 보였다. 처음 피워 본 맛도 더럽게 매운 그 담배를 우체통 안으로 던져 버린 건 한순간이었다. 연기가 피어올랐다. 그리고 할머니를 만났다. 없어짐에 대한 마음의 공허를 국수에서 피어오르는 따듯한 김이 조금이나마 채워주었다.
+
 우체통이 뭔지 아냐는 사장의 질문에 아이가 편지 써서 넣는 거 아니냐고 대답한다. 우체통을 한 번도 이용해 본 적 없다는 아이의 말에 사장이 잠시 고민하더니 창고로 들어가 무언가를 준비한다.
     </span>
     
@@ -476,7 +488,6 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-
         var rootRef = firebase.database().ref().child('infos');
     </script>
     <script>
@@ -484,10 +495,6 @@
         if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
                 event.preventDefault();
             }
-            // 107 Num Key  +
-            // 109 Num Key  -
-            // 173 Min Key  hyphen/underscor Hey
-            // 61 Plus key  +/= key
         });
     </script>
 </body>
