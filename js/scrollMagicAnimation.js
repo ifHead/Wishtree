@@ -97,20 +97,20 @@ for(let i = 0; i < 5; i++){
 //---------------------------------
 
 //----------우체통-----------------
-for(let i = 0; i < 4; i++){
-  let pinObj2 = ['#ut_1','#ut_2','#B2_S', '#B2_P']
-  var tl_3 = new TimelineMax()
-  .add(TweenMax.to('#ut_1', 1, 
-  { opacity: 0 }));
+let pinObj2 = ['#ut_1','#ut_2', '#B2_P']
+var anim3 = TweenMax.to('#ut_1',1,{
+  opacity: 0
+});
+
+for(let i = 0; i < 3; i++){
   var scene5 = new ScrollMagic.Scene({
     triggerElement: "#trig_postbox_pin",
     duration: '210%',
-    triggerHook: 0.6,
-    offset: 0
+    triggerHook: 0.3,
   })
   .setPin(pinObj2[i])
   .addTo(controller)
-  .setTween(tl_3)
+  .setTween(anim3)
   .addIndicators({
     name: "trig_postbox_pin"
   });

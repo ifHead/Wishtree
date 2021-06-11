@@ -29,19 +29,28 @@ let ink_sketch = function(p){ // 잉크 스케치
   // }
 
   p.setup = function() {
-    p.cnv = p.createCanvas(500, 500);
-    p.cnv.position(0, 0);
+    p.cnv = p.createCanvas(300, 300);
+    p.cnv.parent('B4_S');
     p.frameRate(30);
     for(let i = 0; i < 300; i++){
-      p.ink[i] = new Ink(200,200);
+      p.ink[i] = new Ink(100,100);
     }
   }
   p.draw = function() {
+    p.cnv.position(window.innerWidth/2 - 250,1150);
+    p.receivedText = currentWishText;
+    console.log(p.receivedText);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(32);
+    p.fill(0);
+    p.noStroke();
+    p.text(p.receivedText, 120, 150);
     for(let i = 0; i < 50; i++){
       p.ink[i].drop();  
     }
+    p.stroke(0);
     p.noFill();
-    p.rect(0,0,500,500);
+    p.rect(0,0,p.width,p.height);
   }
 
 
@@ -85,8 +94,8 @@ let test_sketch = function(p){
     p.cnv.position(30, 30);
   }
   p.draw = function() {
-    p.noFill();
-    p.rect(0,0,500,500);
+    // p.noFill();
+    // p.rect(0,0,500,500);
   }
 }
 
@@ -103,7 +112,7 @@ let sound_sketch = function(p){
     mySound.play();
   }
   p.draw = function() {
-    p.rect(0,0,500,500);
+    // p.rect(0,0,500,500);
     var scrollValue = $(document).scrollTop();
     if(scrollValue > 1000 && scrollValue < 5000){
       mySound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
