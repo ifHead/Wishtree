@@ -94,16 +94,18 @@
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <!-- loading screen -->
     <div id="loadingwhite"></div>
-    <img id="browser1" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(-97px); width: 28px; z-index: 11000;" src="assets/Logo/chrome.jpg"></img>
-    <img id="browser2" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(-39px); width: 28px; z-index: 11000;" src="assets/Logo/edge.jpg"></img>
-    <img id="browser3" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(17px); width: 28px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
-    <img id="browser4" style="position:absolute; bottom: 135px; left: 50%; transform:translateX(72px); width: 28px; z-index: 11000;" src="assets/Logo/whale.jpg"></img>
+    <img id="browser1" style="position:absolute; bottom: 89px; left: 50%; transform:translateX(-129px); width: 25px; z-index: 11000;" src="assets/Logo/chrome.jpg"></img>
+    <img id="browser2" style="position:absolute; bottom: 89px; left: 50%; transform:translateX(-68px); width: 25px; z-index: 11000;" src="assets/Logo/edge.jpg"></img>
+    <img id="browser3" style="position:absolute; bottom: 89px; left: 50%; transform:translateX(-7px); width: 25px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
+    <img id="browser4" style="position:absolute; bottom: 89px; left: 50%; transform:translateX(52px); width: 25px; z-index: 11000;" src="assets/Logo/whale.jpg"></img>
+    <img id="browser5" style="position:absolute; bottom: 89px; left: 50%; transform:translate(108px, 3px); width: 25px; z-index: 11000;" src="assets/Logo/brave.jpg"></img>
     <img id="loadingicon" style="position: absolute; top:50%; left: 50%; transform: translate(-50%, -170px);" src="assets/UI/loadingicon.svg"></img>
-    <div id="a" style="position: absolute; bottom: 93px; width: 350px; height: 25px; transform:translateX(-50%); 
-    left: 50%; background-image: linear-gradient(20deg, #24b1ca 0%, #330867 100%); opacity: 70%; z-index: 11001;"></div>
-    <p id="loadingtext" style="color: #fff; z-index: 11002;">크롬 브라우저와 전체화면을 권장합니다</p>
+
+    <div id="a" style="position: absolute; bottom: 40px; width: 264px; height: 25px; transform:translateX(-50%); 
+    left: 50%; background-image: linear-gradient(40deg, #83184a 0%, #11288f 100%); opacity: 50%; z-index: 11001;"></div>
+    <p id="loadingtext" style="color: #fff; z-index: 11002;">크롬 브라우저와 전체화면 사용을 권장합니다</p>
     <video id="loadingVid" autoplay muted src="assets/loadingText.webm" style="position:fixed; top:50%; 
-    width:200px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
+    width:240px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
     <script>
         $('#loadingicon').fadeTo(1000, 1);
         $(window).on("load", function(){
@@ -111,13 +113,14 @@
             $(document).ready(function(){
                 setTimeout(function(){
                     $('#loadingicon').delay(6900).fadeOut(800);
-                    $('#loadingwhite').delay(8300).fadeOut(500);
+                    $('#loadingwhite').delay(8600).fadeOut(1500);
                     $('#loadingtext').delay(6500).fadeOut(500);
                     $('#loadingVid').delay(8300).fadeOut(300);
-                    $('#browser1').delay(6900).fadeOut(800);
-                    $('#browser2').delay(6900).fadeOut(800);
-                    $('#browser3').delay(6900).fadeOut(800);
-                    $('#browser4').delay(6900).fadeOut(800);
+                    $('#browser1').delay(6500).fadeOut(800);
+                    $('#browser2').delay(6600).fadeOut(800);
+                    $('#browser3').delay(6700).fadeOut(800);
+                    $('#browser4').delay(6800).fadeOut(800);
+                    $('#browser5').delay(6900).fadeOut(800);
                     $('#a').delay(6300).fadeOut(500);
                 })
                 setTimeout(function(){
@@ -271,20 +274,25 @@
         <!-------------------- text area end ---------------------------->
         <!-- prevent scroll -->
         <script type="text/javascript">
-            let isFirstVisit = true;
+            var modal_state = false;
+            // let wasVisit = false;
             $(window).scroll(function () { 
                 if(isTextExist == false){
                     var scrollValue = $(document).scrollTop(); 
-                    // if(scrollValue > 4800){
-                    //     if(isFirstVisit == true) alert('소망을 적어주셔야 해요!'); isFirstVisit = false;
-                    //     window.scrollTo({
-                    //         left: 0, 
-                    //         top: 4500 //소망 있는 곳으로
-                    //     });
-                    // }
-                    // if(scrollValue < 4800){
-                    //     isFirstVisit = true;
-                    // }
+                    if(scrollValue < 20000){
+                        //소망을 적어야 합니다
+                        wasVisit = false;
+                    }
+                    if(wasVisit == false){
+                        if(scrollValue > 20000){
+                            modal_state = true;
+                            window.scrollTo({
+                                left: 0, 
+                                top: 18000 //소망 있는 곳으로
+                            });
+                            // wasVisit = true;
+                        }
+                    }
                 }
             });
         </script> 
@@ -454,9 +462,7 @@
     </div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
-    <script>
-        $("body").click(function(){console.log($("#menuicon").is(":checked"))});
-        
+    <script>        
         $("#menuicon").click(function () { 
             if($("#menuicon").is(":checked")){
                 $('html, body').css({
@@ -497,5 +503,6 @@
             }
         });
     </script>
+    <div id="fullpageCanvas" style="z-index:-1; position: fixed; top:0; left:0; width:100%; height:100%"></div>
 </body>
 </html> 
