@@ -106,7 +106,7 @@ for(let i = 0; i < 3; i++){
   var scene5 = new ScrollMagic.Scene({
     triggerElement: "#trig_postbox_pin",
     duration: '210%',
-    triggerHook: 0.3,
+    triggerHook: 0.5,
   })
   .setPin(pinObj2[i])
   .addTo(controller)

@@ -93,7 +93,7 @@
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <!-- loading screen -->
-    <div id="loadingwhite"></div>
+    <!-- <div id="loadingwhite"></div>
     <img id="browser1" style="position:absolute; bottom: 89px; left: 50%; transform:translateX(-129px); width: 25px; z-index: 11000;" src="assets/Logo/chrome.jpg"></img>
     <img id="browser2" style="position:absolute; bottom: 89px; left: 50%; transform:translateX(-68px); width: 25px; z-index: 11000;" src="assets/Logo/edge.jpg"></img>
     <img id="browser3" style="position:absolute; bottom: 89px; left: 50%; transform:translateX(-7px); width: 25px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
@@ -105,29 +105,29 @@
     left: 50%; background-image: linear-gradient(40deg, #83184a 0%, #11288f 100%); opacity: 50%; z-index: 11001;"></div>
     <p id="loadingtext" style="color: #fff; z-index: 11002;">크롬 브라우저와 전체화면 사용을 권장합니다</p>
     <video id="loadingVid" autoplay muted src="assets/loadingText.webm" style="position:fixed; top:50%; 
-    width:240px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video>
+    width:240px; left:50%; transform:translate(-50%, 0%); z-index:23;"></video> -->
     <script>
-        $('#loadingicon').fadeTo(1000, 1);
-        $(window).on("load", function(){
-            $('html, body').css({overflow: 'hidden', height: 'auto'});
-            $(document).ready(function(){
-                setTimeout(function(){
-                    $('#loadingicon').delay(6900).fadeOut(800);
-                    $('#loadingwhite').delay(8600).fadeOut(1500);
-                    $('#loadingtext').delay(6500).fadeOut(500);
-                    $('#loadingVid').delay(8300).fadeOut(300);
-                    $('#browser1').delay(6500).fadeOut(800);
-                    $('#browser2').delay(6600).fadeOut(800);
-                    $('#browser3').delay(6700).fadeOut(800);
-                    $('#browser4').delay(6800).fadeOut(800);
-                    $('#browser5').delay(6900).fadeOut(800);
-                    $('#a').delay(6300).fadeOut(500);
-                })
-                setTimeout(function(){
-                    $('html, body').delay(16500).css('overflow-x', 'hidden').css('overflow-y', 'auto');
-                }, 8300);
-            });
-        });
+        // $('#loadingicon').fadeTo(1000, 1);
+        // $(window).on("load", function(){
+        //     $('html, body').css({overflow: 'hidden', height: 'auto'});
+        //     $(document).ready(function(){
+        //         setTimeout(function(){
+        //             $('#loadingicon').delay(6900).fadeOut(800);
+        //             $('#loadingwhite').delay(8600).fadeOut(1500);
+        //             $('#loadingtext').delay(6500).fadeOut(500);
+        //             $('#loadingVid').delay(8300).fadeOut(300);
+        //             $('#browser1').delay(6500).fadeOut(800);
+        //             $('#browser2').delay(6600).fadeOut(800);
+        //             $('#browser3').delay(6700).fadeOut(800);
+        //             $('#browser4').delay(6800).fadeOut(800);
+        //             $('#browser5').delay(6900).fadeOut(800);
+        //             $('#a').delay(6300).fadeOut(500);
+        //         })
+        //         setTimeout(function(){
+        //             $('html, body').delay(16500).css('overflow-x', 'hidden').css('overflow-y', 'auto');
+        //         }, 8300);
+        //     });
+        // });
     </script>
     <!-- loading screen end -->
     <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
@@ -317,15 +317,16 @@
 “응! 사람들은 따듯한 소망을 걸어주며 나를 의미있게 해. 내가 공장에서 본 사람들은 모두 냉랭했는데 소망국수가 있는 이 곳은 달라. 소망이 하나 걸릴 때마다 내가 축복받았다는 생각이 들어. 이렇게 따듯한 사람들 사이에서 나도 따듯한 존재가 되어 내 역할을 하며 살아갈 수 있다는 게 말이야.” 
     </span>
 
-    <!-- <div id="B2_S"> -->
-        <img id="ut_1" src="assets/Story/B2_1 - 어린 우체통.jpg" style="position:absolute; width: 360px; top:13100px; right: 120px; opacity:1; z-index: 3;" alt="error1.jpg">
-        <img id="ut_2" src="assets/Story/B2_2 - 불타는 우체통.jpg" style="position:absolute; width:360px; top:13100px; right: 120px; opacity:1; z-index: 2;" alt="error1.jpg">   
-    <!-- </div> -->
-    <span id="B2_P">
-        소망나무의 이야기를 듣는 우체통의 표정이 점점 어두워진다. 우체통이 차분하게 입을 뗀다. 
+    <div id="B2_S">
+        <img src="assets/Story/B2.5 - 우체통 철거안내문.jpg" style="position: absolute; width: 350px; top:0px; left: 50%; transform: translateX(+130px);" alt="error.jpg">
+        <span id="B2_P">
+            소망나무의 이야기를 듣는 우체통의 표정이 점점 어두워진다. 우체통이 차분하게 입을 뗀다. 
 
-“소망나무야. 이곳의 사람들을 너무 믿기만 해선 안돼. 전엔 내 안에도 편지들이 가득했고, 그때까지만 해도 난 소중한 존재였어. 내 안에 소중히 준비해온 편지를 넣으며 활짝 웃던 아이도 있었어. 그 아이가 나를 보며 짓던 웃음은 아직도 내 기억 속에 생생한데, 지금의 나를 봐. 이제 아이들은 내가 왜 존재하는지도 몰라. 내 몸엔 장난삼아 그려진 낙서와 스티커들이 가득해. 옆면의 철거 안내문이 보이니? 결국 사람들은 자신에게 필요가 없으면 널 버리고 말거야. 네가 경험했던 공장의 차가운 사람들도, 지금 웃으며 따듯한 말을 해대는 이 사람들도 결국엔 똑같은 거야. 처음의 따듯한 모습은 그냥 일부야. 믿으면 안돼.
+    “소망나무야. 이곳의 사람들을 너무 믿기만 해선 안돼. 전엔 내 안에도 편지들이 가득했고, 그때까지만 해도 난 소중한 존재였어. 내 안에 소중히 준비해온 편지를 넣으며 활짝 웃던 아이도 있었어. 그 아이가 나를 보며 짓던 웃음은 아직도 내 기억 속에 생생한데, 지금의 나를 봐. 이제 아이들은 내가 왜 존재하는지도 몰라. 내 몸엔 장난삼아 그려진 낙서와 스티커들이 가득해. 옆면의 철거 안내문이 보이니? 결국 사람들은 자신에게 필요가 없으면 널 버리고 말거야. 네가 경험했던 공장의 차가운 사람들도, 지금 웃으며 따듯한 말을 해대는 이 사람들도 결국엔 똑같은 거야. 처음의 따듯한 모습은 그냥 일부야. 믿으면 안돼.
+        </span>
+    </div>
 
+    <span id="B2-25P">
 우체통이 괴로운 표정으로 말한다.
 
 “내 안에 들어있던 편지들이 다 불타버린 적이 있어.”
@@ -375,7 +376,8 @@
             in1();
             in2();
         </script>
-        <img src="assets/Story/B2.5 - 우체통 철거안내문.jpg" style="position: absolute; left:50%; transform: translateX(-50%);" alt="error.jpg">
+         <img id="ut_1" src="assets/Story/B2_1 - 어린 우체통.jpg" style="position:absolute; width: 300px; right: 20%; opacity:1; z-index: 3;" alt="error1.jpg">
+         <img id="ut_2" src="assets/Story/B2_2 - 불타는 우체통.jpg" style="position:absolute; width: 300px; right: 20%; opacity:1; z-index: 2;" alt="error1.jpg">   
     </div>
 
     <div id="B3_S">
@@ -391,7 +393,7 @@
     
     <div id="B4_S">
         <script src="js/p5.js/canvas.js"></script>
-        <img src="assets/Story/B4 - 비와 소망종이.jpg" style="transform: translate(-50%, 0%); position:absolute; width:3000px; top:0px; left:50%;" alt="error1.jpg">   
+        <img src="assets/Story/B4 - 비와 소망종이.png" style="transform: translate(-50%, 0%); position:absolute; width:3000px; top:320px; left:50%;" alt="error1.jpg">   
     </div>
     <span id="B4_P">
         문에 달린 작은 종이 흔들리며 청명한 소리를 축축한 공기 중으로 퍼뜨린다. 사장의 발소리가 빗소리 틈을 비집고 들어온다. 우체통은 조용해지며 눈코입을 숨긴다. 빗방울들이 아스팔트 바닥으로 낙하하며 둔탁한 마찰음을 내고 있었다. 소망나무는 가지에 서려오는 한기를 느낀다. 아슬하게 매달린 소망들의 잉크가 번져 흘러내리고 있었다. 소망국수 사장이 비에 젖은 소망들과 소망나무를 걱정하며 가게 안으로 조심스레 소망나무를 옮긴다. 

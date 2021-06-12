@@ -37,7 +37,7 @@ let ink_sketch = function(p){ // 잉크 스케치
     }
   }
   p.draw = function() {
-    p.cnv.position(window.innerWidth/2 - 250,1150);
+    p.cnv.position(window.innerWidth/2 - 220,1150);
     p.receivedText = currentWishText;
     p.textAlign(p.CENTER, p.CENTER);
     p.textSize(32);
@@ -255,8 +255,8 @@ let sound_sketch_N_blockingGUI = function(p){
   }
 
   p.button_hover = function(){
-    if((p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
-    && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY) && modal_state == true)
+    if(p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
+    // && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY) && modal_state == true)
     {
       p.button_color = p.lerpColor(p.button_color,p.color(232,130,104,p.closebuttonAlpha),0.23);
       p.hover_bool = true;

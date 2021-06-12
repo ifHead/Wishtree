@@ -177,7 +177,7 @@ textarea {
 }
 #trig_postbox_pin{
   position: absolute;
-  top: 13250px;
+  top: 14150px;
 }
 /* --------------------------------------------- triggers end */
 
@@ -481,12 +481,36 @@ input#menuicon {display:none;}
   transform: translate(-50%, 0%);
 }
 
-#B2_P {
-  top: 13100px;
+#B2_S {
+  top: 13125px;
   position: absolute;
   white-space: pre-line;
-  width: 800px;
+  width: 100%;
+  left: 50%;
+  font-size: 15pt;
+  line-height: 168%;
+  transform: translate(-50%, 0%);
+}
+
+#B2_P {
+  top: -35px;
+  position: absolute;
+  white-space: pre-line;
+  width: 500px;
+  left: 50%;
+  font-size: 15pt;
+  transform: translateX(-450px);
+  line-height: 168%;
+}
+
+#B2-25P {
+  top: 17200px;
+  position: absolute;
+  white-space: pre-line;
+  width: 600px;
   left: 690px;
+  font-size: 12pt;
+
   transform: translate(-50%, 0%);
 }
 
