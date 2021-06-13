@@ -169,15 +169,23 @@ textarea {
 }
 #trig_bg_to_white {
   position: absolute;
-  top: 21000px;
+  top: 23900px;
 }
-#trig_wishtree_pin {
+/* #trig_fast_black {
   position: absolute;
-  top: 9050px;
+  top: 18000px;
+} */
+/* #trig_fast_white {
+  position: absolute;
+  top: 24900px;
+} */
+#trig_wishtree_pin {transform:translateX(-460px);
+  position: absolute;
+  top: 8450px;
 }
 #trig_postbox_pin{
   position: absolute;
-  top: 14150px;
+  top: 13450px;
 }
 /* --------------------------------------------- triggers end */
 
@@ -313,7 +321,7 @@ input#menuicon {display:none;}
   position: absolute;
   min-height: 100%;
   width: 100vw;
-  top: 26000px;
+  top: 29000px;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 1000px;
@@ -380,7 +388,7 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #A1_P {
-  top: 2980px;
+  top: 2940px;
   position: absolute;
   line-height: 168%;
   width: 600px;
@@ -390,7 +398,7 @@ input#menuicon {display:none;}
 }
 
 #A2_S {
-  top: 3880px;
+  top: 3780px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -400,7 +408,7 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #A2_P {
-  top: 4580px;
+  top: 4420px;
   position: absolute;
   width: 600px;
   left: 50%;
@@ -409,7 +417,7 @@ input#menuicon {display:none;}
 }
 
 #A3_S {
-  top: 5050px;
+  top: 4800px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -419,7 +427,7 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #A3_P {
-  top: 5750px;
+  top: 5430px;
   position: absolute;
   width: 600px;
   left: 50%;
@@ -428,7 +436,7 @@ input#menuicon {display:none;}
 }
 
 #A4_S {
-  top: 6200px;
+  top: 5800px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -438,17 +446,17 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #A4_P {
-  top: 6920px;
+  top: 6500px;
   position: absolute;
   white-space: pre-line;
-  width: 1060px;
+  width: 600px;
   left: 50%;
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
 #A5_S {
-  top: 7700px;
+  top: 7080px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0px);
@@ -458,16 +466,16 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #A5_P {
-  top: 7450px;
+  top: 6950px;
   position: absolute;
-  width: 1060px;
+  width: 600px;
   left: 50%;
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
 #B1_S {
-  top: 9100px;
+  top: 8000px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -482,7 +490,7 @@ input#menuicon {display:none;}
 }
 
 #B2_S {
-  top: 13125px;
+  top: 12525px;
   position: absolute;
   white-space: pre-line;
   width: 100%;
@@ -493,38 +501,38 @@ input#menuicon {display:none;}
 }
 
 #B2_P {
-  top: -35px;
+  top: -80px;
   position: absolute;
   white-space: pre-line;
-  width: 500px;
+  width: 440px;
   left: 50%;
   font-size: 15pt;
-  transform: translateX(-450px);
+  transform: translateX(-425px);
   line-height: 168%;
 }
 
 #B2-25P {
-  top: 17200px;
+  top: 13200px;
   position: absolute;
   white-space: pre-line;
-  width: 600px;
-  left: 690px;
-  font-size: 12pt;
+  width: 470px;
+  left: 50%;
+  font-size: 15pt;
 
-  transform: translate(-50%, 0%);
+  transform: translate(-50px, 0%);
 }
 
 #B2-5{
-  top: 15700px;
+  top: 12900px;
   position: absolute;
-  width: 1060px;
+  width: 100%;
   white-space: pre-line;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
 #B3_S {
-  top: 16900px;
+  top: 15950px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -533,16 +541,16 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #B3_P {
-  top: 17500px;
+  top: 16580px;
   position: absolute;
-  width: 1060px;
+  width: 600px;
   left: 50%;
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
 #B4_S {
-  top: 18000px;
+  top: 17300px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -551,16 +559,17 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #B4_P {
-  top: 19900px;
+  top: 19300px;
   position: absolute;
-  width: 1060px;
+  width: 900px;
   left: 50%;
+  font-size: 16pt;
   transform: translate(-50%, 0%);
   white-space: pre-line;
 }
 
 #C1_S {
-  top: 20400px;
+  top: 19890px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -569,16 +578,18 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #C1_P {
-  top: 21020px;
+  top: 20530px;
   position: absolute;
-  width: 1060px;
+  color:white;
+  font-weight: 200;
+  width: 600px;
   left: 50%;
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
 #C2_S {
-  top: 21500px;
+  top: 21200px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -587,16 +598,18 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #C2_P {
-  top: 22150px;
+  color:white;
+  font-weight: 200;
+  top: 21760px;
   position: absolute;
-  width: 1060px;
+  width: 600px;
   left: 50%;
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
 #C3_S {
-  top: 22950px;
+  top: 22600px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -606,46 +619,48 @@ input#menuicon {display:none;}
   width: 90%;
 }
 #C3_P {
-  top: 23590px;
+  top: 23220px;
+  color: white;
+  font-weight: 200;
   position: absolute;
-  width: 1065px;
+  width: 600px;
   left: 50%;
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
 #D1_S {
-  top: 24400px;
+  top: 26550px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
   border: red solid 3px;
-  height: 300px;
-  width: 90%;
+  height: 600px;
+  width: 50%;
 }
 #D1_P {
-  top: 24700px;
+  top: 27210px;
   position: absolute;
   left: 50%;
-  width: 1060px;
+  width: 600px;
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
 
 #D2_S {
-  top: 25100px;
+  top: 27800px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
 
   border:red solid 3px;
-  height: 300px;
-  width: 90%;
+  height: 600px;
+  width: 50%;
 }
 #D2_P {
-  top: 25400px;
+  top: 28410px;
   position: absolute;
-  width: 1060px;
+  width: 600px;
   left: 50%;
   white-space: pre-line;
   transform: translate(-50%, 0%);

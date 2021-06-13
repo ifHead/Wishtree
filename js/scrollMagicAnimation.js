@@ -34,13 +34,13 @@ var scene = new ScrollMagic.Scene({
 });
 
 // ---------- 배경 어둡게 ------------
-var background_to_black = TweenMax.to('#white_bg', 1, {
-  ease: Power1.easeOut,
+var background_to_black = TweenMax.to('#white_bg', 2, {
+  ease: Power2.easeOut,
   opacity: 0.0
 });
 var scene2 = new ScrollMagic.Scene({
   triggerElement: '#trig_bg_to_black',
-  triggerHook: 0.6,
+  triggerHook: 0,
   // offset: 0,
   // duration: '120%'
 })
@@ -58,7 +58,7 @@ var background_to_white = TweenMax.to('#white_bg', 1, {
 });
 var scene3 = new ScrollMagic.Scene({
   triggerElement: '#trig_bg_to_white',
-  triggerHook: 0.5,
+  triggerHook: 0.2,
   
   // offset: 0,
   // duration: '120%'
@@ -69,6 +69,41 @@ var scene3 = new ScrollMagic.Scene({
   name: "trig_bg_to_white"
 });
 // ------------------------------------
+
+// //-----------배경 빠르게 블랙------------------
+// var bg_fast_black = TweenMax.to('#white_bg', 0.3, {
+//   opacity: 0.0
+// });
+// var fast1 = new ScrollMagic.Scene({
+//   triggerElement: '#trig_fast_black',
+//   triggerHook: 0
+//   // offset: 0,
+//   // duration: '120%'
+// })
+// .setTween(bg_fast_black)
+// .addTo(controller)
+// .addIndicators({
+//   name: "trig_fast_black"
+// });
+// // ------------------------------------
+
+// // ---------- 배경 빠르게 화이트 ------------
+// var bg_fast_white = TweenMax.to('#white_bg', 0.3, {
+//   opacity: 1.0
+// });
+// var fast2 = new ScrollMagic.Scene({
+//   triggerElement: '#trig_fast_white',
+//   triggerHook: 0
+  
+//   // offset: 0,
+//   // duration: '120%'
+// })
+// .setTween(bg_fast_white)
+// .addTo(controller)
+// .addIndicators({
+//   name: "trig_fast_white"
+// });
+// //-----------------------------------
 
 //----------소망나무 핀-------------
 var tl_2 = new TimelineMax()
@@ -84,7 +119,7 @@ for(let i = 0; i < 5; i++){
   var scene4 = new ScrollMagic.Scene({
     triggerElement: "#trig_wishtree_pin",
     duration: '410%',
-    triggerHook: 0.1,
+    triggerHook: 0.5,
     offset: 0
   })
   .setPin(pinObj[i])
@@ -97,7 +132,7 @@ for(let i = 0; i < 5; i++){
 //---------------------------------
 
 //----------우체통-----------------
-let pinObj2 = ['#ut_1','#ut_2', '#B2_P']
+let pinObj2 = ['#ut_1','#ut_2', '#B2-25P']
 var anim3 = TweenMax.to('#ut_1',1,{
   opacity: 0
 });
