@@ -52,7 +52,6 @@ let ink_sketch = function(p){ // 잉크 스케치
     p.rect(0,0,p.width,p.height);
   }
 
-
   class Ink{
     constructor(_x, _y){
       this.ten_track = new Int8Array(10);
@@ -107,14 +106,22 @@ let sound_sketch_N_blockingGUI = function(p){
   p.setup = function() {
     // p.elem = createElement
     p.cnv = p.createCanvas(window.innerWidth, window.innerHeight);
-    p.cnv.parent('fullpageCanvas');
+    let fullpageCanvas = p.createDiv('');
+    fullpageCanvas.elt.style.position = 'fixed';
+    fullpageCanvas.style('pointer-events', 'none');
+    fullpageCanvas.style('top', '0');
+    fullpageCanvas.style('left','0');
+    fullpageCanvas.style('width','100%');
+    fullpageCanvas.style('height','100%');
+    fullpageCanvas.style('z-index','20');
+    fullpageCanvas.style('border','red solid 23px')
+    p.cnv.parent(fullpageCanvas);
     p.cnv.position(0,0);
     mySound.setVolume(0);
     mySound.play();
     //-------------------------sound ready
   }
   p.draw = function() {
-    p.clear();
     var scrollValue = $(document).scrollTop();
     if(scrollValue > 1000 && scrollValue < 5000){
       mySound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
@@ -126,9 +133,6 @@ let sound_sketch_N_blockingGUI = function(p){
       mySound.setVolume(0);
     }
 
-    // p.modaler = p.constrain(p.map(p.modal_w, 0, 100, 0, 28), 0, 28);
-    // p.modal_h = p.lerp(p.modal_h, 0, 180, 0.03);
-    // p.modal_w = p.lerp(p.modal_w, 0, 350, 0.03);
     p.drawingContext.shadowOffsetX = 2;
     p.drawingContext.shadowOffsetY = 2;
     p.drawingContext.shadowBlur = 24;
@@ -256,6 +260,7 @@ let sound_sketch_N_blockingGUI = function(p){
 
   p.button_hover = function(){
     if(p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
+    // if( (p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
     // && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY) && modal_state == true)
     {
       p.button_color = p.lerpColor(p.button_color,p.color(232,130,104,p.closebuttonAlpha),0.23);
@@ -279,3 +284,5 @@ let sound_sketch_N_blockingGUI = function(p){
 let superP5_1 = new p5(test_sketch);
 let superP5_2 = new p5(ink_sketch); // 스케치의 레이어를 결정함, 선입선출
 let superP5_3 = new p5(sound_sketch_N_blockingGUI);
+
+
