@@ -1,3 +1,9 @@
+
+
+var modal_state = false;
+var sidebar_bool = false;
+
+
 let ink_sketch = function(p){ // 잉크 스케치
   const cosX = new Float32Array([
       0.500,  0.492,  0.470,  0.433,  0.383,  
@@ -99,22 +105,24 @@ let test_sketch = function(p){
 
 let sound_sketch_N_blockingGUI = function(p){
   var mySound;
+
   p.preload = function(){
     p.soundFormats('ogg');
     mySound = p.loadSound('../../assets/le_festin.ogg')
   }
+
+  let fullpageCanvas;
   p.setup = function() {
     // p.elem = createElement
     p.cnv = p.createCanvas(window.innerWidth, window.innerHeight);
-    let fullpageCanvas = p.createDiv('');
+    fullpageCanvas = p.createDiv('');
     fullpageCanvas.elt.style.position = 'fixed';
-    fullpageCanvas.style('pointer-events', 'none');
     fullpageCanvas.style('top', '0');
     fullpageCanvas.style('left','0');
     fullpageCanvas.style('width','100%');
     fullpageCanvas.style('height','100%');
-    fullpageCanvas.style('z-index','20');
-    fullpageCanvas.style('border','red solid 23px')
+    fullpageCanvas.style('z-index','120');
+    fullpageCanvas.style("pointer-events", "none");
     p.cnv.parent(fullpageCanvas);
     p.cnv.position(0,0);
     mySound.setVolume(0);
@@ -122,6 +130,11 @@ let sound_sketch_N_blockingGUI = function(p){
     //-------------------------sound ready
   }
   p.draw = function() {
+    p.scrollTo();
+
+    
+    
+
     var scrollValue = $(document).scrollTop();
     if(scrollValue > 1000 && scrollValue < 5000){
       mySound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
@@ -143,7 +156,6 @@ let sound_sketch_N_blockingGUI = function(p){
 
     p.fill(255, p.modal_alpha);
     p.rect(window.innerWidth/2-175, window.innerHeight/2-90, p.modal_w, p.modal_h, 10,10,10,10);
-    p.togglebool = modal_state;
     
     p.stroke(0,255);
     p.strokeWeight(5);
@@ -151,7 +163,9 @@ let sound_sketch_N_blockingGUI = function(p){
     p.textSize(20);
     p.text(window.innerWidth/2, window.innerHeight/2, "asdfasdf소망을 입력해주셔야 해요!");
 
-    if(p.togglebool == true){
+    if(modal_state == true){
+        fullpageCanvas.style("pointer-events", "auto");
+
         p.modal_w_target = 350;
         p.d_modal_w = p.modal_w_target - p.modal_w;
         p.modal_w += p.d_modal_w * p.easing;
@@ -172,9 +186,12 @@ let sound_sketch_N_blockingGUI = function(p){
         }
       }  
       p.button();
+      p.fill(0);
     }
+    else
+    {
+      fullpageCanvas.style('pointer-events', 'none');
 
-    if(p.togglebool == false){
       p.bgalpha_target = 0;
       p.d_bgalpha = p.bgalpha_target - p.bgalpha;
       p.bgalpha += p.d_bgalpha * 0.03;
@@ -182,6 +199,7 @@ let sound_sketch_N_blockingGUI = function(p){
       p.modal_h_target = 20;
       p.d_modal_h = p.modal_h_target - p.modal_h;
       p.modal_h += p.d_modal_h * p.easing;
+
       if(p.modal_h < 23){
         p.modal_w_target = 20;
         p.d_modal_w = p.modal_w_target - p.modal_w;
@@ -199,18 +217,16 @@ let sound_sketch_N_blockingGUI = function(p){
     }
 
     p.button_hover();
+    p.disableScroll();
   }
+
+
 
   p.button = function(){
       p.drawingContext.shadowOffsetX = 0;
       p.drawingContext.shadowOffsetY = 0;
       p.drawingContext.shadowBlur = 5;
       p.drawingContext.shadowColor = p.color(0,0);
-      if(p.togglebool == true){
-        
-      } else {
-        
-      }
       p.fill(p.button_color);
       p.stroke(p.button_color);
       if(p.hover_bool == true){ 
@@ -237,7 +253,6 @@ let sound_sketch_N_blockingGUI = function(p){
   p.easing = 0.15;
   p.modal_w = 20;
   p.modal_h = 20;
-  p.togglebool = false;
   p.bgalpha = 0;
   p.hover_bool = false;
 
@@ -259,9 +274,8 @@ let sound_sketch_N_blockingGUI = function(p){
   }
 
   p.button_hover = function(){
-    if(p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
-    // if( (p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
-    // && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY) && modal_state == true)
+    if((p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
+    && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY) && modal_state == true)
     {
       p.button_color = p.lerpColor(p.button_color,p.color(232,130,104,p.closebuttonAlpha),0.23);
       p.hover_bool = true;
@@ -278,6 +292,37 @@ let sound_sketch_N_blockingGUI = function(p){
     p.w = window.innerWidth;
     p.h = window.innerHeight;  
     p.cnv.size(p.w,p.h);
+  }
+
+  p.scrollTo = function(){
+    if(isTextExist == false){
+      var scrollValue = $(document).scrollTop(); 
+      if(scrollValue > 7500){
+          modal_state = true;
+          window.scrollTo({
+              left: 0, 
+              top: 6900
+          });
+      }
+    } else {
+        modal_state = false;
+    }
+  }
+
+  p.disableScroll = function(){
+    sidebar_bool = $("#menuicon").is(":checked");
+    if(sidebar_bool || modal_state){
+      $('html, body').css({
+          overflow: 'hidden',
+          height: 'auto'
+      });
+    }
+    else
+    {
+      $('html, body').css(
+          'overflow-x', 'hidden'
+      ).css('overflow-y', 'auto');
+    }
   }
 }
 

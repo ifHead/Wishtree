@@ -49,15 +49,6 @@
     <meta name="msapplication-TileImage" content="assets/favicon.ico/ms-icon-144x144.png?">
     <meta name="theme-color" content="#ffffff">
     <!-- end custom head snippets -->
-
-    <!-- <script>
-        var Scrollbar = window.Scrollbar;
-        Scrollbar.init(document.body, {
-            damping: 0.01,
-            renderByPixels: true,
-            alwaysShowTracks: true
-        });
-    </script> -->
     
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -279,34 +270,9 @@
 
         <button id="wishbutton" onclick="inputButton()" 
         style="width: 100px; height: 50px; position: absolute; left:50%; 
-       top: 400px; transform: translateX(-45px); 
+        top: 400px; transform: translateX(-45px); 
         z-index: 2; cursor:pointer;">소망 걸기</button>
         <!-------------------- text area end ---------------------------->
-        <!-- prevent scroll -->
-        <script type="text/javascript">
-            var modal_state = false;
-            // let wasVisit = false;
-            $(window).scroll(function () { 
-                if(isTextExist == false){
-                    var scrollValue = $(document).scrollTop(); 
-                    if(scrollValue < 20000){
-                        //소망을 적어야 합니다
-                        wasVisit = false;
-                    }
-                    if(wasVisit == false){
-                        if(scrollValue > 20000){
-                            modal_state = true;
-                            window.scrollTo({
-                                left: 0, 
-                                top: 18000 //소망 있는 곳으로
-                            });
-                            // wasVisit = true;
-                        }
-                    }
-                }
-            });
-        </script> 
-        <!-- prevent scroll end -->
     </div>
     <span id="A5_P" style="text-align: center;"> 
         저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. 
@@ -502,6 +468,13 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
     <script>        
+        var target = document.getElementById("menuicon");
+        // target.style.overflow = 'hidden';
+        // target.style.height = 'auto';
+        
+        // target.style.overflow-x = 'hidden';
+        // target.style.overflow-y = 'auto';
+
         $("#menuicon").click(function () { 
             if($("#menuicon").is(":checked")){
                 $('html, body').css({
@@ -543,6 +516,6 @@
         });
     </script>
     <script src="js/p5.js/canvas.js"></script>
-    <div id="fullpageCanvas" style="z-index:-1; position: fixed; top:0; left:0; width:100%; height:100%"></div>
+    <!-- <div id="fullpageCanvas" style="z-index:-1; position: fixed; top:0; left:0; width:100%; height:100%"></div> -->
 </body>
 </html> 
