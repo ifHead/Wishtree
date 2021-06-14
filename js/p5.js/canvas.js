@@ -131,10 +131,6 @@ let sound_sketch_N_blockingGUI = function(p){
   }
   p.draw = function() {
     p.scrollTo();
-
-    
-    
-
     var scrollValue = $(document).scrollTop();
     if(scrollValue > 1000 && scrollValue < 5000){
       mySound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
@@ -275,7 +271,7 @@ let sound_sketch_N_blockingGUI = function(p){
 
   p.button_hover = function(){
     if((p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
-    && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY) && modal_state == true)
+    && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY))
     {
       p.button_color = p.lerpColor(p.button_color,p.color(232,130,104,p.closebuttonAlpha),0.23);
       p.hover_bool = true;
@@ -294,18 +290,19 @@ let sound_sketch_N_blockingGUI = function(p){
     p.cnv.size(p.w,p.h);
   }
 
+  let wasVisited = false;
   p.scrollTo = function(){
+    var scrollValue = $(document).scrollTop();     
     if(isTextExist == false){
-      var scrollValue = $(document).scrollTop(); 
-      if(scrollValue > 7500){
-          modal_state = true;
+      if(scrollValue > 7300){
+        modal_state = true;
           window.scrollTo({
-              left: 0, 
-              top: 6900
+            left: 0, 
+            top: 6850
           });
-      }
+        }
     } else {
-        modal_state = false;
+      modal_state = false;
     }
   }
 

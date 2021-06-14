@@ -66,11 +66,12 @@ img { /*드래그 방지*/
 }
 
 #white_bg {
-  opacity: 1;
+  opacity: 1.0;
   position:fixed; top:0; left:0; width:300%; height:200%; z-index: -2;
 }
 
 #black_bg {
+  opacity: 0.0;
   position:fixed; top:0; left:0; width:300%; height:200%; z-index: -3;
 }
 
@@ -183,7 +184,7 @@ textarea {
 } */
 #trig_wishtree_pin {transform:translateX(-460px);
   position: absolute;
-  top: 8450px;
+  top: 8250px;
 }
 #trig_postbox_pin{
   position: absolute;
@@ -675,5 +676,15 @@ input #menuicon {display:none;}
 }
 #wt_4 {
   opacity: 0;  
+}
+
+#hide_contents_before_Wishinput{
+  position: absolute;
+  top: 7600px;
+  left: 0px;
+  height: 20000px;
+  width: 100%;
+  z-index: 10;
+  background: white;
 }
 /* --------------------------------------------- image elements ends */
