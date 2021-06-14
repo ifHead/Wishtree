@@ -84,7 +84,7 @@
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <!-- loading screen -->
-    <div id="loadingwhite"></div>
+    <!-- <div id="loadingwhite"></div>
     <img id="browser1" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-129px); width: 25px; z-index: 11000;" src="assets/Logo/chrome.jpg"></img>
     <img id="browser2" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-68px); width: 25px; z-index: 11000;" src="assets/Logo/edge.jpg"></img>
     <img id="browser3" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-7px); width: 25px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
@@ -97,6 +97,25 @@
     <p id="loadingtext" style="color: #fff; z-index: 11002;">크롬 브라우저와 전체화면 사용을 권장합니다</p>
     <video id="loadingVid" autoplay muted src="assets/loadingText.webm" style="position:fixed; top:50%; 
     width:240px; left:50%; transform:translate(-50%, 20px); z-index:23;"></video>
+    <script>
+        var loading = true;
+        $('#loadingicon').fadeTo(1000, 1);
+        $(document).ready(function(){
+            setTimeout(function(){
+                loading = true;
+                $('#loadingicon').delay(6900).fadeOut(800);
+                $('#loadingwhite').delay(8600).fadeOut(1500);
+                $('#loadingtext').delay(6500).fadeOut(500);
+                $('#loadingVid').delay(8300).fadeOut(300);
+                $('#browser1').delay(6500).fadeOut(800);
+                $('#browser2').delay(6600).fadeOut(800);
+                $('#browser3').delay(6700).fadeOut(800);
+                $('#browser4').delay(6800).fadeOut(800);
+                $('#browser5').delay(6900).fadeOut(800);
+                $('#a').delay(6300).fadeOut(500);
+            });
+        });
+    </script> -->
     <!-- loading screen end -->
     <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
     <!-- <video src="assets/video/opqr.webm?" autoplay muted loop style="position: fixed; z-index: 10; width:100%;top:0px; left: 0px;
@@ -108,9 +127,6 @@
     <div class="trig_style" id="trig_bg_to_white">trigger_bg_to_white</div>
     <div class="trig_style" id="trig_wishtree_pin">trigger_wishtree_pin</div>
     <div class="trig_style" id="trig_postbox_pin">trigger_postbox_pin</div>
-
-    <div class="trig_style" id="trig_fast_white">trigger_fast_white</div>
-    <div class="trig_style" id="trig_fast_black">trigger_fast_black</div>
     <!-- triggers end -->
     
     <img id="black_bg" src="assets/background_black.jpg">
@@ -177,7 +193,7 @@
     <div id="A1_S">
         <img src="assets/Story/A1 - 첫 소망.jpg" style="left:50%; transform: translate(-50%, 0%); position:absolute; top:0px; text-indent: 30px;">
     </div>
-    <span id="A1_P">
+    <span id="A1_P" style="text-align:justify">
         아직 사람이 많이 오가지 않는 이른 아침의 상가 거리. 따듯한 햇살 아래 소망국수의 사장은 택배를 조심스럽게 열어 차갑게 굳어 있는 인조나무를 꺼낸다. 나무와 함께 다양한 색의 종이, 펜을 탁자에 조심스레 올려놓는다.
 
         사장은 한 발 물러서서 중얼거린다.
@@ -196,7 +212,7 @@
     <div id="A2_S">
         <img src="assets/Story/A2 - 공장.jpg" style="left:50%; transform: translate(-50%, 0%); position:absolute; top:0px; ">
     </div>
-    <span id="A2_P">
+    <span id="A2_P" style="text-align:justify">
         나무는 마음 한구석이 따듯함으로 차오르는 것을 느낀다. 
 
         갓 태어나 처음 눈을 뜬 곳에 있던 수많은 인조 나무들. 차가운 얼굴로 일만 하는 사람들에게 색이 입혀지고, 이동하고, 포장되며 나무는 자신이 특별한 존재가 아니라는 걸 뼈저리게 깨달았다. 진짜 나무를 대신하며 살아갈 자신의 삶을 그리며 나무는 눈을 감았고, 말을 잃었다.
@@ -205,7 +221,7 @@
     <div id="A3_S">
         <img src="assets/Story/A3- 거리 전경.jpg" style="left:50%; transform: translate(-50%, 0%); position:absolute; top:0px;">
     </div>
-    <span id="A3_P">  그랬던 나무가 눈을 떴을 때, 가지에는 따듯한 소망이 달려 있었다. 
+    <span id="A3_P" style="text-align:justify">  그랬던 나무가 눈을 떴을 때, 가지에는 따듯한 소망이 달려 있었다. 
 
         소망나무는 가만히 이곳의 온기를 느낀다. 고마운 사장님과 김이 모락모락 피어오르는 국수, 그리고 웃으며 식사하는 사람들. 가끔 단체로 선생님과 함께 국수를 먹고 가는 아이들까지. 소망나무는 이 모든 것을 소중하게 마음에 담아둔다.
       
@@ -215,7 +231,7 @@
     <div id="A4_S">
         <video src="assets/Story/A4 우체통.webm" autoplay muted loop style="position:absolute; left:50%; transform: translateX(-50%);"></video>
     </div>
-    <span id="A4_P">            
+    <span id="A4_P" style="text-align:justify">            
         소망나무가 여느 때와 다름없이 행복한 하루를 보내고 있다. 어디선가 외마디 비명이 들려온다. 누군가가 우체통에 편지를 넣으려다 투입구에 손이 끼어 동동거리고 있다. 우체통이 사람의 손을 꽉 깨문 채 노려본다. 소망나무가 우체통을 의아하게 여긴다.
 
         ‘우체통은 따듯한 사람들을 왜 괴롭히지?’
@@ -262,7 +278,7 @@
     <img id="wt_3" src="assets/Story/B1_2 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:8030px; visibility: hidden;" alt="error3.jpg">
     <img id="wt_4" src="assets/Story/B1_3 - 소망나무.jpg" style="left:50%; position:absolute; transform:translateX(-420px);width:350px; top:8030px; visibility: hidden;" alt="error4.jpg">
     <!-- </div> -->
-    <span id="B1_P" style="position: absolute; top: 8035px; left:50%; transform: translateX(-40px); width: 450px; visibility: hidden;">
+    <span id="B1_P" style="text-align:justify; position: absolute; top: 8035px; left:50%; transform: translateX(-40px); width: 450px; visibility: hidden;">
         또 하나의 소망이 나무에 걸린다. 소망나무가 새로운 소망을 바라보며 활짝 미소짓는다. 우체통이 묻는다. 
 
         “소망이 걸리는 게 그렇게 좋아?”
@@ -273,7 +289,7 @@
     </span>
 
     <div id="B2_S">
-        <img src="assets/Story/B2.5 - 우체통 철거안내문.jpg" style="position: absolute; left:50%; top: -50px; width: 410px; transform: translateX(70px);" alt="error.jpg">
+        <img src="assets/Story/B2.5 - 우체통 철거안내문.jpg" style="text-align:justify; position: absolute; left:50%; top: -50px; width: 410px; transform: translateX(70px);" alt="error.jpg">
 
         <p id="today" style="position:absolute; top:183px; left:50%; transform:translate(261px, 0%);
         font-family: 'Noto Sans KR', sans-serif;
@@ -288,7 +304,7 @@
         z-index: 3;
         color: #444;"></p>
 
-        <span id="B2_P">
+        <span id="B2_P" style="text-align:justify">
             소망나무의 이야기를 듣는 우체통의 표정이 점점 어두워진다. 우체통이 차분하게 입을 뗀다. 
 
     “소망나무야. 이곳의 사람들을 너무 믿기만 해선 안돼. 전엔 내 안에도 편지들이 가득했고, 그때까지만 해도 난 소중한 존재였어. 내 안에 소중히 준비해온 편지를 넣으며 활짝 웃던 아이도 있었어. 그 아이가 나를 보며 짓던 웃음은 아직도 내 기억 속에 생생한데, 지금의 나를 봐. 이제 아이들은 내가 왜 존재하는지도 몰라. 내 몸엔 장난삼아 그려진 낙서와 스티커들이 가득해. 옆면의 철거 안내문이 보이니? 결국 사람들은 자신에게 필요가 없으면 널 버리고 말거야. 네가 경험했던 공장의 차가운 사람들도, 지금 웃으며 따듯한 말을 해대는 이 사람들도 결국엔 똑같은 거야. 처음의 따듯한 모습은 그냥 일부야. 믿으면 안돼.
@@ -330,7 +346,7 @@
     </div>
     <img id="ut_1" src="assets/Story/B2_1 - 어린 우체통.jpg" style="position:absolute; top: 13230px; width: 276px; left:50%; transform: translateX(-390px); opacity:1; z-index: 3;" alt="error1.jpg">
     <img id="ut_2" src="assets/Story/B2_2 - 불타는 우체통.jpg" style="position:absolute; top: 13230px; width: 276px; left:50%; opacity:1; z-index: 2; transform:translateX(-390px);" alt="error1.jpg">   
-    <span id="B2-25P">
+    <span id="B2-25P" style="text-align:justify">
         우체통이 괴로운 표정으로 말한다.
 
         “내 안에 들어있던 편지들이 다 불타버린 적이 있어.”
@@ -343,7 +359,7 @@
     <div id="B3_S">
         <img src="assets/Story/B3 - 사장.jpg" style="transform: translate(-50%, 0%); position:absolute; left:50%;" alt="error1.jpg">   
     </div>
-    <span id="B3_P">
+    <span id="B3_P" style="text-align:justify">
         소망나무가 마음 아파하며 가지를 떨고 있다. 우체통이 다시 말을 시작한다.
 
         “소망나무야. 사람들을 사랑했던 나는 너무도 아팠어. 나와 닮은 네가 그렇게 아프지 않길 바라. 나는 그 애를 진심으로 좋아했어. 앳된 손으로 편지를 써넣던, 미소 가득한 아이. 그 애의 편지에 담겨있던 깊고 따듯한 마음이 난 너무도 좋았는데. 오랜만에 교복을 입고 찾아온 그 애가 나에게 던진 건 전의 따듯한 손길이 아닌 빨간 불씨뿐이었어. 너는 소망국수의 사장을 믿지? 나에게 담배를 집어넣은 그 애가 네가 사랑하고 굳게 믿는 지금의 소망국수 사장이야.” 
@@ -356,7 +372,7 @@
     <div id="B4_S">
         <img src="assets/Story/B4 - 비와 소망종이.png" style=" transform: translate(-50%, 0%); position:absolute; width:3000px; top:320px; left:50%;" alt="error1.jpg">   
     </div>
-    <span id="B4_P" style="color: white; font-weight: 200;">
+    <span id="B4_P" style="color: white; font-weight: 200; text-align:justify;" >
         소망나무와 우체통 사이에 침묵이 흐른다. 비가 내리고 있었다.
 
         가게 문에 달린 작은 종이 흔들리며 청명한 소리를 축축한 공기 중으로 퍼뜨린다. 사장의 발걸음이 빗소리 틈을 비집고 들어온다. 빗방울들이 아스팔트 바닥으로 낙하하며 둔탁한 마찰음을 내고 있었다. 소망나무는 가지에 서려오는 한기를 느낀다. 아슬하게 매달린 소망들의 잉크가 번져 흘러내리고 있었다. 소망국수 사장이 비에 젖은 소망들을 걱정하며 가게 안으로 조심스럽게 소망나무를 옮긴다. 
@@ -381,8 +397,10 @@
        
          까치발을 든 채 탁자를 둘러보더니 펜을 들고 서툴게 소망을 적어내려간다. 소망을 다 적은 아이가 키에 비해 높은 나무를 올려다본다. 사장이 아이에게 다가온다. 아이의 손에 들린 소망 종이를 나무에 매어 준다.
        
-         우체통 사라지지 안앗으면 조켓다. 
+         <p style="text-align: center; font-weight: 600; font-size: 33px; font-family: 'UhBeeJjipungding'; line-height: 170%; letter-spacing: 1.2px;">
+            우체통 사라지지 안앗으면 조켓다.</p>
        
+            
          소망국수 사장은 아이에게 왜 그렇게 생각하냐고 묻는다. 아이가 울상이 되어 말한다.
        
          “없어지는 건 슬프잖아요! 오늘 선생님한테 제 거 장난감 뺏겼는데 너무 슬펐어요. 있던 게 이제 나한테 없는 거니까 믿기가 싫어요.”
@@ -399,12 +417,14 @@
         밥을 굶어 가면서 돈을 모아 미국으로 떠날 티켓을 어떻게든 마련했다. 떠나기 전, 확인차 잠시 들른 보육원에서 이상한 이야기를 들었다. 분명히 미국 땅 어딘가에 존재한다고 생각했던 엄마가, 마음속으론 항상 살아 숨 쉬고 있던 엄마가, 없다고 한다. 이젠 기억 속 잔상으로만 남은 엄마의 모습이 마지막이었다고 한다.       
     </span>
 
-    <div id="C3-5_S" style="position: absolute; text-align: center; top: 25100px; left:50%; width:50%; transform: translateX(-50%); height:600px; border: red solid 3px; ">
+    <div id="C3-5_S" style="position: absolute; text-align: center; top: 24900px; left:50%; width:50%; transform: translateX(-50%); height:600px;">
         <p style="text-align: center; font-weight: 600; font-size: 33px; font-family: 'UhBeeJjipungding'; line-height: 170%; letter-spacing: 1.2px;">
-            우체통이 사라지지 안앗으면 조켓다.</p>
+            우체통 사라지지 안앗으면 조켓다.</p>
     </div>
     <span id="C3-5_P" style="position: absolute; top: 25700px; font-weight: 400; color:black; width: 600px; left:50%; transform: translateX(-50%); white-space: pre-line;">
-  사장이 창문 밖으로 우두커니 서 있는 우체통을 바라본다. 보육원에서 비틀거리며 나와 마주한 빨간 우체통. 너는 내 편지들을 어디로 보내주었니. 존재하지도 않는 것에 대한 사랑을 담아 설레는 마음으로 마주했던 그 우체통이 순간 시뻘겋고 끔찍한 괴물로 보였다. 처음 피워 본 더럽게 쓴 담배를 우체통 안으로 던져 버린 건 한순간이었다. 연기가 피어올랐다. 그리고 할머니를 만났다. 국수에서 피어오르는 따듯한 김이 공허한 마음을 조금이나마 채워주었다. 사장이 아이에게 말한다.
+  사장이 창문 밖으로 우두커니 서 있는 우체통을 바라본다. 보육원에서 비틀거리며 나와 마주한 빨간 우체통. 너는 내 편지들을 어디로 보내주었니. 존재하지도 않는 것에 대한 사랑을 담아 설레는 마음으로 마주했던 그 우체통이 순간 시뻘겋고 끔찍한 괴물로 보였다. 
+  
+  처음 피워 본 더럽게 쓴 담배를 우체통 안으로 던져 버린 건 한순간이었다. 연기가 피어올랐다. 그리고 할머니를 만났다. 국수에서 피어오르는 따듯한 김이 공허한 마음을 조금이나마 채워주었다. 사장이 아이에게 말한다.
    
   “우체통이 뭔지 알아?”
 
@@ -417,7 +437,7 @@
 
     
     <div id="D1_S" style="color: black">
-        d1
+        <video style="position: absolute; left:50%; transform:translateX(-50%);" src="assets/Story/D1 - 엽서넣는 사장.webm" autoplay loop></video>
     </div>
     <span id="D1_P">  소망나무는 더 큰 탁자와 함께 바깥으로 옮겨진다. 사장이 무언가를 주섬주섬 꺼낸다. 엽서와 우표가 가득하다. 아이가 마구 질문하며 엽서를 만지작거리고, 무언가를 열심히 적어내려간다. 사장은 아이를 흐뭇하게 바라보다 손에 들린 엽서를 가만히 바라본다. 
 
@@ -444,14 +464,12 @@
     </div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
-    <script>        
+    <script>
         var target = document.getElementById("menuicon");
         // target.style.overflow = 'hidden';
         // target.style.height = 'auto';
-        
         // target.style.overflow-x = 'hidden';
         // target.style.overflow-y = 'auto';
-
         $("#menuicon").click(function () { 
             if($("#menuicon").is(":checked")){
                 $('html, body').css({
@@ -494,24 +512,5 @@
     </script>
     <script src="js/p5.js/canvas.js"></script>
     <!-- <div id="fullpageCanvas" style="z-index:-1; position: fixed; top:0; left:0; width:100%; height:100%"></div> -->
-    <script>
-        var loading = true;
-        $('#loadingicon').fadeTo(1000, 1);
-        $(document).ready(function(){
-            setTimeout(function(){
-                loading = true;
-                $('#loadingicon').delay(6900).fadeOut(800);
-                $('#loadingwhite').delay(8600).fadeOut(1500);
-                $('#loadingtext').delay(6500).fadeOut(500);
-                $('#loadingVid').delay(8300).fadeOut(300);
-                $('#browser1').delay(6500).fadeOut(800);
-                $('#browser2').delay(6600).fadeOut(800);
-                $('#browser3').delay(6700).fadeOut(800);
-                $('#browser4').delay(6800).fadeOut(800);
-                $('#browser5').delay(6900).fadeOut(800);
-                $('#a').delay(6300).fadeOut(500);
-            });
-        });
-    </script>
 </body>
 </html> 

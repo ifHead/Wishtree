@@ -3,7 +3,6 @@
 var modal_state = false;
 var sidebar_bool = false;
 
-
 let ink_sketch = function(p){ // 잉크 스케치
   const cosX = new Float32Array([
       0.500,  0.492,  0.470,  0.433,  0.383,  
@@ -94,35 +93,10 @@ let ink_sketch = function(p){ // 잉크 스케치
 
 let ticker_sketch = function(p){
   p.setup = function() {
-    p.cnv = p.createCanvas(500, 500);
-    p.cnv.position(30, 30);
   }
-  p.now = 0;
-  p.timer_flag = true;
 
   p.draw = function(){
-    if(timer && timer_flag){
-      p.timer_flag = false;
-      p.now = p.millis();
-    }
-    if(p.now + 8600 > p.millis()){
-      console.log(p.millis());
-      window.scrollTo({
-          left: 0, 
-          top: 0
-      });      
-      $('html, body').css({
-        overflow: 'hidden',
-        height: 'auto'
-      });
-    } else {
-      p.timer_flag = true;
-      $('html, body').css(
-        'overflow-x', 'hidden'
-      ).css('overflow-y', 'auto');
-    }
   }
-  p.background(0)
 }
 
 let sound_sketch_N_blockingGUI = function(p){
@@ -312,7 +286,6 @@ let sound_sketch_N_blockingGUI = function(p){
     p.cnv.size(p.w,p.h);
   }
 
-  let wasVisited = false;
   p.scrollTo = function(){
     var scrollValue = $(document).scrollTop();     
     if(isTextExist == false){
@@ -330,7 +303,7 @@ let sound_sketch_N_blockingGUI = function(p){
 
   p.disableScroll = function(){
     sidebar_bool = $("#menuicon").is(":checked");
-    if(sidebar_bool || modal_state){
+    if(sidebar_bool || modal_state || loading){
       $('html, body').css({
           overflow: 'hidden',
           height: 'auto'
@@ -341,6 +314,18 @@ let sound_sketch_N_blockingGUI = function(p){
       $('html, body').css(
           'overflow-x', 'hidden'
       ).css('overflow-y', 'auto');
+    }
+  }
+
+  p.now = -10000;
+  loading = false;
+  p.loadingToggle = function(){
+    if(loading){
+      p.now = p.millis();
+      loading = false;
+    }
+    if(p.now + 8600 > p.millis()){
+      
     }
   }
 }

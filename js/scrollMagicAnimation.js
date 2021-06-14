@@ -53,12 +53,12 @@ var scene2 = new ScrollMagic.Scene({
 
 // ---------- 배경 밝게 ------------
 var background_to_white = TweenMax.to('#white_bg', 1, {
-  ease: Power1.easeIn,
+  ease: Power1.easeOut,
   opacity: 1.0
 });
 var scene3 = new ScrollMagic.Scene({
   triggerElement: '#trig_bg_to_white',
-  triggerHook: 0.2,
+  triggerHook: 0.1,
   // offset: 0,
   // duration: '120%'
 })
