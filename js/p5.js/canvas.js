@@ -92,15 +92,37 @@ let ink_sketch = function(p){ // 잉크 스케치
   }
 }
 
-let test_sketch = function(p){
+let ticker_sketch = function(p){
   p.setup = function() {
     p.cnv = p.createCanvas(500, 500);
     p.cnv.position(30, 30);
   }
-  p.draw = function() {
-    // p.noFill();
-    // p.rect(0,0,500,500);
+  p.now = 0;
+  p.timer_flag = true;
+
+  p.draw = function(){
+    if(timer && timer_flag){
+      p.timer_flag = false;
+      p.now = p.millis();
+    }
+    if(p.now + 8600 > p.millis()){
+      console.log(p.millis());
+      window.scrollTo({
+          left: 0, 
+          top: 0
+      });      
+      $('html, body').css({
+        overflow: 'hidden',
+        height: 'auto'
+      });
+    } else {
+      p.timer_flag = true;
+      $('html, body').css(
+        'overflow-x', 'hidden'
+      ).css('overflow-y', 'auto');
+    }
   }
+  p.background(0)
 }
 
 let sound_sketch_N_blockingGUI = function(p){
@@ -323,7 +345,7 @@ let sound_sketch_N_blockingGUI = function(p){
   }
 }
 
-let superP5_1 = new p5(test_sketch);
+let superP5_1 = new p5(ticker_sketch);
 let superP5_2 = new p5(ink_sketch); // 스케치의 레이어를 결정함, 선입선출
 let superP5_3 = new p5(sound_sketch_N_blockingGUI);
 

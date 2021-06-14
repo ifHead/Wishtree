@@ -59,7 +59,6 @@ var background_to_white = TweenMax.to('#white_bg', 1, {
 var scene3 = new ScrollMagic.Scene({
   triggerElement: '#trig_bg_to_white',
   triggerHook: 0.2,
-  
   // offset: 0,
   // duration: '120%'
 })
