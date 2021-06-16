@@ -38,7 +38,7 @@ var scene_m1 = new ScrollMagic.Scene({
 
     var tl_2 = new TimelineMax()
     .add(TweenMax.fromTo('#mainpage_2', 1, 
-    { transform: 'translate(-50%, 5vh)' }, {  transform: 'translate(-50%, -35vh)' }))
+    { transform: 'translate(-50%, 5vh)' }, {  transform: 'translate(-50%, -42vh)' }))
     .add(TweenMax.to('#mainpage_2', 1, 
     {  filter: 'brightness(0.6)', ease: Sine.easeIn}))
     .add(TweenMax.to('#mainpage_2', 4, 
@@ -57,7 +57,7 @@ var scene_m1 = new ScrollMagic.Scene({
 
             var tl_3 = new TimelineMax()
             .add(TweenMax.fromTo('#mainpage_3', 1.3, 
-            { transform: 'translate(-50%, 20vh)' }, {  transform: 'translate(-50%, -35vh)' }))
+            { transform: 'translate(-50%, 20vh)' }, {  transform: 'translate(-50%, -50vh)' }))
             .add(TweenMax.to('#mainpage_3', 1.3, 
             {  filter: 'brightness(0.6)', ease: Power3.easeOut }))
             .add(TweenMax.to('#mainpage_3', 4, 
@@ -76,7 +76,7 @@ var scene_m1 = new ScrollMagic.Scene({
 
                     var tl_4 = new TimelineMax()
                     .add(TweenMax.fromTo('#mainpage_4', 0.7, 
-                    { transform: 'translate(-50%, -20vh)' }, {  transform: 'translate(-50%, -90vh)' }))
+                    { transform: 'translate(-50%, -20vh)' }, {  transform: 'translate(-50%, -104vh)' }))
                     .add(TweenMax.to('#mainpage_4', 0.5, 
                     {  filter: 'brightness(0.6)', ease: Power3.easeOut  }))
                     .add(TweenMax.to('#mainpage_4', 4, 
