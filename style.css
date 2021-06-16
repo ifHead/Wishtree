@@ -68,12 +68,12 @@ img { /*드래그 방지*/
 
 #white_bg {
   opacity: 1.0;
-  position:fixed; top:0; left:0; width:300%; height:200%; z-index: -2;
+  position:fixed; top:0; left:0; width:300%; height:200%; z-index: -6;
 }
 
 #black_bg {
 
-  position:fixed; top:0; left:0; width:300%; height:200%; z-index: -3;
+  position:fixed; top:0; left:0; width:300%; height:200%; z-index: -7;
 }
 
 .content {
@@ -100,6 +100,21 @@ h2 {
 header h1 {
   font-size: 60px;
 }
+
+
+#mainpage_1{position: fixed; top:0%; width:100vw; min-width:1800px; left:50%; z-index:-4;
+visibility: visible; filter: brightness(1);
+}
+#mainpage_2{position: fixed; top:50%; width:160vw; min-width:1800px; left:50%; z-index:-3;
+visibility: visible; filter: brightness(1);
+}
+#mainpage_3{position: fixed; top:50%; width:160vw; min-width:1800px; left:50%; z-index:-2;
+visibility: visible; filter: brightness(1);
+}
+#mainpage_4{position: fixed; top:50%; width:160vw; min-width:2000px; left:50%; z-index:-1;
+visibility: visible; filter: brightness(1);
+}
+
 
 /*-----loading screen*/
 #loadingwhite {
@@ -163,9 +178,9 @@ textarea {
   width:100vw;
   z-index: 10;
 }
-#trig_hide_verytoplogo {
+#trig_mainpage {
   position: absolute;
-  top: 1500px;
+  top: 0px;
 }
 #trig_bg_to_black {
   position: absolute;

@@ -16,22 +16,104 @@ const flightPath = {
 //------------첫 로고화면-------------
 var controller = new ScrollMagic.Controller();
 var tl_1 = new TimelineMax()
-.add(TweenMax.to('#verytoplogo', 1, 
-{  filter: "brightness(0.2)" }))
-.add(TweenMax.to('#verytoplogo', 0, 
+.add(TweenMax.fromTo('#mainpage_1', 1, 
+{ transform: 'translate(-50%, -120px)' }, {  transform: 'translate(-50%, -160px)' }))
+.add(TweenMax.to('#mainpage_1', 1.5, 
+{  filter: 'brightness(1)' }))
+.add(TweenMax.to('#mainpage_1', 1, 
+{  filter: 'brightness(0.6)'}))
+.add(TweenMax.to('#mainpage_1', 4, 
+{  filter: 'brightness(0.61)' }))
+.add(TweenMax.to('#mainpage_1', 0, 
 { visibility: 'hidden' }));
 
-var scene = new ScrollMagic.Scene({
-  triggerElement: '#trig_hide_verytoplogo',
-  duration: '150%',
+var scene_m1 = new ScrollMagic.Scene({
+  triggerElement: '#trig_mainpage',
+  duration: '500%',
   offset: 0,
-  triggerHook: 0.8
+  triggerHook: 0
 })
 .setTween(tl_1)
-.addTo(controller)
-.addIndicators({
-  name: "trig_hide_verytoplogo"
-});
+.addTo(controller);
+
+    var tl_2 = new TimelineMax()
+    .add(TweenMax.fromTo('#mainpage_2', 1, 
+    { transform: 'translate(-50%, 5vh)' }, {  transform: 'translate(-50%, -35vh)' }))
+    .add(TweenMax.to('#mainpage_2', 1, 
+    {  filter: 'brightness(0.6)', ease: Sine.easeIn}))
+    .add(TweenMax.to('#mainpage_2', 4, 
+    {  filter: 'brightness(0.61)', ease: Sine.easeIn}))
+    .add(TweenMax.to('#mainpage_2', 0, 
+    { visibility: 'hidden' }));
+
+    var scene_m2 = new ScrollMagic.Scene({
+      triggerElement: '#trig_mainpage',
+      duration: '500%',
+      offset: 0,
+      triggerHook: 0
+    })
+    .setTween(tl_2)
+    .addTo(controller);
+
+            var tl_3 = new TimelineMax()
+            .add(TweenMax.fromTo('#mainpage_3', 1.3, 
+            { transform: 'translate(-50%, 20vh)' }, {  transform: 'translate(-50%, -35vh)' }))
+            .add(TweenMax.to('#mainpage_3', 1.3, 
+            {  filter: 'brightness(0.6)', ease: Power3.easeOut }))
+            .add(TweenMax.to('#mainpage_3', 4, 
+            {  filter: 'brightness(0.61)'  }))
+            .add(TweenMax.to('#mainpage_3', 0, 
+            { visibility: 'hidden' }));
+
+            var scene_m3 = new ScrollMagic.Scene({
+              triggerElement: '#trig_mainpage',
+              duration: '500%',
+              offset: 0,
+              triggerHook: 0
+            })
+            .setTween(tl_3)
+            .addTo(controller);
+
+                    var tl_4 = new TimelineMax()
+                    .add(TweenMax.fromTo('#mainpage_4', 0.7, 
+                    { transform: 'translate(-50%, -20vh)' }, {  transform: 'translate(-50%, -90vh)' }))
+                    .add(TweenMax.to('#mainpage_4', 0.5, 
+                    {  filter: 'brightness(0.6)', ease: Power3.easeOut  }))
+                    .add(TweenMax.to('#mainpage_4', 4, 
+                    {  filter: 'brightness(0.61)'  }))
+                    .add(TweenMax.to('#mainpage_4', 0,
+                    { visibility: 'hidden' }));
+
+                    var scene_m4 = new ScrollMagic.Scene({
+                      triggerElement: '#trig_mainpage',
+                      duration: '500%',
+                      offset: 0,
+                      triggerHook: 0
+                    })
+                    .setTween(tl_4)
+                    .addTo(controller);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ---------- 배경 어둡게 ------------
 var background_to_black = TweenMax.to('#white_bg', 2, {
