@@ -126,17 +126,17 @@ let sound_sketch_N_blockingGUI = function(p){
     //-------------------------sound ready
   }
   p.draw = function() {
-    p.scrollTo();
-    var scrollValue = $(document).scrollTop();
-    if(scrollValue > 1000 && scrollValue < 5000){
-      mySound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
-    }
-    else if(scrollValue > 5000 && scrollValue < 9000) {
-      mySound.setVolume(p.map(scrollValue, 5000, 9000, 1, 0));
-    }
-    else {
-      mySound.setVolume(0);
-    }
+    // p.scrollTo();
+    // var scrollValue = $(document).scrollTop();
+    // if(scrollValue > 1000 && scrollValue < 5000){
+    //   mySound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
+    // }
+    // else if(scrollValue > 5000 && scrollValue < 9000) {
+    //   mySound.setVolume(p.map(scrollValue, 5000, 9000, 1, 0));
+    // }
+    // else {
+    //   mySound.setVolume(0);
+    // }
 
     p.drawingContext.shadowOffsetX = 2;
     p.drawingContext.shadowOffsetY = 2;
