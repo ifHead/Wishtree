@@ -100,11 +100,15 @@ let ticker_sketch = function(p){
 }
 
 let sound_sketch_N_blockingGUI = function(p){
-  var mySound;
-
+  var sound = new Array(4);
+  
   p.preload = function(){
     p.soundFormats('ogg');
-    mySound = p.loadSound('../../assets/le_festin.ogg')
+    for(let i = 0; i < sound.length; i++){
+      sound[i] = p.loadSound('../../assets/audio/챕터 '+(i+1)+'.ogg');
+      sound[i].play();
+      sound[i].stop();
+    }
   }
 
   let fullpageCanvas;
@@ -121,22 +125,70 @@ let sound_sketch_N_blockingGUI = function(p){
     fullpageCanvas.style("pointer-events", "none");
     p.cnv.parent(fullpageCanvas);
     p.cnv.position(0,0);
-    mySound.setVolume(0);
-    mySound.play();
+    
+    p.bgm_1 = new BGM(1, 300, 2300);
     //-------------------------sound ready
   }
+
+  var scrollValue;
+
+  class BGM {
+    constructor(_idx, _start, _end){
+      this.start = _start;
+      this.end = _end;
+      this.idx = _idx - 1;
+      this.volume = 0;
+      this.volume_target;
+      this.d_volume;
+      this.volume_easing = 0.01;
+    }
+
+    player(){
+      console.log(this.volume);
+      if(scrollValue > this.start && scrollValue < this.end){
+        if(this.volume == 0 && !(sound[this.idx].isPlaying())){
+          sound[this.idx].play();
+        }
+
+        if (this.volume < 0.02) {
+          this.volume = p.lerp(this.volume, 1, 0.0006);
+        } 
+        else if (this.volume < 0.06) {
+          this.volume = p.lerp(this.volume, 1, 0.001);
+        }
+        else
+        {
+          this.volume = p.lerp(this.volume, 1, 0.005);
+          if(this.volume > 0.97){ this.volume = 1; }
+        }
+        sound[this.idx].setVolume(this.volume);
+      } else {
+          this.volume_target = 0;
+          this.d_volume = this.volume_target - this.volume;
+          this.volume += this.d_volume * 0.05;
+          if(sound[this.idx].isPlaying()){
+            if(this.volume < 0.001 ) {
+              this.volume = 0; 
+              sound[this.idx].stop();
+            }
+            sound[this.idx].setVolume(this.volume);
+          }
+      }
+    }
+  }
+
   p.draw = function() {
     // p.scrollTo();
-    // var scrollValue = $(document).scrollTop();
+    scrollValue = $(document).scrollTop();
+    p.bgm_1.player();
+
     // if(scrollValue > 1000 && scrollValue < 5000){
-    //   mySound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
+    //   chap_1_sound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
     // }
     // else if(scrollValue > 5000 && scrollValue < 9000) {
-    //   mySound.setVolume(p.map(scrollValue, 5000, 9000, 1, 0));
+    //   chap_1_sound.setVolume(p.map(scrollValue, 5000, 9000, 1, 0));
     // }
-    // else {
-    //   mySound.setVolume(0);
-    // }
+    // else {chap_1_sound.setVolume(0);}
 
     p.drawingContext.shadowOffsetX = 2;
     p.drawingContext.shadowOffsetY = 2;
