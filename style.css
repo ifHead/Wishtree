@@ -22,6 +22,26 @@ input:focus, select:focus, option:focus, textarea:focus, button:focus{
 ::-webkit-scrollbar-thumb {
   background: #FF0000;
 }
+#wishbutton:hover{
+  background: #8ad3f5;
+  box-shadow: 0 0 8px rgb(119, 185, 216, .5); 
+  text-shadow: 0 0 3px rgb(255, 255, 255, .3);
+  color: white;
+}
+#wishbutton{
+  -webkit-transition-duration: 0.1s; /* Safari */
+  transition-duration: 0.1s;
+  width: 105px; height: 48px; position: absolute; left:50%; 
+  background: #6bc0f1; color: white;
+  border-radius: 10px;
+  border: 0px;
+  box-shadow: 1 1 4px rgb(19, 89, 136, .6); 
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13pt;
+  font-weight: 400;
+  top: 420px; transform: translateX(-55px); 
+  z-index: 2; cursor:pointer
+}
 
 #smooth_scroll_wrapper{
   position: absolute;
@@ -308,7 +328,7 @@ input #menuicon {display:none;}
   display:inline-block;
   width:auto;
   color:#fff;
-  padding: 30px 10px;
+  padding: 30px 30px;
   background:rgba(0,0,0,0);
   /* border: 3px solid blue; */
   z-index: 11;

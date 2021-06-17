@@ -13,13 +13,13 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
     
     <link rel="stylesheet" hef="style.css">
-    <script src="js/text.js"></script>
-    <script src="main.js"></script>
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    
     
     <script>
         console.log(jQuery.browser.mobile);
@@ -150,10 +150,11 @@
     <div class="sidebar_content">
         <ul>
             <li class="with_margin" style="margin-top: 3px;"><a></a></li>
-            <li><a>  이번엔</a></li>
-            <li><a>  내가</a></li>
-            <li><a>  사는걸로</a></li>
-            <li><a>  해요</a></li>
+            <li><a>  디지털 아트 전시회 </a></li>
+            <li><a>  등장인물 소개 </a></li>
+            <li><a>  만든 사람들  </a></li>
+            <li><a>  작가의 말 </a></li>
+            <li style="bottom: 30px; position: absolute; border-bottom: 0px; border-top: 0.5px solid #444; "><a>  Velog </a></li>
         </ul>
         <label for="menuicon" ></label>
     </div>       
@@ -245,33 +246,38 @@
         <div>
             <textarea id="wishtext"
                 rows="7"
-                maxlength="118"
+                maxlength="80"
                 required="1"
                 placeholder="당신의 소망을 적어주세요";
                 wrap="hard"
                 style="
-                    position: absolute; top: 42px; left: 50%;
-                    transform:translateX(-140px);
-                    border:none; border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
-                    width: 295px;
+                    position: absolute; top: 28px; left: 50%;
+                    transform:translateX(-145px);
+                    border:none; border-right:0px; 
+                    border-top:0px; border-left:0px; 
+                    border-bottom:0px;
+                    width: 300px;
                     resize: none;
                     height: 260px;
                     background-color: transparent;
                     z-index: 3;
+                    font-size: 8;
+                    text-align: left;
+                    overflow-x:hidden;
                 "
             ></textarea>
-            <img  src="assets/textarea.png" style="position: absolute; width: 400px; left:50%; transform: translateX(-220px);" alt="error.jpg">
+            <img  src="assets/textarea.png" 
+            style="position: absolute; 
+            width: 400px; left:50%; 
+            transform: translateX(-220px);" alt="error.jpg">
         </div>
 
-        <button id="wishbutton" onclick="inputButton()" 
-        style="width: 100px; height: 50px; position: absolute; left:50%; 
-        top: 400px; transform: translateX(-45px); 
-        z-index: 2; cursor:pointer;">소망 걸기</button>
+        <button id="wishbutton" onclick="inputButton()">소망 걸기</button>
         <!-------------------- text area end ---------------------------->
     </div>
     <span id="A5_P" style="text-align: center; "> 
-        <p style="font-size: 20pt;"> 저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. </p>
-        <p style="font-size: 28pt; line-height: 10%;">손님의 소망은 무엇인가요?</p>
+        <p style="font-size: 20pt; color:rgb(44, 140, 218);"> 저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. </p>
+        <p style="font-size: 28pt; line-height: 10%; color:rgb(26, 118, 223);">손님의 소망은 무엇인가요?</p>
     </span>
 
     <!-- <div id="B1_S"> -->
@@ -401,7 +407,10 @@
        
          까치발을 든 채 탁자를 둘러보더니 펜을 들고 서툴게 소망을 적어내려간다. 소망을 다 적은 아이가 키에 비해 높은 나무를 올려다본다. 사장이 아이에게 다가온다. 아이의 손에 들린 소망 종이를 나무에 매어 준다.
        
-         <p style="text-align: center; font-weight: 600; font-size: 33px; font-family: 'UhBeeJjipungding'; line-height: 170%; letter-spacing: 1.2px;">
+         <p style="text-align: center; font-weight: 600; 
+         text-shadow: 0px 0px 4px white; font-size: 33px; 
+         font-family: 'UhBeeJjipungding'; line-height: 170%; 
+         letter-spacing: 1.2px;">
             우체통 사라지지 안앗으면 조켓다.</p>
        
 
@@ -422,7 +431,8 @@
     </span>
 
     <div id="C3-5_S" style="position: absolute; text-align: center; top: 26000px; left:50%; width:50%; transform: translateX(-50%); height:600px;">
-        <p style="text-align: center; font-weight: 600; font-size: 33px; font-family: 'UhBeeJjipungding'; line-height: 170%; letter-spacing: 1.2px;">
+        <p style="text-align: center; font-weight: 600; font-size: 33px; font-family: 'UhBeeJjipungding'; line-height: 170%; letter-spacing: 1.2px;
+        text-shadow: 0px 0px 4px white; ">
             우체통 사라지지 안앗으면 조켓다.</p>
     </div>
     <span id="C3-5_P" style="position: absolute; top: 26500px; font-weight: 400; color:black; width: 600px; left:50%; transform: translateX(-50%); white-space: pre-line;">
@@ -541,6 +551,9 @@
             }
         });
     </script>
+    
+    <script src="js/global.js"></script>
+    <script src="js/text.js"></script>
     <script src="js/p5.js/canvas.js"></script>
     <!-- <div id="fullpageCanvas" style="z-index:-1; position: fixed; top:0; left:0; width:100%; height:100%"></div> -->
 </body>

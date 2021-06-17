@@ -1,4 +1,7 @@
 
+function getter_isHang(){
+	return isHang;
+}
 
 var modal_state = false;
 var sidebar_bool = false;
@@ -100,17 +103,15 @@ let ticker_sketch = function(p){
 }
 
 let sound_sketch_N_blockingGUI = function(p){
-  var sound = new Array(4);
   
   p.preload = function(){
     p.soundFormats('ogg');
-    for(let i = 0; i < sound.length; i++){
-      sound[i] = p.loadSound('../../assets/audio/챕터 '+(i+1)+'.ogg');
-      sound[i].play();
-      sound[i].stop();
+    for(let i = 0; i < 4; i++){
+      p.sound[i] = p.loadSound('../../assets/audio/챕터 '+(i+1)+'.ogg');
     }
   }
-
+  
+  p.sound = new Array(4);
   let fullpageCanvas;
   p.setup = function() {
     // p.elem = createElement
@@ -126,11 +127,18 @@ let sound_sketch_N_blockingGUI = function(p){
     p.cnv.parent(fullpageCanvas);
     p.cnv.position(0,0);
     
-    p.bgm_1 = new BGM(1, 300, 2300);
+    p.bgm_1 = new BGM(1, 2300, 9200);
+    p.bgm_2 = new BGM(2, 9500, 20100);
+    p.bgm_3 = new BGM(3, 20300, 25500);
+    p.bgm_4 = new BGM(4, 25700, 40200);
+    for(let i = 0; i < 4; i++){
+      p.sound[i].play();
+      p.sound[i].stop();
+    }
     //-------------------------sound ready
   }
 
-  var scrollValue;
+  p.scrollValue;
 
   class BGM {
     constructor(_idx, _start, _end){
@@ -141,14 +149,15 @@ let sound_sketch_N_blockingGUI = function(p){
       this.volume_target;
       this.d_volume;
       this.volume_easing = 0.01;
+      this.isFirstPlay = true;
     }
 
     player(){
-      console.log(this.volume);
-      if(scrollValue > this.start && scrollValue < this.end){
-        if(this.volume == 0 && !(sound[this.idx].isPlaying())){
-          sound[this.idx].play();
+      if(p.scrollValue > this.start && p.scrollValue < this.end){
+        if(!(p.sound[this.idx].isPlaying())){
+          p.sound[this.idx].play();
         }
+
 
         if (this.volume < 0.02) {
           this.volume = p.lerp(this.volume, 1, 0.0006);
@@ -158,37 +167,37 @@ let sound_sketch_N_blockingGUI = function(p){
         }
         else
         {
-          this.volume = p.lerp(this.volume, 1, 0.005);
+          this.volume = p.lerp(this.volume, 1, 0.001);
           if(this.volume > 0.97){ this.volume = 1; }
         }
-        sound[this.idx].setVolume(this.volume);
+
+        if(this.isFirstPlay == true){
+          this.volume = 1;
+          this.isFirstPlay = false;  
+        }
+        p.sound[this.idx].setVolume(this.volume);
       } else {
           this.volume_target = 0;
           this.d_volume = this.volume_target - this.volume;
           this.volume += this.d_volume * 0.05;
-          if(sound[this.idx].isPlaying()){
+          if(p.sound[this.idx].isPlaying()){
             if(this.volume < 0.001 ) {
               this.volume = 0; 
-              sound[this.idx].stop();
+              p.sound[this.idx].stop();
             }
-            sound[this.idx].setVolume(this.volume);
+            p.sound[this.idx].setVolume(this.volume);
           }
       }
     }
   }
-
+  
   p.draw = function() {
-    // p.scrollTo();
-    scrollValue = $(document).scrollTop();
+    p.scrollValue = $(document).scrollTop();
+    p.scrollTo();
     p.bgm_1.player();
-
-    // if(scrollValue > 1000 && scrollValue < 5000){
-    //   chap_1_sound.setVolume(p.map(scrollValue, 1000, 5000, 0, 1));
-    // }
-    // else if(scrollValue > 5000 && scrollValue < 9000) {
-    //   chap_1_sound.setVolume(p.map(scrollValue, 5000, 9000, 1, 0));
-    // }
-    // else {chap_1_sound.setVolume(0);}
+    p.bgm_2.player();
+    p.bgm_3.player();
+    p.bgm_4.player();
 
     p.drawingContext.shadowOffsetX = 2;
     p.drawingContext.shadowOffsetY = 2;
@@ -199,7 +208,7 @@ let sound_sketch_N_blockingGUI = function(p){
     p.noStroke();
 
     p.fill(255, p.modal_alpha);
-    p.rect(window.innerWidth/2-175, window.innerHeight/2-90, p.modal_w, p.modal_h, 10,10,10,10);
+    p.rect(window.innerWidth/2-175, window.innerHeight/2-30, p.modal_w, p.modal_h, 10,10,10,10);
     
     p.stroke(0,255);
     p.strokeWeight(5);
@@ -207,7 +216,7 @@ let sound_sketch_N_blockingGUI = function(p){
     p.textSize(20);
     p.text(window.innerWidth/2, window.innerHeight/2, "asdfasdf소망을 입력해주셔야 해요!");
 
-    if(modal_state == true){
+    if(modal_state){
         fullpageCanvas.style("pointer-events", "auto");
 
         p.modal_w_target = 350;
@@ -221,7 +230,7 @@ let sound_sketch_N_blockingGUI = function(p){
         p.d_modal_alpha = p.modal_alpha_target - p.modal_alpha;
         p.modal_alpha += p.d_modal_alpha * 0.35;
       if(p.modal_w > 340){
-        p.modal_h_target = 220;
+        p.modal_h_target = 85;
         p.d_modal_h = p.modal_h_target - p.modal_h;
         p.modal_h += p.d_modal_h * p.easing;
 
@@ -262,10 +271,12 @@ let sound_sketch_N_blockingGUI = function(p){
 
     p.button_hover();
     p.disableScroll();
-  }
+  } // ---------------------------- DRAW END ----------------------------
 
-
-
+  p.modal_alpha = 0;
+  p.modal_color = p.color(255,255,255,0);
+    
+  p.textAlpha = 0;
   p.button = function(){
       p.drawingContext.shadowOffsetX = 0;
       p.drawingContext.shadowOffsetY = 0;
@@ -273,6 +284,7 @@ let sound_sketch_N_blockingGUI = function(p){
       p.drawingContext.shadowColor = p.color(0,0);
       p.fill(p.button_color);
       p.stroke(p.button_color);
+      
       if(p.hover_bool == true){ 
         p.close_button_border_thickness = p.lerp(p.close_button_border_thickness, 4, 0.15);
       } else {
@@ -281,6 +293,22 @@ let sound_sketch_N_blockingGUI = function(p){
       p.strokeWeight(p.close_button_border_thickness);
       p.rect(window.innerWidth/2+134, window.innerHeight/2-77, 30, 30, 7,7,7,7);
       p.drawX(window.innerWidth/2+143, window.innerHeight/2-68, 12);
+      if(p.modal_h > 82){
+        p.textAlpha = p.lerp(p.textAlpha, 255, 0.1);
+      } else {
+        p.textAlpha = p.lerp(p.textAlpha, 0, 0.4);
+      }
+      // p.stroke(30,30,30,p.textAlpha);
+      p.fill(40,40,50,p.textAlpha);
+      p.textSize(19);
+      p.strokeWeight(1);
+      if(modal_state){
+        p.text('당신의 소망이 궁금해요!', window.innerWidth/2 - 135, window.innerHeight/2+20);
+      }
+      // console.log(getter_isHang());
+      // if(getter_isHang()){
+      //   // p.text('멋진 소망을 나무에 걸었어요!', window.innerWidth/2 - 135, window.innerHeight/2+20);
+      // }
   }
 
   p.drawX = function(x, y, size){
@@ -306,18 +334,12 @@ let sound_sketch_N_blockingGUI = function(p){
   p.modalRegion_y = window.innerHeight/2-90;
   p.button_color = p.color(182,80,44,0);
   
-  p.mouseClicked = function(){  
-    if((p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
-      && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY)
-      || p.modalRegion_x > p.mouseX || p.modalRegion_x + 350 < p.mouseX
-      || p.modalRegion_y > p.mouseY || p.modalRegion_y + 220 < p.mouseY)
-      {
-        modal_state = false;
-        p.close_button_border_thickness = 0;
-      }
-  }
-
+  
   p.button_hover = function(){
+    p.buttonRegion_x = window.innerWidth/2+134;
+    p.buttonRegion_y = window.innerHeight/2-77;
+    p.modalRegion_x = window.innerWidth/2-175;
+    p.modalRegion_y = window.innerHeight/2-90;
     if((p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
     && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY))
     {
@@ -339,47 +361,65 @@ let sound_sketch_N_blockingGUI = function(p){
   }
 
   p.scrollTo = function(){
-    var scrollValue = $(document).scrollTop();     
-    if(isTextExist == false){
-      if(scrollValue > 7300){
+    if( !isTextExist ){
+      if(p.scrollValue > 8500){
         modal_state = true;
-          window.scrollTo({
-            left: 0, 
-            top: 6850
-          });
-        }
-    } else {
-      modal_state = false;
+      }
     }
   }
-
+  
   p.disableScroll = function(){
     sidebar_bool = $("#menuicon").is(":checked");
-    if(sidebar_bool || modal_state || loading){
-      $('html, body').css({
-          overflow: 'hidden',
-          height: 'auto'
-      });
-    }
-    else
-    {
-      $('html, body').css(
+    if(sidebar_bool || modal_state/* || loading*/){
+      if(modal_state){
+        window.scrollTo({
+          left: 0,
+          top: 7980
+        });
+      }
+        $('html, body').css({
+            overflow: 'hidden',
+            height: 'auto'
+        });
+      }
+      else
+      {
+        $('html, body').css(
           'overflow-x', 'hidden'
-      ).css('overflow-y', 'auto');
-    }
-  }
+          ).css('overflow-y', 'auto');
+        }
+      }
 
-  p.now = -10000;
-  loading = false;
-  p.loadingToggle = function(){
-    if(loading){
-      p.now = p.millis();
-      loading = false;
-    }
-    if(p.now + 8600 > p.millis()){
+
+      p.mouseClicked = function(){  
+        p.buttonRegion_x = window.innerWidth/2+134;
+        p.buttonRegion_y = window.innerHeight/2-77;
+        p.modalRegion_x = window.innerWidth/2-175;
+        p.modalRegion_y = window.innerHeight/2-90;
+        // if(
+          // (p.buttonRegion_x < p.mouseX && p.buttonRegion_x+30 > p.mouseX)
+          // && (p.buttonRegion_y < p.mouseY && p.buttonRegion_y+30 > p.mouseY)
+          // || p.modalRegion_x > p.mouseX || p.modalRegion_x + 350 < p.mouseX
+          // || p.modalRegion_y > p.mouseY || p.modalRegion_y + 220 < p.mouseY)
+        // {}
+        
+        modal_state = false;
+        setter_isHang(false);
+        console.log(getter_isHang());
+        p.close_button_border_thickness = 0;  
+      }
       
-    }
-  }
+      p.now = -10000;
+      // p.loading = false;
+  // p.loadingToggle = function(){
+  //   if(p.loading){
+    //     p.now = p.millis();
+    //     p.loading = false;
+    //   }
+    //   if(p.now + 8600 > p.millis()){
+      
+  //   }
+  // }
 }
 
 let superP5_1 = new p5(ticker_sketch);
