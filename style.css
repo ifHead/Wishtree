@@ -32,7 +32,7 @@ input:focus, select:focus, option:focus, textarea:focus, button:focus{
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.1s;
   width: 105px; height: 48px; position: absolute; left:50%; 
-  background: #6bc0f1; color: white;
+  background: rgb(107, 192, 241); color: white;
   border-radius: 10px;
   border: 0px;
   box-shadow: 1 1 4px rgb(19, 89, 136, .6); 

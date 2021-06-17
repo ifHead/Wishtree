@@ -1,8 +1,4 @@
 
-function getter_isHang(){
-	return isHang;
-}
-
 var modal_state = false;
 var sidebar_bool = false;
 
@@ -214,9 +210,9 @@ let sound_sketch_N_blockingGUI = function(p){
     p.strokeWeight(5);
     p.fill(0);
     p.textSize(20);
-    p.text(window.innerWidth/2, window.innerHeight/2, "asdfasdf소망을 입력해주셔야 해요!");
+    p.text(window.innerWidth/2, window.innerHeight/2, "소망을 입력해주셔야 해요!");
 
-    if(modal_state){
+    if(modal_state || isHang || isBlankInput){
         fullpageCanvas.style("pointer-events", "auto");
 
         p.modal_w_target = 350;
@@ -241,7 +237,7 @@ let sound_sketch_N_blockingGUI = function(p){
       p.button();
       p.fill(0);
     }
-    else
+    else if(!modal_state || !isHang || !isBlankInput)
     {
       fullpageCanvas.style('pointer-events', 'none');
 
@@ -304,6 +300,14 @@ let sound_sketch_N_blockingGUI = function(p){
       p.strokeWeight(1);
       if(modal_state){
         p.text('당신의 소망이 궁금해요!', window.innerWidth/2 - 135, window.innerHeight/2+20);
+      }
+      
+      if(isBlankInput){
+        p.text('여백의 미...!', window.innerWidth/2 - 135, window.innerHeight/2+20);
+      }
+
+      if(isHang){
+        p.text('멋진 소망을 나무에 걸었어요!', window.innerWidth/2 - 135, window.innerHeight/2+20);
       }
       // console.log(getter_isHang());
       // if(getter_isHang()){
@@ -402,13 +406,16 @@ let sound_sketch_N_blockingGUI = function(p){
           // || p.modalRegion_x > p.mouseX || p.modalRegion_x + 350 < p.mouseX
           // || p.modalRegion_y > p.mouseY || p.modalRegion_y + 220 < p.mouseY)
         // {}
-        
+        // if(isHang){
+        //   isHang = false;
+        // }
+        if(p.modal_h > 83){
+          isHang = false;
+          isBlankInput = false;
+        }
         modal_state = false;
-        setter_isHang(false);
-        console.log(getter_isHang());
         p.close_button_border_thickness = 0;  
       }
-      
       p.now = -10000;
       // p.loading = false;
   // p.loadingToggle = function(){
