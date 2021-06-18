@@ -227,7 +227,7 @@ for(let i = 0; i < 5; i++){
   let pinObj = ["#wt_1", "#wt_2", "#wt_3", "#wt_4", "#B1_P"];
   var scene4 = new ScrollMagic.Scene({
     triggerElement: "#trig_wishtree_pin",
-    duration: '370%',
+    duration: '300%',
     triggerHook: 0.5,
     offset: 0
   })

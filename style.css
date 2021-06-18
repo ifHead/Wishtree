@@ -371,7 +371,7 @@ input #menuicon {display:none;}
   width: 100%;
   
   /* background: red; */
-  top: 30200px;
+  top: 30500px;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 1100px;
@@ -704,6 +704,7 @@ input #menuicon {display:none;}
 #D1_P {
   top: 28090px;
   position: absolute;
+  line-height: 25pt;
   left: 50%;
   width: 600px;
   white-space: pre-line;
