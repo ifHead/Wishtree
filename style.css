@@ -91,9 +91,9 @@ img { /*드래그 방지*/
   position:fixed; top:0; left:0; width:300%; height:200%; z-index: -6;
 }
 
-#black_bg {
+.black_bg {
   opacity: 1.0;
-  position:fixed; top:0; left:0; width:300%; height:200%; z-index: -7;
+  position:fixed; top:0%; left:0%; z-index: -7;
 }
 
 .content {
@@ -175,6 +175,7 @@ visibility: visible; filter: brightness(1);
 @font-face {
   font-family: 'UhBeeJjipungding';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJjipungding.woff') format('woff');
+  
   font-weight: normal;
   font-style: normal;
 }
@@ -413,7 +414,7 @@ input #menuicon {display:none;}
   z-index:4; 
   text-align: center;
   font-size: 30pt;
-  background: rgb(29, 49, 87);
+  background: rgb(39, 39, 37);
   bottom: -30px; 
   height: 180px; 
   right:0px; width: 100%; 

@@ -109,9 +109,9 @@ var covermove_1 = new ScrollMagic.Scene({
 })
 .setTween(upper_cover_move)
 .addTo(controller)
-.addIndicators({
-  name: "upper_cover_move"
-});
+// .addIndicators({
+//   name: "upper_cover_move"
+// });
 
 var under_cover_move = TweenMax.fromTo(
   '#p_cover_under', 2, 
@@ -133,7 +133,7 @@ var covermove_2 = new ScrollMagic.Scene({
 // ---------- 배경 어둡게 ------------
 var background_to_black = TweenMax.to('#white_bg', 2, {
   ease: Power2.easeOut,
-  opacity: 0.0
+  opacity: 0.13
 });
 var scene2 = new ScrollMagic.Scene({
   triggerElement: '#trig_bg_to_black',
@@ -143,9 +143,9 @@ var scene2 = new ScrollMagic.Scene({
 })
 .setTween(background_to_black)
 .addTo(controller)
-.addIndicators({
-  name: "trig_bg_to_black"
-});
+// .addIndicators({
+//   name: "trig_bg_to_black"
+// });
 // ------------------------------------
 
 // ---------- 배경 밝게 ------------
@@ -155,15 +155,15 @@ var background_to_white = TweenMax.to('#white_bg', 1, {
 });
 var scene3 = new ScrollMagic.Scene({
   triggerElement: '#trig_bg_to_white',
-  triggerHook: 0.1,
+  triggerHook: 0.1
   // offset: 0,
   // duration: '120%'
 })
 .setTween(background_to_white)
 .addTo(controller)
-.addIndicators({
-  name: "trig_bg_to_white"
-});
+// .addIndicators({
+//   name: "trig_bg_to_white"
+// });
 // ------------------------------------
 
 // //-----------배경 빠르게 블랙------------------
@@ -214,16 +214,16 @@ for(let i = 0; i < 5; i++){
   let pinObj = ["#wt_1", "#wt_2", "#wt_3", "#wt_4", "#B1_P"];
   var scene4 = new ScrollMagic.Scene({
     triggerElement: "#trig_wishtree_pin",
-    duration: '420%',
+    duration: '370%',
     triggerHook: 0.5,
     offset: 0
   })
   .setPin(pinObj[i])
   .addTo(controller)
   .setTween(tl_5)
-  .addIndicators({
-    name: "trig_wishtree_pin"
-  });
+  // .addIndicators({
+  //   name: "trig_wishtree_pin"
+  // });
 }
 //---------------------------------
 
@@ -242,9 +242,9 @@ for(let i = 0; i < 3; i++){
   .setPin(pinObj2[i])
   .addTo(controller)
   .setTween(anim3)
-  .addIndicators({
-    name: "trig_postbox_pin"
-  });
+  // .addIndicators({
+  //   name: "trig_postbox_pin"
+  // });
 }
 
 //----------------------------------
