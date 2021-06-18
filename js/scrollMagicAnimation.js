@@ -95,6 +95,19 @@ var scene_m4 = new ScrollMagic.Scene({
 .setTween(tl_4)
 .addTo(controller);
 
+var Wishtreelogo = TweenMax.fromTo(
+  '#Wishtreelogo', 2,
+  {opacity: 1}, 
+  {opacity: 0}
+);
+var logoOpac = new ScrollMagic.Scene({
+  triggerElement: '#trig_Wishtreelogo',
+  triggerHook: 0.3,
+  // offset: 0,
+  duration: '100%'
+})
+.setTween(Wishtreelogo)
+.addTo(controller);
 
 var upper_cover_move = TweenMax.fromTo(
   '#p_cover_upper', 2,

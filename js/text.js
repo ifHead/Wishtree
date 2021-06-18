@@ -17,8 +17,21 @@ function inputButton(){
 		document.getElementById('B1_P').style.visibility = 'visible';
 		currentWishText = document.getElementById('wishtext').value;
 	}
-	firebase.initializeApp(config);
-	console.log(firebase);
+	let d = new Date();
+	d = d.getFullYear() + ' / ' + (d.getMonth()+1) + ' / ' + d.getDate()  + ' & ' + d.getHours()  + ':' + d.getMinutes() + ':' + d.getSeconds();
+	var wishdata = {
+		time: d,
+		input: currentWishText
+	}
+	var database = firebase.database();
+	var ref = database.ref('EXIBITION');
+	ref.push(wishdata);
+
+	// firebase.database().ref('EXIBITION').set({
+	// 		time: d,
+	// 		wish: currentWishText                    
+	// });
+	// console.log(firebase);
 	// saveAsFile(document.getElementById('wishtext').value, )
 }
 
