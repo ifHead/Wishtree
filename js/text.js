@@ -17,7 +17,8 @@ function inputButton(){
 		document.getElementById('B1_P').style.visibility = 'visible';
 		currentWishText = document.getElementById('wishtext').value;
 	}
-
+	firebase.initializeApp(config);
+	console.log(firebase);
 	// saveAsFile(document.getElementById('wishtext').value, )
 }
 
