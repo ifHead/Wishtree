@@ -712,13 +712,11 @@ function button_hover(){
     hover_bool = false;
   }
 }
-  
-window.onresize = function() {
-  // assigns new values for width and height variables
-  let w = window.innerWidth;
-  let h = window.innerHeight;  
-  cnv.size(w,h);
-}
+
+// function windowResized() {
+//   // assigns new values for width and height variables
+//   cnv.resizeCanvas(window.innerWidth, window.innerHeight);
+// }
 
 function scrollgo(){
   if( !isTextExist ){
