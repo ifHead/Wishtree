@@ -4,13 +4,14 @@
     <title>Wishtree</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, 
-    maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="libraries/detectmobilebrowser.js"></script>
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
+    
+    <link rel="stylesheet" hef="style.css">
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
@@ -96,15 +97,13 @@
     <video id="loadingVid" autoplay muted src="assets/loadingText.webm" style="position:fixed; top:50%; 
     width:240px; left:50%; transform:translate(-50%, 20px); z-index:23;"></video>
     <script>
-        var waitLoad = true;
         var loading = true;
         $('#loadingicon').fadeTo(1000, 1);
         $(document).ready(function(){
             setTimeout(function(){
                 loading = true;
-                waitLoad = false;
-                $('#loadingicon').delay(7000).fadeOut(800);
-                $('#loadingwhite').delay(10000).fadeOut(1500);
+                $('#loadingicon').delay(6900).fadeOut(800);
+                $('#loadingwhite').delay(8600).fadeOut(1500);
                 $('#loadingtext').delay(6500).fadeOut(500);
                 $('#loadingVid').delay(8300).fadeOut(300);
                 $('#browser1').delay(6500).fadeOut(800);
@@ -122,18 +121,21 @@
     filter: brightness(4);"></video> -->
     <!-- <video src="assets/bigTest.webm?" autoplay muted style="position: absolute; top:100px; left: 50px; transform: translate-translateX(-50%);"></video> -->
     <!-- positions of all triggers -->
-    <div  id="trig_mainpage"></div>
-    <div  id="trig_covers"></div>
+    <div class="trig_style" id="trig_mainpage">trigger_mainpage</div>
+    <div class="trig_style" id="trig_covers">trigger_covers</div>
 
-    <div  id="trig_bg_to_black"></div>
-    <div  id="trig_bg_to_white"></div>
-    <div  id="trig_wishtree_pin"></div>
-    <div  id="trig_postbox_pin"></div>
+    <div class="trig_style" id="trig_bg_to_black">trigger_bg_to_black</div>
+    <div class="trig_style" id="trig_bg_to_white">trigger_bg_to_white</div>
+    <div class="trig_style" id="trig_wishtree_pin">trigger_wishtree_pin</div>
+    <div class="trig_style" id="trig_postbox_pin">trigger_postbox_pin</div>
     <!-- triggers end -->
+<<<<<<< HEAD
     <video class="black_bg" src="assets/video/rainy.mp4" autoplay loop muted style="position: fixed; transform: translateY(0px); width:140%;"></video>
     <video class="black_bg" src="assets/video/rainy.mp4" autoplay loop muted style="position: fixed; transform: translateY(100%); width:140%;"></video>
+=======
+    <img id="black_bg" src="assets/background_black.jpg">
+>>>>>>> 9802a1abe7c4afdf2d82b1e7fa8b9ce3e7b35888
     <img id="white_bg" src="assets/background_white.jpg">
-    <img  src="assets/background_black.jpg">
     <!-- hamburger menu -->
     <script type="text/javascript">
         $(document).ready(function(){
@@ -152,7 +154,7 @@
     <div class="sidebar_content">
         <ul>
             <li class="with_margin" style="margin-top: 3px;"><a></a></li>
-            <li><a>  디지털 아트 전시회 </a></li>
+            <li><a>  디지털아트 전시 </a></li>
             <li><a>  등장인물 소개 </a></li>
             <li><a>  만든 사람들  </a></li>
             <li><a>  작가의 말 </a></li>
@@ -382,41 +384,13 @@
     </span>
     
     <div id="B4_S">
-        <img src="assets/Story/B4 - 비와 소망종이.png" style=" transform: translate(-50%, 0%); position:absolute; width:3000px; top:320px; left:50%;" alt="error1.jpg"> 
-        <script>
-            
-        </script>  
-        <textarea id="wishtext_copied"
-                rows="7"
-                maxlength="80"
-                required="1"
-                wrap="hard"
-                readonly
-                style="
-                    position: absolute; top: 1158px; left: 50%;
-                    transform: translateX(-170px);
-                    color:black;
-                    border:none; border-right:0px; 
-                    border-top:0px; border-left:0px; 
-                    border-bottom:0px;
-                    width: 300px;
-                    resize: none;
-                    height: 260px;
-                    background-color: transparent;
-                    z-index: 3;
-                    font-size: 8;
-                    text-align: left;
-                    overflow-x:hidden;
-                    cursor: default;
-                "
-        ></textarea>
+        <img src="assets/Story/B4 - 비와 소망종이.png" style=" transform: translate(-50%, 0%); position:absolute; width:3000px; top:320px; left:50%;" alt="error1.jpg">   
     </div>
     <span id="B4_P" style="color: white; font-weight: 200; text-align:justify;" >
         소망나무와 우체통 사이에 침묵이 흐른다. 비가 내리고 있었다.
 
         가게 문에 달린 작은 종이 흔들리며 청명한 소리를 축축한 공기 중으로 퍼뜨린다. 사장의 발걸음이 빗소리 틈을 비집고 들어온다. 빗방울들이 아스팔트 바닥으로 낙하하며 둔탁한 마찰음을 내고 있었다. 소망나무는 가지에 서려오는 한기를 느낀다. 아슬하게 매달린 소망들의 잉크가 번져 흘러내리고 있었다. 소망국수 사장이 비에 젖은 소망들을 걱정하며 가게 안으로 조심스럽게 소망나무를 옮긴다. 
     </span>
-
     
 
     <div id="C1_S">
@@ -531,7 +505,7 @@
             </script>
         </div>
         <div id="footer_white"></div>
-        <div id="footer_black"></div>
+        <div id="footer_black">This is footer</div>
     </div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
@@ -581,8 +555,7 @@
             }
         });
     </script>
-    
-    <script src="js/global.js"></script>
+
     <script src="js/text.js"></script>
     <script src="js/p5.js/canvas.js"></script>
     <!-- <div id="fullpageCanvas" style="z-index:-1; position: fixed; top:0; left:0; width:100%; height:100%"></div> -->
