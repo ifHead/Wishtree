@@ -578,7 +578,7 @@ function draw() {
   noStroke();
 
   fill(255, modal_alpha);
-  rect(window.innerWidth/2-175, window.innerHeight/2-30, modal_w, modal_h, 10,10,10,10);
+  rect(window.innerWidth/2-225, window.innerHeight/2-30, modal_w, modal_h, 10,10,10,10);
   
   stroke(0,255);
   strokeWeight(5);
@@ -589,7 +589,7 @@ function draw() {
   if(modal_state || isHang || isBlankInput){
       fullpageCanvas.style("pointer-events", "auto");
 
-      let modal_w_target = 350;
+      let modal_w_target = 450;
       let d_modal_w = modal_w_target - modal_w;
       modal_w += d_modal_w * easing;
       let bgalpha_target = 100;
@@ -600,7 +600,7 @@ function draw() {
       let d_modal_alpha = modal_alpha_target - modal_alpha;
       modal_alpha += d_modal_alpha * 0.35;
     if(modal_w > 340){
-      let modal_h_target = 85;
+      let modal_h_target = 125;
       let d_modal_h = modal_h_target - modal_h;
       modal_h += d_modal_h * easing;
 
@@ -670,15 +670,21 @@ function button(){
     textSize(19);
     strokeWeight(1);
     if(modal_state){
-      text('당신의 소망이 궁금해요!', window.innerWidth/2 - 102, window.innerHeight/2+20);
+      text('소망을 적고 감상을 이어나가 주세요!', window.innerWidth/2 - 152, window.innerHeight/2+20);
+      textSize(13);
+      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 80, window.innerHeight/2+60);
     }
     
     if(isBlankInput){
-      text('여백의 미...!', window.innerWidth/2 - 135, window.innerHeight/2+20);
+      text('빈 종이네요?!', window.innerWidth/2 - 70, window.innerHeight/2+20);
+      textSize(13);
+      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 80, window.innerHeight/2+60);
     }
 
     if(isHang){
       text('멋진 소망을 나무에 걸었어요!', window.innerWidth/2 - 135, window.innerHeight/2+20);
+      textSize(13);
+      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 80, window.innerHeight/2+60);
     }
     // console.log(getter_isHang());
     // if(getter_isHang()){
