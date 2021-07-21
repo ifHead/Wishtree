@@ -106,27 +106,34 @@
     <script>
         let sound = new Array(4);
         let scroll_amount;
+        let volume_inc = 0.001;
+        var chapter_1_volume = 0;
 
         sound[0] = new Audio('./assets/audio/chapter_1.ogg');
         sound[1] = new Audio('./assets/audio/chapter_2.ogg');
         sound[2] = new Audio('./assets/audio/chapter_3.ogg');
         sound[3] = new Audio('./assets/audio/chapter_4.ogg');
-        
+        sound[0].volume = 0;
+
         $(window).scroll(function () { 
             scroll_amount = $(document).scrollTop(); 
             console.log(scroll_amount);
-            sound[0].volume = 1;
             if(scroll_amount > 2000 && scroll_amount < 5000){
                 sound[0].play();
+                chapter_1_volume += volume_inc;
+                if(chapter_1_volume > 1) {
+                    chapter_1_volume = 1;
+                }
+                sound[0].volume = chapter_1_volume;
             } else if (scroll_amount < 2000) {
-                sound[0].stop();
+                sound[0].pause();
             } else {
-                sound[0].volume = 0.1;
+                chapter_1_volume -= volume_inc;
+                if(chapter_1_volume < 0) chapter_1_volume = 0;
+                sound[0].volume = chapter_1_volume;
                 sound[0].play();
             }
-            
         });
-        
         
     </script>
 </head>
