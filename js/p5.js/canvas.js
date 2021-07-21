@@ -527,9 +527,13 @@ class BGM {
 
 function preload(){
   soundFormats('ogg');
-  for(let i = 0; i < 4; i++){
-    sound[i] = loadSound('../../assets/audio/chapter_'+(i+1)+'.ogg');
-  }
+  // for(let i = 0; i < 4; i++){
+  //   sound[i] = loadSound('/assets/audio/chapter_'+(i+1)+'.ogg');
+  // }
+  sound[0] = loadSound('/assets/audio/chapter_1.ogg');
+  sound[1] = loadSound('/assets/audio/chapter_2.ogg');
+  sound[2] = loadSound('/assets/audio/chapter_3.ogg');
+  sound[3] = loadSound('/assets/audio/chapter_4.ogg');
 }
 
 function setup() {
@@ -548,10 +552,10 @@ function setup() {
     button_color = color(182,80,44,0);
     modal_color =  color(255,255,255,0);
 
-    // bgm_1 = new BGM(1, 2300, 9200);
-    // bgm_2 = new BGM(2, 9500, 20100);
-    // bgm_3 = new BGM(3, 20300, 25500);
-    // bgm_4 = new BGM(4, 25700, 40200);
+    bgm_1 = new BGM(1, 2300, 9200);
+    bgm_2 = new BGM(2, 9500, 20100);
+    bgm_3 = new BGM(3, 20300, 25500);
+    bgm_4 = new BGM(4, 25700, 40200);
 
     for(let i = 0; i < 4; i++){
       sound[i].play();
@@ -564,10 +568,10 @@ function setup() {
 function draw() {
   scrollValue = $(document).scrollTop();
   scrollgo();
-  // bgm_1.player();
-  // bgm_2.player();
-  // bgm_3.player();
-  // bgm_4.player();
+  bgm_1.player();
+  bgm_2.player();
+  bgm_3.player();
+  bgm_4.player();
 
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = 2;
