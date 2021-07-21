@@ -665,7 +665,6 @@ function button(){
     } else {
       textAlpha = lerp(textAlpha, 0, 0.4);
     }
-    // stroke(30,30,30,textAlpha);
     fill(40,40,50,textAlpha);
     textSize(19);
     strokeWeight(1);
