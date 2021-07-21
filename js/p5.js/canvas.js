@@ -528,7 +528,7 @@ class BGM {
         if(sound[this.idx].isPlaying()){
           if(this.volume < 0.001 ) {
             this.volume = 0; 
-            sound[this.idx].stop();
+            sound[this.idx].pause();
           }
           sound[this.idx].setVolume(this.volume);
         }
@@ -559,7 +559,7 @@ function setup() {
     bgm_4 = new BGM(4, 25700, 40200);
 
     for(let i = 0; i < 4; i++){
-      sound[i].stop();
+      sound[i].pause();
     }
     //-------------------------sound ready
 }
