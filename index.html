@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html xml:lang>
 <head>
-    <script>
-        var audio = new Audio('./assets/audio/chapter_1.ogg');
-    </script>
     <title>Wishtree</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -103,6 +100,34 @@
 	};	
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Sound control according to the amount of scrolling  -->
+    <script>
+        let sound = new Array(4);
+        let scroll_amount;
+
+        sound[0] = new Audio('./assets/audio/chapter_1.ogg');
+        sound[1] = new Audio('./assets/audio/chapter_2.ogg');
+        sound[2] = new Audio('./assets/audio/chapter_3.ogg');
+        sound[3] = new Audio('./assets/audio/chapter_4.ogg');
+        
+        $(window).scroll(function () { 
+            scroll_amount = $(document).scrollTop(); 
+            console.log(scroll_amount);
+            sound[0].volume = 1;
+            if(scroll_amount > 2000 && scroll_amount < 5000){
+                sound[0].play();
+            } else if (scroll_amount < 2000) {
+                sound[0].stop();
+            } else {
+                sound[0].volume = 0.1;
+                sound[0].play();
+            }
+            
+        });
+        
+        
     </script>
 </head>
 
@@ -591,10 +616,6 @@
     <script src="js/p5.js/canvas.js"></script>
     <img src="assets/Page/댓글.jpg" style="position: absolute; top: 30500px; width: 450px; left:50%; transform: translateX(-50%); z-index:3;">
 
-    <!-- soundTest -->
-    
-    <input type="button" onclick="audio.play();" value="PLAY"> <!--재생-->
-    <input type="button" onclick="audio.pause();" value="PAUSE">
     <!-- <audio controls autoplay>
         <source src="/assets/audio/챕터 1.ogg" type="audio/ogg">
     </audio> -->

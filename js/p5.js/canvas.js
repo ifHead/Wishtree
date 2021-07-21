@@ -446,7 +446,18 @@ var sidebar_bool = false;
   
   
   //--------------------------single sketch code below-------------------------------
-let sound = new Array(4);
+// let sound = new Array(4);
+// function preload(){
+//   soundFormats('ogg');
+//   // for(let i = 0; i < 4; i++){
+//   //   sound[i] = loadSound('/assets/audio/chapter_'+(i+1)+'.ogg');
+//   // }
+//   sound[0] = loadSound('/assets/audio/chapter_1.ogg');
+//   sound[1] = loadSound('/assets/audio/chapter_2.ogg');
+//   sound[2] = loadSound('/assets/audio/chapter_3.ogg');
+//   sound[3] = loadSound('/assets/audio/chapter_4.ogg');
+// }
+
 let close_button_border_thickness = 0;
 let closebuttonAlpha = 0;
 let closebuttonToggle = -1;
@@ -525,16 +536,6 @@ class BGM {
   }
 }
 
-function preload(){
-  soundFormats('ogg');
-  // for(let i = 0; i < 4; i++){
-  //   sound[i] = loadSound('/assets/audio/chapter_'+(i+1)+'.ogg');
-  // }
-  sound[0] = loadSound('/assets/audio/chapter_1.ogg');
-  sound[1] = loadSound('/assets/audio/chapter_2.ogg');
-  sound[2] = loadSound('/assets/audio/chapter_3.ogg');
-  sound[3] = loadSound('/assets/audio/chapter_4.ogg');
-}
 
 function setup() {
   // elem = createElement
@@ -558,7 +559,6 @@ function setup() {
     bgm_4 = new BGM(4, 25700, 40200);
 
     for(let i = 0; i < 4; i++){
-      sound[i].play();
       sound[i].stop();
     }
     //-------------------------sound ready
