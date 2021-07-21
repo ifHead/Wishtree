@@ -564,10 +564,10 @@ function setup() {
 function draw() {
   scrollValue = $(document).scrollTop();
   scrollgo();
-  bgm_1.player();
-  bgm_2.player();
-  bgm_3.player();
-  bgm_4.player();
+  // bgm_1.player();
+  // bgm_2.player();
+  // bgm_3.player();
+  // bgm_4.player();
 
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = 2;
