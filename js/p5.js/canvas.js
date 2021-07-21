@@ -485,56 +485,56 @@ let bgm_2;
 let bgm_3;
 let bgm_4;
 
-// class BGM {
-//   constructor(_idx, _start, _end){
-//     this.start = _start;
-//     this.end = _end;
-//     this.idx = _idx - 1;
-//     this.volume = 0;
-//     this.volume_target;
-//     this.d_volume;
-//     this.volume_easing = 0.01;
-//     this.isFirstPlay = true;
-//   }
+class BGM {
+  constructor(_idx, _start, _end){
+    this.start = _start;
+    this.end = _end;
+    this.idx = _idx - 1;
+    this.volume = 0;
+    this.volume_target;
+    this.d_volume;
+    this.volume_easing = 0.01;
+    this.isFirstPlay = true;
+  }
 
-//   player(){
-//     if(scrollValue > this.start && scrollValue < this.end){
-//       if(!(sound[this.idx].isPlaying())){
-//         sound[this.idx].play();
-//       }
+  player(){
+    if(scrollValue > this.start && scrollValue < this.end){
+      if(!(sound[this.idx].isPlaying())){
+        sound[this.idx].play();
+      }
 
 
-//       if (this.volume < 0.02) {
-//         this.volume = lerp(this.volume, 1, 0.0006);
-//       } 
-//       else if (this.volume < 0.06) {
-//         this.volume = lerp(this.volume, 1, 0.001);
-//       }
-//       else
-//       {
-//         this.volume = lerp(this.volume, 1, 0.001);
-//         if(this.volume > 0.97){ this.volume = 1; }
-//       }
+      if (this.volume < 0.02) {
+        this.volume = lerp(this.volume, 1, 0.0006);
+      } 
+      else if (this.volume < 0.06) {
+        this.volume = lerp(this.volume, 1, 0.001);
+      }
+      else
+      {
+        this.volume = lerp(this.volume, 1, 0.001);
+        if(this.volume > 0.97){ this.volume = 1; }
+      }
 
-//       if(this.isFirstPlay == true){
-//         this.volume = 1;
-//         this.isFirstPlay = false;  
-//       }
-//       sound[this.idx].setVolume(this.volume);
-//     } else {
-//         this.volume_target = 0;
-//         this.d_volume = this.volume_target - this.volume;
-//         this.volume += this.d_volume * 0.05;
-//         if(sound[this.idx].isPlaying()){
-//           if(this.volume < 0.001 ) {
-//             this.volume = 0; 
-//             sound[this.idx].pause();
-//           }
-//           sound[this.idx].setVolume(this.volume);
-//         }
-//     }
-//   }
-// }
+      if(this.isFirstPlay == true){
+        this.volume = 1;
+        this.isFirstPlay = false;  
+      }
+      sound[this.idx].setVolume(this.volume);
+    } else {
+        this.volume_target = 0;
+        this.d_volume = this.volume_target - this.volume;
+        this.volume += this.d_volume * 0.05;
+        if(sound[this.idx].isPlaying()){
+          if(this.volume < 0.001 ) {
+            this.volume = 0; 
+            sound[this.idx].pause();
+          }
+          sound[this.idx].setVolume(this.volume);
+        }
+    }
+  }
+}
 
 
 function setup() {
@@ -553,14 +553,14 @@ function setup() {
     button_color = color(182,80,44,0);
     modal_color =  color(255,255,255,0);
 
-    // bgm_1 = new BGM(1, 2300, 9200);
-    // bgm_2 = new BGM(2, 9500, 20100);
-    // bgm_3 = new BGM(3, 20300, 25500);
-    // bgm_4 = new BGM(4, 25700, 40200);
+    bgm_1 = new BGM(1, 2300, 9200);
+    bgm_2 = new BGM(2, 9500, 20100);
+    bgm_3 = new BGM(3, 20300, 25500);
+    bgm_4 = new BGM(4, 25700, 40200);
 
-    // for(let i = 0; i < 4; i++){
-    //   sound[i].pause();
-    // }
+    for(let i = 0; i < 4; i++){
+      sound[i].pause();
+    }
     //-------------------------sound ready
 }
 
@@ -568,10 +568,10 @@ function setup() {
 function draw() {
   scrollValue = $(document).scrollTop();
   scrollgo();
-  // bgm_1.player();
-  // bgm_2.player();
-  // bgm_3.player();
-  // bgm_4.player();
+  bgm_1.player();
+  bgm_2.player();
+  bgm_3.player();
+  bgm_4.player();
 
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = 2;
