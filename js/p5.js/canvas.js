@@ -528,7 +528,7 @@ class BGM {
 function preload(){
   soundFormats('ogg');
   for(let i = 0; i < 4; i++){
-    sound[i] = loadSound('../../assets/audio/챕터 '+(i+1)+'.ogg');
+    sound[i] = loadSound('../../assets/audio/chapter_'+(i+1)+'.ogg');
   }
 }
 
@@ -548,10 +548,10 @@ function setup() {
     button_color = color(182,80,44,0);
     modal_color =  color(255,255,255,0);
 
-    bgm_1 = new BGM(1, 2300, 9200);
-    bgm_2 = new BGM(2, 9500, 20100);
-    bgm_3 = new BGM(3, 20300, 25500);
-    bgm_4 = new BGM(4, 25700, 40200);
+    // bgm_1 = new BGM(1, 2300, 9200);
+    // bgm_2 = new BGM(2, 9500, 20100);
+    // bgm_3 = new BGM(3, 20300, 25500);
+    // bgm_4 = new BGM(4, 25700, 40200);
 
     for(let i = 0; i < 4; i++){
       sound[i].play();
