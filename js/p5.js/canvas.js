@@ -495,12 +495,14 @@ class BGM {
     this.d_volume;
     this.volume_easing = 0.01;
     this.isFirstPlay = true;
+    this.isSoundPlaying = false;
   }
 
   player(){
     if(scrollValue > this.start && scrollValue < this.end){
-      if(!(sound[this.idx].isPlaying())){
+      if( ! this.isSoundPlaying ){
         sound[this.idx].play();
+        this.isSoundPlaying = true;
       }
 
 
@@ -518,19 +520,20 @@ class BGM {
 
       if(this.isFirstPlay == true){
         this.volume = 1;
-        this.isFirstPlay = false;  
+        this.isFirstPlay = false;
       }
-      sound[this.idx].setVolume(this.volume);
+      sound[this.idx].volume = this.volume;
     } else {
         this.volume_target = 0;
         this.d_volume = this.volume_target - this.volume;
         this.volume += this.d_volume * 0.05;
-        if(sound[this.idx].isPlaying()){
-          if(this.volume < 0.001 ) {
+        if( this.isSoundPlaying ){
+          if(this.volume < 0.001){
             this.volume = 0; 
             sound[this.idx].pause();
+            this.isSoundPlaying = false;
           }
-          sound[this.idx].setVolume(this.volume);
+          sound[this.idx].volume = this.volume;
         }
     }
   }
