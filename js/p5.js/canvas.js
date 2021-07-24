@@ -505,7 +505,7 @@ class BGM {
         this.isSoundPlaying = true;
       }
 
-      if(this.idx == 0) console.log("In Range  :  "+this.volume);
+      // if(this.idx == 0) console.log("In Range  :  "+this.volume);
       if (this.volume != 1) {
         if(this.volume > 0.97){ this.volume = 1; }
         this.volume = lerp(this.volume, 1, 0.015);
@@ -517,7 +517,7 @@ class BGM {
       }
       sound[this.idx].volume = this.volume;
     } else {
-      if(this.idx == 0) console.log("Not In Range  :  "+this.volume);
+      // if(this.idx == 0) console.log("Not In Range  :  "+this.volume);
         this.volume_target = 0;
         this.d_volume = this.volume_target - this.volume;
         this.volume += this.d_volume * 0.05;
