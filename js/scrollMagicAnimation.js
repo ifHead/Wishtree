@@ -1,17 +1,17 @@
-const flightPath = {
-  curviness: 1.5,
-  autoRotate: true,
-  values: [
-    {x: 0, y: -300},
-    {x: 300, y: 10}, 
-    {x: 500, y: 100}, 
-    {x: 750, y: -100}, 
-    {x: 350, y: -50},
-    {x: 600, y: 100},
-    {x: 800, y: 0},
-    {x: window.innerWidth, y: -250}
-  ]
-}
+// const flightPath = {
+//   curviness: 1.5,
+//   autoRotate: true,
+//   values: [
+//     {x: 0, y: -300},
+//     {x: 300, y: 10}, 
+//     {x: 500, y: 100}, 
+//     {x: 750, y: -100}, 
+//     {x: 350, y: -50},
+//     {x: 600, y: 100},
+//     {x: 800, y: 0},
+//     {x: window.innerWidth, y: -250}
+//   ]
+// }
 // hide_verytoplogo_anim = 
 //------------첫 로고화면-------------
 

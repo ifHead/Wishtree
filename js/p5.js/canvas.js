@@ -563,7 +563,9 @@ function setup() {
 
 
 function draw() {
-  scrollValue = $(document).scrollTop();
+  $(window).scroll(function (){
+    scrollValue = $(document).scrollTop();
+  })
   scrollgo();
   bgm_1.player();
   bgm_2.player();
@@ -595,7 +597,7 @@ function draw() {
       modal_w += d_modal_w * easing;
       let bgalpha_target = 100;
       let d_bgalpha = bgalpha_target - bgalpha;
-      bgalpha += d_bgalpha * 0.03;
+      bgalpha += d_bgalpha * 0.1;
       
       let modal_alpha_target = 255;
       let d_modal_alpha = modal_alpha_target - modal_alpha;
@@ -618,7 +620,7 @@ function draw() {
 
     let bgalpha_target = 0;
     let d_bgalpha = bgalpha_target - bgalpha;
-    bgalpha += d_bgalpha * 0.03;
+    bgalpha += d_bgalpha * 0.1;
 
     let modal_h_target = 20;
     let d_modal_h = modal_h_target - modal_h;
@@ -672,19 +674,19 @@ function button(){
     if(modal_state){
       text('소망을 적고 감상을 이어나가 주세요!', window.innerWidth/2 - 152, window.innerHeight/2+20);
       textSize(13);
-      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 80, window.innerHeight/2+60);
+      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 70, window.innerHeight/2+60);
     }
     
     if(isBlankInput){
-      text('빈 종이네요?!', window.innerWidth/2 - 70, window.innerHeight/2+20);
+      text('빈 종이네요?!', window.innerWidth/2 - 55, window.innerHeight/2+20);
       textSize(13);
-      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 80, window.innerHeight/2+60);
+      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 70, window.innerHeight/2+60);
     }
 
     if(isHang){
       text('멋진 소망을 나무에 걸었어요!', window.innerWidth/2 - 135, window.innerHeight/2+20);
       textSize(13);
-      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 80, window.innerHeight/2+60);
+      text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 70, window.innerHeight/2+60);
     }
     // console.log(getter_isHang());
     // if(getter_isHang()){
@@ -767,3 +769,6 @@ function mouseClicked(){
   close_button_border_thickness = 0;  
 }
 
+function windowResized() {
+  resizeCanvas(window.innerWidth, window.innerHeight);
+}

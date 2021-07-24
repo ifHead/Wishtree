@@ -113,34 +113,6 @@
             sound[i].volume = 0;
             sound[i].loop = true;
         }
-        // sound[0] = new Audio('./assets/audio/chapter_1.ogg');
-        // sound[1] = new Audio('./assets/audio/chapter_2.ogg');
-        // sound[2] = new Audio('./assets/audio/chapter_3.ogg');
-        // sound[3] = new Audio('./assets/audio/chapter_4.ogg');
-        // sound[0].volume = 0;
-        // sound[1].volume = 0;
-        // sound[2].volume = 0;
-        // sound[3].volume = 0;
-
-        // $(window).scroll(function () { 
-        //     scroll_amount = $(document).scrollTop(); 
-        //     console.log(scroll_amount);
-        //     if(scroll_amount > 2000 && scroll_amount < 5000){
-        //         sound[0].play();
-        //         chapter_1_volume += volume_inc;
-        //         if(chapter_1_volume > 1) {
-        //             chapter_1_volume = 1;
-        //         }
-        //         sound[0].volume = chapter_1_volume;
-        //     } else if (scroll_amount < 2000) {
-        //         sound[0].pause();
-        //     } else {
-        //         chapter_1_volume -= volume_inc;
-        //         if(chapter_1_volume < 0) chapter_1_volume = 0;
-        //         sound[0].volume = chapter_1_volume;
-        //         sound[0].play();
-        //     }
-        // });
     </script>
     <script src="js/p5.js/canvas.js"></script>
 </head>
@@ -230,28 +202,6 @@
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; bottom: 50px; left: 60px;"></video>
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; bottom: 50px; right: 60px;"></video>
     <div style="top: 3000px;"></div>
-
-
-    <!-- video player -->
-    <!-- <video id="myHTMLvideo" src="assets/surprised_eye_2.webm" mute paused style="position:fixed; top:500px; left:50%; transform:translateX(-50%); z-index: 1;"></video> -->
-    <script type="text/javascript">
-        var vidZone = {
-            start: 1000,
-            end: 2000
-        }
-        let vidVisit = false;
-        $(window).scroll(function () { // 방문 시 한 번만 플레이하는 코드
-            var scrollTopVal = $(document).scrollTop();
-            var vid1 = $("#myHTMLvideo").get(0);
-            if((scrollTopVal > vidZone.start && scrollTopVal < vidZone.end) && vidVisit == false){
-                vidVisit = true;
-                // $("#myHTMLvideo").get(0).play();
-            } else if(!(scrollTopVal > vidZone.start && scrollTopVal < vidZone.end)) {
-                vidVisit = false;
-            }
-        })
-    </script>
-    <!-- eye surprise test end -->
 
     <img id="mainpage_1" src="assets/Page/mainpage/Main_1.jpg" alt="assets/error.jpg">
     <img id="mainpage_2" src="assets/Page/mainpage/Main_2.png" alt="assets/error.jpg">
