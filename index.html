@@ -108,17 +108,19 @@
         let volume_inc = 0.001;
         var chapter_1_volume = 0;
 
-        // function preload() {
-        //     img = loadImage('assets/laDefense.jpg');
-        // }
-        sound[0] = new Audio('./assets/audio/chapter_1.ogg');
-        sound[1] = new Audio('./assets/audio/chapter_2.ogg');
-        sound[2] = new Audio('./assets/audio/chapter_3.ogg');
-        sound[3] = new Audio('./assets/audio/chapter_4.ogg');
-        sound[0].volume = 0;
-        sound[1].volume = 0;
-        sound[2].volume = 0;
-        sound[3].volume = 0;
+        for(let i = 0; i < 4; i++){
+            sound[i] = new Audio('./assets/audio/chapter_'+i+1+'.ogg');
+            sound[i].volume = 0;
+            sound[i].loop = true;
+        }
+        // sound[0] = new Audio('./assets/audio/chapter_1.ogg');
+        // sound[1] = new Audio('./assets/audio/chapter_2.ogg');
+        // sound[2] = new Audio('./assets/audio/chapter_3.ogg');
+        // sound[3] = new Audio('./assets/audio/chapter_4.ogg');
+        // sound[0].volume = 0;
+        // sound[1].volume = 0;
+        // sound[2].volume = 0;
+        // sound[3].volume = 0;
 
         // $(window).scroll(function () { 
         //     scroll_amount = $(document).scrollTop(); 

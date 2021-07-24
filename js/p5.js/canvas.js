@@ -507,16 +507,16 @@ class BGM {
 
 
       if (this.volume < 0.02) {
-        this.volume = lerp(this.volume, 1, 0.0006);
+        this.volume = lerp(this.volume, 1, 0.0012);
       } 
       else if (this.volume < 0.06) {
-        this.volume = lerp(this.volume, 1, 0.001);
+        this.volume = lerp(this.volume, 1, 0.002);
       }
-      else
-      {
-        this.volume = lerp(this.volume, 1, 0.001);
-        if(this.volume > 0.97){ this.volume = 1; }
-      }
+      // else
+      // {
+      //   this.volume = lerp(this.volume, 1, 0.001);
+      //   if(this.volume > 0.97){ this.volume = 1; }
+      // }
 
       if(this.isFirstPlay == true){
         this.volume = 1;
