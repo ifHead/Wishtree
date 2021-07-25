@@ -1,7 +1,7 @@
 
 var modal_state = false;
 var sidebar_bool = false;
-
+{
 // let ink_sketch = function(p){ // 잉크 스케치
 //   const cosX = new Float32Array([
 //       0.500,  0.492,  0.470,  0.433,  0.383,  
@@ -457,7 +457,7 @@ var sidebar_bool = false;
 //   sound[2] = loadSound('/assets/audio/chapter_3.ogg');
 //   sound[3] = loadSound('/assets/audio/chapter_4.ogg');
 // }
-
+}
 let close_button_border_thickness = 0;
 let closebuttonAlpha = 0;
 let closebuttonToggle = -1;
@@ -533,6 +533,49 @@ class BGM {
   }
 }
 
+class SoundEffect {
+  constructor(_idx, _start, _end){
+    this.start = _start;
+    this.end = _end;
+    this.idx = _idx - 1;
+    this.volume = 0;
+    this.volume_target;
+    this.d_volume;
+    this.volume_easing = 0.01;
+    this.isSoundPlaying = false;
+  }
+
+  player(){
+    if(scrollValue > this.start && scrollValue < this.end){
+      if( ! this.isSoundPlaying ){
+        sound[this.idx].play();
+        this.isSoundPlaying = true;
+      }
+
+      // if(this.idx == 0) console.log("In Range  :  "+this.volume);
+      if (this.volume != 0.3) {
+        if(this.volume >= 0.27){ this.volume = 0.3; }
+        this.volume = lerp(this.volume, 0.3, 0.015);
+      } 
+
+      sound[this.idx].volume = this.volume.toFixed(2);
+    } else {
+      // if(this.idx == 0) console.log("Not In Range  :  "+this.volume);
+        this.volume_target = 0;
+        this.d_volume = this.volume_target - this.volume;
+        this.volume += this.d_volume * 0.05;
+        if( this.isSoundPlaying ){
+          if(this.volume < 0.001){
+            this.volume = 0; 
+            sound[this.idx].pause();
+            this.isSoundPlaying = false;
+          }
+          sound[this.idx].volume = this.volume.toFixed(2);
+        }
+    }
+  }
+}
+
 
 function setup() {
   // elem = createElement
@@ -554,8 +597,9 @@ function setup() {
     bgm_2 = new BGM(2, 9500, 20100);
     bgm_3 = new BGM(3, 20300, 25500);
     bgm_4 = new BGM(4, 25700, 40200);
+    rain_sound_effect = new SoundEffect(5, 17980, 25080);
 
-    for(let i = 0; i < 4; i++){
+    for(let i = 0; i < 5; i++){
       sound[i].pause();
     }
     //-------------------------sound ready
@@ -566,11 +610,15 @@ function draw() {
   $(window).scroll(function (){
     scrollValue = $(document).scrollTop();
   })
+  // if(frameCount % 5 == 0){
+  //   console.log(scrollValue);
+  // } 
   scrollgo();
   bgm_1.player();
   bgm_2.player();
   bgm_3.player();
-  bgm_4.player();
+  rain_sound_effect.player();
+  bgm_4.player();  
 
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = 2;
@@ -587,7 +635,6 @@ function draw() {
   strokeWeight(5);
   fill(0);
   textSize(20);
-  text(window.innerWidth/2, window.innerHeight/2, "소망을 입력해주셔야 해요!");
 
   if(modal_state || isHang || isBlankInput){
       fullpageCanvas.style("pointer-events", "auto");
@@ -597,7 +644,7 @@ function draw() {
       modal_w += d_modal_w * easing;
       let bgalpha_target = 100;
       let d_bgalpha = bgalpha_target - bgalpha;
-      bgalpha += d_bgalpha * 0.1;
+      bgalpha += d_bgalpha * 0.07;
       
       let modal_alpha_target = 255;
       let d_modal_alpha = modal_alpha_target - modal_alpha;
@@ -620,7 +667,7 @@ function draw() {
 
     let bgalpha_target = 0;
     let d_bgalpha = bgalpha_target - bgalpha;
-    bgalpha += d_bgalpha * 0.1;
+    bgalpha += d_bgalpha * 0.07;
 
     let modal_h_target = 20;
     let d_modal_h = modal_h_target - modal_h;
@@ -684,7 +731,7 @@ function button(){
     }
 
     if(isHang){
-      text('멋진 소망을 나무에 걸었어요!', window.innerWidth/2 - 135, window.innerHeight/2+20);
+      text('멋진 소망을 나무에 걸었어요!', window.innerWidth/2 - 125, window.innerHeight/2+20);
       textSize(13);
       text('아무 데나 클릭해서 닫기', window.innerWidth/2 - 70, window.innerHeight/2+60);
     }
@@ -725,14 +772,13 @@ function button_hover(){
 //   // assigns new values for width and height variables
 //   cnv.resizeCanvas(window.innerWidth, window.innerHeight);
 // }
-
-function scrollgo(){
+function scrollgo(e){
   if( !isTextExist ){
-    if(scrollValue > 8500){
+    if(scrollValue > 8600){
       modal_state = true;
       window.scrollTo({
         left: 0,
-        top: 7980
+        top: 8080
       });
     }
   }
@@ -741,7 +787,7 @@ function scrollgo(){
 function disableScroll(){
   // console.log(modal_state);
   sidebar_bool = $("#menuicon").is(":checked");
-  if(sidebar_bool || modal_state/* || loading*/){
+  if(sidebar_bool || modal_state || isHang /*|| loading*/){
     $('html, body').css({
         overflow: 'hidden',
         height: 'auto'

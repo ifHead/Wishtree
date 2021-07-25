@@ -17,9 +17,20 @@
 
 var controller = new ScrollMagic.Controller();
 
-var tl_1 = new TimelineMax()
+// var tl_1 = new TimelineMax()
+// .add(TweenMax.fromTo('#mainpage_1', 1, 
+// { transform: 'translate(-50%, -120px)' }, {  transform: 'translate(-50%, -160px)' }))
+// .add(TweenMax.to('#mainpage_1', 1.2,
+// {  filter: 'brightness(1)' }))
+// .add(TweenMax.to('#mainpage_1', 1,
+// {  filter: 'brightness(0.6)'}))
+// .add(TweenMax.to('#mainpage_1', 1,
+// {  filter: 'brightness(0.61)' }))
+// .add(TweenMax.to('#mainpage_1', 3,
+// { visibility: 'hidden' }));
+var tl_1 = new TimelineMax() // 하늘배경
 .add(TweenMax.fromTo('#mainpage_1', 1, 
-{ transform: 'translate(-50%, -120px)' }, {  transform: 'translate(-50%, -160px)' }))
+{ xPercent: -50, yPercent: -12 }, {  xPercent: -50, yPercent: -16 }))
 .add(TweenMax.to('#mainpage_1', 1.2,
 {  filter: 'brightness(1)' }))
 .add(TweenMax.to('#mainpage_1', 1,
@@ -31,16 +42,25 @@ var tl_1 = new TimelineMax()
 
 var scene_m1 = new ScrollMagic.Scene({
   triggerElement: '#trig_mainpage',
-  duration: '500%',
+  duration: '550%',
   offset: 0,
   triggerHook: 0
 })
 .setTween(tl_1)
 .addTo(controller);
 
-var tl_2 = new TimelineMax()
+// var tl_2 = new TimelineMax()
+// .add(TweenMax.fromTo('#mainpage_2', 1, 
+// { transform: 'translate(-50%, 5vh)' }, {  transform: 'translate(-50%, -52vh)' }))
+// .add(TweenMax.to('#mainpage_2', 0.6, 
+// {  filter: 'brightness(0.6)', ease: Sine.easeIn}))
+// .add(TweenMax.to('#mainpage_2', 2, 
+// {  filter: 'brightness(0.61)', ease: Sine.easeIn}))
+// .add(TweenMax.to('#mainpage_2', 3, 
+// { visibility: 'hidden' }));
+var tl_2 = new TimelineMax() // 건물배경
 .add(TweenMax.fromTo('#mainpage_2', 1, 
-{ transform: 'translate(-50%, 5vh)' }, {  transform: 'translate(-50%, -52vh)' }))
+{ xPercent: -50, yPercent: 25 }, { xPercent: -50, yPercent: -42 }))
 .add(TweenMax.to('#mainpage_2', 0.6, 
 {  filter: 'brightness(0.6)', ease: Sine.easeIn}))
 .add(TweenMax.to('#mainpage_2', 2, 
@@ -50,16 +70,25 @@ var tl_2 = new TimelineMax()
 
 var scene_m2 = new ScrollMagic.Scene({
   triggerElement: '#trig_mainpage',
-  duration: '500%',
+  duration: '550%',
   offset: 0,
   triggerHook: 0
 })
 .setTween(tl_2)
 .addTo(controller);
 
-var tl_3 = new TimelineMax()
+// var tl_3 = new TimelineMax()
+// .add(TweenMax.fromTo('#mainpage_3', 1.3, 
+// { transform: 'translate(-50%, 40vh)' }, {  transform: 'translate(-50%, -50vh)' }))
+// .add(TweenMax.to('#mainpage_3', 1.3, 
+// {  filter: 'brightness(0.6)', ease: Power2.easeOut }))
+// .add(TweenMax.to('#mainpage_3', 2, 
+// {  filter: 'brightness(0.61)'  }))
+// .add(TweenMax.to('#mainpage_3', 3, 
+// { visibility: 'hidden' }));
+var tl_3 = new TimelineMax() // 사장과 우체통과 소망나무
 .add(TweenMax.fromTo('#mainpage_3', 1.3, 
-{ transform: 'translate(-50%, 40vh)' }, {  transform: 'translate(-50%, -50vh)' }))
+{ xPercent: -50, yPercent: 40 }, {xPercent: -50, yPercent: -25}))
 .add(TweenMax.to('#mainpage_3', 1.3, 
 {  filter: 'brightness(0.6)', ease: Power2.easeOut }))
 .add(TweenMax.to('#mainpage_3', 2, 
@@ -69,16 +98,25 @@ var tl_3 = new TimelineMax()
 
 var scene_m3 = new ScrollMagic.Scene({
   triggerElement: '#trig_mainpage',
-  duration: '500%',
+  duration: '550%',
   offset: 0,
   triggerHook: 0
 })
 .setTween(tl_3)
 .addTo(controller);
 
-var tl_4 = new TimelineMax()
+// var tl_4 = new TimelineMax()
+// .add(TweenMax.fromTo('#mainpage_4', 1, 
+// { transform: 'translate(-50%, 0vh)' }, {  transform: 'translate(-50%, -104vh)' }))
+// .add(TweenMax.to('#mainpage_4', 0.5, 
+// {  filter: 'brightness(0.6)', ease: Power1.easeOut  }))
+// .add(TweenMax.to('#mainpage_4', 2, 
+// {  filter: 'brightness(0.61)'  }))
+// .add(TweenMax.to('#mainpage_4', 3,
+// { visibility: 'hidden' }));
+var tl_4 = new TimelineMax() // 전봇대
 .add(TweenMax.fromTo('#mainpage_4', 1, 
-{ transform: 'translate(-50%, 0vh)' }, {  transform: 'translate(-50%, -104vh)' }))
+{ xPercent:-50, yPercent: 0}, {xPercent: -50, yPercent: -44}))
 .add(TweenMax.to('#mainpage_4', 0.5, 
 {  filter: 'brightness(0.6)', ease: Power1.easeOut  }))
 .add(TweenMax.to('#mainpage_4', 2, 
@@ -88,7 +126,7 @@ var tl_4 = new TimelineMax()
 
 var scene_m4 = new ScrollMagic.Scene({
   triggerElement: '#trig_mainpage',
-  duration: '500%',
+  duration: '550%',
   offset: 0,
   triggerHook: 0
 })
@@ -111,14 +149,14 @@ var logoOpac = new ScrollMagic.Scene({
 
 var upper_cover_move = TweenMax.fromTo(
   '#p_cover_upper', 2,
-  {transform: 'translate(-70%, -100px)'}, 
-  {transform: 'translate(-50%, 200px)'}
+  {xPercent: 10, yPercent: 30}, 
+  {xPercent: -50, yPercent: 7}
 );
 var covermove_1 = new ScrollMagic.Scene({
   triggerElement: '#trig_covers',
   triggerHook: 1,
   // offset: 0,
-  duration: '200%'
+  duration: '240%'
 })
 .setTween(upper_cover_move)
 .addTo(controller)
@@ -128,23 +166,37 @@ var covermove_1 = new ScrollMagic.Scene({
 
 var under_cover_move = TweenMax.fromTo(
   '#p_cover_under', 2, 
-  {transform: 'translate(-40%, 0px)'}, 
-  {transform: 'translate(-60%, 0px)'}
+  {xPercent: -65, yPercent: 0}, 
+  {xPercent: -30, yPercent: 0}
 );
 var covermove_2 = new ScrollMagic.Scene({
   triggerElement: '#trig_covers',
   triggerHook: 1,
   // offset: 0,
-  duration: '200%'
+  duration: '250%'
 })
 .setTween(under_cover_move)
 .addTo(controller);
 
 
+var first_story = new TimelineMax()
+.add(TweenMax.to('#A1_S', 3, 
+{ opacity: 0 }))
+.add(TweenMax.to('#A1_S', 1, 
+{ opacity: 1 }));
+
+var first_story_reveal = new ScrollMagic.Scene({
+  triggerElement: '#trig_first_story',
+  triggerHook: 1,
+  // offset: 0,
+  duration: '240%'
+})
+.setTween(first_story)
+.addTo(controller);
 
 
 // ---------- 배경 어둡게 ------------
-var background_to_black = TweenMax.to('#white_bg', 2, {
+var background_to_black = TweenMax.to('#white_bg', 1, {
   ease: Power2.easeOut,
   opacity: 0.13
 });
@@ -163,7 +215,7 @@ var scene2 = new ScrollMagic.Scene({
 
 // ---------- 배경 밝게 ------------
 var background_to_white = TweenMax.to('#white_bg', 1, {
-  ease: Power1.easeOut,
+  ease: Power2.easeOut,
   opacity: 1.0
 });
 var scene3 = new ScrollMagic.Scene({
@@ -216,20 +268,23 @@ var scene3 = new ScrollMagic.Scene({
 
 //----------소망나무 핀-------------
 var tl_5 = new TimelineMax()
+.add(TweenMax.to('#wt_0', 2, 
+{ opacity: 0 }))
+.add(TweenMax.to('#wt_1', 2, 
+{ opacity: 0 }))
 .add(TweenMax.to('#wt_2', 2, 
-{ opacity: 1.0 }))
+{ opacity: 0 }))
 .add(TweenMax.to('#wt_3', 2, 
-{ opacity: 1.0 }))
-.add(TweenMax.to('#wt_4', 2, 
-{ opacity: 1.0 }));
+{ opacity: 0 }));
 	
-for(let i = 0; i < 5; i++){
-  let pinObj = ["#wt_1", "#wt_2", "#wt_3", "#wt_4", "#B1_P"];
-  var scene4 = new ScrollMagic.Scene({
+let pinObj = ["#wt_0", "#wt_1", "#wt_2", "#wt_3", "#wt_4", "#B1_P"];
+var scene4 = new ScrollMagic;
+
+for(let i = 0; i < 6; i++){
+  scene4 = new ScrollMagic.Scene({
     triggerElement: "#trig_wishtree_pin",
-    duration: '300%',
+    duration: '430%',
     triggerHook: 0.5,
-    offset: 0
   })
   .setPin(pinObj[i])
   .addTo(controller)
@@ -238,23 +293,26 @@ for(let i = 0; i < 5; i++){
   //   name: "trig_wishtree_pin"
   // });
 }
+
 //---------------------------------
 
 //----------우체통-----------------
 let pinObj2 = ['#ut_1','#ut_2', '#B2-25P']
-var anim3 = TweenMax.to('#ut_1',1,{
-  opacity: 0
-});
+var tl_6 = new TimelineMax().add(TweenMax.to('#ut_1',1,
+{ opacity: 1 }))
+.add(TweenMax.to('#ut_1',2,
+{ opacity: 0}));
+
 
 for(let i = 0; i < 3; i++){
   var scene5 = new ScrollMagic.Scene({
     triggerElement: "#trig_postbox_pin",
-    duration: '140%',
+    duration: '200%',
     triggerHook: 0.5,
   })
   .setPin(pinObj2[i])
   .addTo(controller)
-  .setTween(anim3)
+  .setTween(tl_6)
   // .addIndicators({
   //   name: "trig_postbox_pin"
   // });

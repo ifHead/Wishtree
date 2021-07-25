@@ -12,9 +12,10 @@
     
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
     <script src="libraries/detectmobilebrowser.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.3/p5.js" integrity="sha512-QuSeD8RXxJYZirU5MKtvgyHOU9CYS2+kZuO5BB+ailoSyB2r7DyG9QkyW75GotODrWpC2jAI8dBluGQ3MXAeIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.3/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.3/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
@@ -29,7 +30,7 @@
     
     
     <script>
-        console.log(jQuery.browser.mobile);
+        console.log('Mobile Device? : '+jQuery.browser.mobile);
         console.log(location.href);
         if(jQuery.browser.mobile == true){
             console.log(location.href);
@@ -103,7 +104,7 @@
 
     <!-- Sound control according to the amount of scrolling  -->
     <script>
-        let sound = new Array(4);
+        let sound = new Array(5);
         let scroll_amount;
         let volume_inc = 0.001;
         var chapter_1_volume = 0;
@@ -113,13 +114,16 @@
             sound[i].volume = 0;
             sound[i].loop = true;
         }
+        sound[4] = new Audio('./assets/audio/rain2.ogg');
+        sound[4].volume = 0;
+        sound[4].loop = true;
     </script>
     <script src="js/p5.js/canvas.js"></script>
 </head>
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <!-- loading screen -->
-    <div id="loadingwhite"></div>
+    <!-- <div id="loadingwhite"></div>
     <img id="browser1" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-129px); width: 25px; z-index: 11000;" src="assets/Logo/chrome.jpg"></img>
     <img id="browser2" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-68px); width: 25px; z-index: 11000;" src="assets/Logo/edge.jpg"></img>
     <img id="browser3" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-7px); width: 25px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
@@ -150,7 +154,7 @@
                 $('#a').delay(6300).fadeOut(500);
             });
         });
-    </script>
+    </script> -->
     <!-- loading screen end -->
     <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
     <!-- <video src="assets/video/opqr.webm?" autoplay muted loop style="position: fixed; z-index: 10; width:100%;top:0px; left: 0px;
@@ -160,6 +164,7 @@
     <div id="trig_Wishtreelogo" style="position: absolute; top: 300px; width: 100%; height:100px;"></div>
     <div id="trig_mainpage"></div>
     <div id="trig_covers"></div>
+    <div id="trig_first_story"></div>
 
     <div id="trig_bg_to_black"></div>
     <div id="trig_bg_to_white"></div>
@@ -167,7 +172,9 @@
     <div id="trig_postbox_pin"></div>
     <!-- triggers end -->
 
-    <video class="black_bg" src="assets/video/rainy.mp4" autoplay loop muted style="position: fixed; transform: translateY(0px); height:100%"></video>
+    <video class="black_bg" src="assets/video/rainy.mp4" autoplay loop muted style="position: fixed; transform: translate(0px, 0px); height:100%;"></video>
+    <video class="black_bg" src="assets/video/rainy.mp4" autoplay loop muted style="position: fixed; top: 0%; transform: translate(80%, 0px); height:100%;"></video>
+
     <!-- <video class="black_bg" src="assets/video/rainy.mp4" autoplay loop muted style="position: fixed; transform: translateY(100%); width:140%;"></video> -->
 
     <img id="white_bg" src="assets/background_white.jpg">
@@ -289,28 +296,30 @@
             transform: translateX(-220px);" alt="error.jpg">
         </div>
 
-        <button id="wishbutton" onclick="inputButton()">소망 걸기</button>
+        <button id="wishbutton" style="transform: translateX(-75px);" onclick="inputButton()">소망 걸기</button>
         <!-------------------- text area end ---------------------------->
     </div>
     <span id="A5_P" style="text-align: center; "> 
-        <p style="font-size: 20pt; color:rgb(44, 140, 218);"> 저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. </p>
-        <p style="font-size: 28pt; line-height: 10%; color:rgb(26, 118, 223);">손님의 소망은 무엇인가요?</p>
+        <p style="font-size: 20pt; color:rgb(56, 149, 255);"> 저희 소망국수는 손님의 마음에 담긴 소망들을 항상 응원하고 있습니다. </p>
+        <p style="font-size: 28pt; line-height: 10%; color:rgb(56, 149, 255);">손님의 소망은 무엇인가요?</p>
     </span>
 
     <!-- <div id="B1_S"> -->
-    <img id="wt_1" src="assets/Story/B1_0 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px);position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error1.jpg">
-    <img id="wt_2" src="assets/Story/B1_1 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px);position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error2.jpg">
+    <img id="wt_4" src="assets/Story/B1_3 - 소망나무.jpg" style="left:50%; position:absolute; transform:translateX(-420px); width:350px; top:9230px; visibility: hidden;" alt="error4.jpg">
     <img id="wt_3" src="assets/Story/B1_2 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error3.jpg">
-    <img id="wt_4" src="assets/Story/B1_3 - 소망나무.jpg" style="left:50%; position:absolute; transform:translateX(-420px);width:350px; top:9230px; visibility: hidden;" alt="error4.jpg">
+    <img id="wt_2" src="assets/Story/B1_1 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error2.jpg">
+    <img id="wt_1" src="assets/Story/B1_0 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error1.jpg">
+    <img id="wt_0" src="assets/Story/B1_0 - 소망나무.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden; z-index: 2;" alt="error1.jpg">
+    
     <!-- </div> -->
-    <span id="B1_P" style="text-align:justify; line-height: 24pt; position: absolute; top: 9205px; left:50%; transform: translateX(-40px); width: 450px; visibility: hidden;">
+    <span id="B1_P">
         또 하나의 소망이 나무에 걸린다. 소망나무가 새로운 소망을 바라보며 활짝 미소짓는다. 우체통이 묻는다. 
 
         “소망이 걸리는 게 그렇게 좋아?”
       
         소망나무가 말한다. 
       
-        “응! 사람들은 따듯한 소망으로 나를 의미 있게 해. 내가 공장에서 본 사람들은 모두 차가웠는데 이곳은 달라. 소망이 하나 걸릴 때마다 내가 축복받았다는 생각이 들어. 이렇게 따듯한 사람들에게 필요한 존재가 되어 살아갈 수 있다는 게 말이야.” 
+        <span style="letter-spacing: 0pt;">“응! 사람들은 따듯한 소망으로 나를 의미 있게 해. 내가 공장에서 본 사람들은 모두 차가웠는데 이곳은 달라. 소망이 하나 걸릴 때마다 내가 축복받았다는 생각이 들어. 이렇게 따듯한 사람들에게 필요한 존재가 되어 살아갈 수 있다는 게 말이야.”</span>
     </span>
 
     <div id="B2_S">
@@ -331,14 +340,12 @@
         z-index: 3;
         color: #444;"></p>
 
-        <span id="B2_P" style="text-align:justify; line-height: 24pt;">
+        <span id="B2_P" style="text-align:justify; line-height: 25pt;">
             소망나무의 이야기를 듣는 우체통의 표정이 점점 어두워진다. 우체통이 차분하게 입을 뗀다. 
 
     “소망나무야. 이곳의 사람들을 너무 믿기만 해선 안 돼. 전엔 내 안에도 편지들이 가득했고, 그때까지만 해도 난 소중한 존재였어. 내 안에 소중히 준비해온 편지를 넣으며 활짝 웃던 아이도 있었어. 그 아이가 나를 보며 짓던 웃음은 아직도 내 기억 속에 생생한데, 지금의 나를 봐. 이제 아이들은 내가 왜 존재하는지도 몰라. 내 몸엔 장난삼아 그려진 낙서와 스티커들이 가득해. 옆면의 철거 안내문이 보이니? 결국 사람들은 자신에게 필요가 없으면 널 버리고 말거야. 네가 경험했던 공장의 차가운 사람들도, 지금 웃으며 따듯한 말을 해대는 이 사람들도 결국엔 똑같은 거야. 처음의 따듯한 모습은 그냥 일부야. 믿으면 안 돼.
         </span>
     </div>
-
-
 
     <div id="B2-5">
         <script>
@@ -386,9 +393,8 @@
     <div id="B3_S">
         <video src="assets/Story/Comp 1.webm" style="line-height: 24pt; transform: translate(-50%, 0%); position:absolute; left:50%;" muted autoplay loop></video>
     </div>
-    <span id="B3_P" style="text-align:justify">
+    <span id="B3_P" style="text-align:justify; line-height: 27pt; ">
         <p style="letter-spacing: -0.3pt; ">소망나무가 마음 아파하며 가지를 떨고 있다. 우체통이 다시 말을 시작한다.</p>
-
         “소망나무야. 사람들을 사랑했던 나는 너무도 아팠어. 나와 닮은 네가 그렇게 아프지 않길 바라. 나는 그 애를 진심으로 좋아했어. 앳된 손으로 편지를 써넣던, 미소 가득한 아이. 그 애의 편지에 담겨있던 깊고 따듯한 마음이 난 너무도 좋았는데. 오랜만에 교복을 입고 찾아온 그 애가 나에게 던진 건 전의 따듯한 손길이 아닌 빨간 불씨뿐이었어. 너는 소망국수의 사장을 믿지? 나에게 담배를 집어넣은 그 애가 네가 사랑하고 굳게 믿는 지금의 소망국수 사장이야.” 
       
         우체통이 타오르는 편지들에 좌절하는 동안, 학생은 그곳에 한참이나 멍하니 서 있었다. 한치의 미동도 없는 듯 보였지만 온몸을 잘게 떨고 있었다. 할머니는 아이를 안쓰럽게 바라보다 가게 안으로 데리고 들어갔다. 따듯한 국수 한 그릇이 학생 앞에 놓였다. 
@@ -423,7 +429,7 @@
             "
 ></textarea>
     </div>
-    <span id="B4_P" style="line-height: 24pt; color: white; font-weight: 200; text-align:justify;" >
+    <span id="B4_P" style="line-height: 33pt; color: white; font-weight: 200; text-align:justify; text-shadow: 0px 0px 10px rgb(7, 7, 63);" >
         소망나무와 우체통 사이에 침묵이 흐른다. 비가 내리고 있었다.
 
         가게 문에 달린 작은 종이 흔들리며 청명한 소리를 축축한 공기 중으로 퍼뜨린다. 사장의 발걸음이 빗소리 틈을 비집고 들어온다. 빗방울들이 아스팔트 바닥으로 낙하하며 둔탁한 마찰음을 내고 있었다. 소망나무는 가지에 서려오는 한기를 느낀다. 아슬하게 매달린 소망들의 잉크가 번져 흘러내리고 있었다. 소망국수 사장이 비에 젖은 소망들을 걱정하며 가게 안으로 조심스럽게 소망나무를 옮긴다. 
@@ -433,7 +439,7 @@
     <div id="C1_S">
         <img src="assets/Story/C1 - 소망 사슬.jpg" style="transform: translate(-50%, 0%); position:absolute; top:0px; left:50%;" alt="error1.jpg">   
     </div>
-    <span id="C1_P" style="text-align:justify; line-height:24pt;">
+    <span id="C1_P" style="text-align:justify; line-height:27pt; letter-spacing: 0.6pt; text-shadow: 0px 0px 4px black;">
         소망나무는 창에 비친 자신을 본다. 물에 젖어 검게 번져버린 사람들의 소망이 자신에게 매달려 있는 모양을 본다. 소망들에서 배어 나온 한기가 서로 질기게 이어져있는 듯하다. 문득 소망나무는 두려워진다.
 
         ‘버려진다. 내가 버려진다. 사장은 왜 우체통을 불태웠을까. 사람들은 왜 우체통을 잊었을까. 사람들은 결국 다 차가운 건가? 따듯했던 모습은 모두 거짓이었나? 내 가지에 걸린 소망들은? 차갑게 굳어있던 나를 깨워준 사장의 소망도?’
@@ -463,7 +469,7 @@
     <div id="C3_S">
         <img src="assets/Story/C3 - 사장의 과거.jpg" style="transform: translate(-50%, 0%); position:absolute; top:0px; left:50%;" alt="error1.jpg">   
     </div>
-    <span id="C3_P" style="text-align:justify; line-height:24pt;">
+    <span id="C3_P" style="text-align:justify; line-height:26pt;">
         사장은 가만히 생각에 잠긴다. 빨간 우체통, 그리고 사라진 것들. 유난히 건조한 공기가 흐르던 그 날이 떠오른다. 인생에서 가장 끔찍했지만 또한 따듯했던 그 날.
 
         사장이 기억하는 그 날은 공허했다. 어린 시절, 보육원에서 알려준 엄마의 미국 주소로 아이는 열심히 편지를 보냈다. 고사리손으로 써낸 편지에 답장이 오지 않는 까닭은 글씨가 알아보기 힘들어서겠지, 엄마가 한국말을 잊어버려서 그런 거겠지 생각했다. 아이는 조금만 자라면, 꼭 편지의 주소로 가서 엄마를 만나겠다고 다짐했다. 보육원에서 독립한 후에는 답장이 없는 편지를 더 이상 쓰지 않았다. 하지만 하나의 목표는 변하지 않았다. 

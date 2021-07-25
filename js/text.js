@@ -10,6 +10,7 @@ function inputButton(){
 		isTextExist = true;
 		isHang = true;
 		$("#wishtext_copied").val(document.getElementById('wishtext').value);
+		document.getElementById('wt_0').style.visibility = 'visible';
 		document.getElementById('wt_1').style.visibility = 'visible';
 		document.getElementById('wt_2').style.visibility = 'visible';
 		document.getElementById('wt_3').style.visibility = 'visible';

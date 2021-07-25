@@ -24,20 +24,26 @@ input:focus, select:focus, option:focus, textarea:focus, button:focus{
 }
 #wishbutton:hover{
   background: #8ad3f5;
-  box-shadow: 0 0 8px rgb(119, 185, 216, .5); 
-  text-shadow: 0 0 3px rgb(255, 255, 255, .3);
+  text-shadow: 0px 0px 4px rgb(19, 39, 76, .3);
+  box-shadow: 1px 1px 14px rgba(135, 186, 246, 0.5); 
+  background: rgb(127, 202, 255);
   color: white;
 }
 #wishbutton{
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.1s;
-  width: 105px; height: 48px; position: absolute; left:50%; 
-  background: rgb(107, 192, 241); color: white;
+  width: 145px; height: 50px; position: absolute; 
+  left:50%; 
+  background: rgb(89, 191, 255); color: white;
+  font-weight: bolder;
   border-radius: 10px;
   border: 0px;
-  box-shadow: 1 1 4px rgb(19, 89, 136, .6); 
+  letter-spacing: 1pt;
+  
+  text-shadow: 0px 0px 4px rgb(19, 49, 76, .6);
+  box-shadow: 1px 1px 14px rgba(35, 156, 236, 0.2); 
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 13pt;
+  font-size: 15pt;
   font-weight: 400;
   top: 420px; transform: translateX(-55px); 
   z-index: 2; cursor:pointer
@@ -93,7 +99,7 @@ img { /*드래그 방지*/
 
 .black_bg {
   opacity: 1.0;
-  position:fixed; top:0%; left:0%; z-index: -7;
+  z-index: -7;
 }
 
 .content {
@@ -201,6 +207,7 @@ textarea {
   z-index: 30;
 }
 
+
 #trig_mainpage {
   position: absolute;
   top: 0px;
@@ -208,6 +215,10 @@ textarea {
 #trig_covers {
   position: absolute; 
   top: 1600px; left:0px;
+}
+#trig_first_story{
+  position: absolute;
+  top: 1680px;
 }
 
 #trig_bg_to_black {
@@ -226,14 +237,14 @@ textarea {
   position: absolute;
   top: 24900px;
 } */
+
 #trig_wishtree_pin {
-  transform:translateX(-460px);
   position: absolute;
-  top: 9440px;
+  top: 9450px;
 }
 #trig_postbox_pin{
   position: absolute;
-  top: 14360px;
+  top: 14380px;
 }
 /* --------------------------------------------- triggers end */
 
@@ -454,7 +465,7 @@ input #menuicon {display:none;}
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
-  
+  opacity: 0;
   /* border:red solid 3px; */
   height: 600px;
   width: 90%;
@@ -539,7 +550,7 @@ input #menuicon {display:none;}
   width: 90%;
 }
 #A5_P {
-  top: 8090px;
+  top: 8130px;
   position: absolute;
   width: 900px;
   left: 50%;
@@ -550,7 +561,11 @@ input #menuicon {display:none;}
 
 #B1_P {
   white-space: pre-line;
+  letter-spacing: 0.3pt;
   transform: translate(-50%, 0%);
+  text-align:justify; line-height:24pt; 
+  position:absolute; top: 9205px; left:50%; 
+  transform: translateX(-40px); width: 450px; visibility: hidden;
 }
 
 #B2_S {
@@ -563,6 +578,7 @@ input #menuicon {display:none;}
   line-height: 168%;
   transform: translate(-50%, 0%);
 }
+
 
 #B2_P {
   top: -80px;
@@ -728,14 +744,20 @@ input #menuicon {display:none;}
   white-space: pre-line;
   transform: translate(-50%, 0%);
 }
+#wt_0 {
+  opacity: 1;  
+}
+#wt_1 {
+  opacity: 1;  
+}
 #wt_2 {
-  opacity: 0;  
+  opacity: 1;  
 }
 #wt_3 {
-  opacity: 0;  
+  opacity: 1;  
 }
 #wt_4 {
-  opacity: 0;  
+  opacity: 1;  
 }
 
 /* --------------------------------------------- image elements ends */
