@@ -163,19 +163,19 @@
                             });
                             loading = true;
                             //로딩 관련 페이드아웃
-                            $('#loadingicon').delay(5900/5).fadeOut(800);
-                            $('#loadingwhite').delay(9300/5).fadeOut(1500);
-                            $('#loadingtext').delay(4500/5).fadeOut(500);
-                            $('#loadingVid').delay(6400/5).fadeOut(300);
-                            $('#browser1').delay(3500/5).fadeOut(800);
-                            $('#browser2').delay(3900/5).fadeOut(800);
-                            $('#browser3').delay(4300/5).fadeOut(800);
-                            $('#browser4').delay(4700/5).fadeOut(800);
-                            $('#browser5').delay(5100/5).fadeOut(800);
-                            $('#a').delay(3300/5).fadeOut(500);
+                            $('#loadingicon').delay(5900/7).fadeOut(800);
+                            $('#loadingwhite').delay(9300/7).fadeOut(1500);
+                            $('#loadingtext').delay(4500/7).fadeOut(500);
+                            $('#loadingVid').delay(6400/7).fadeOut(300);
+                            $('#browser1').delay(3500/7).fadeOut(800);
+                            $('#browser2').delay(3900/7).fadeOut(800);
+                            $('#browser3').delay(4300/7).fadeOut(800);
+                            $('#browser4').delay(4700/7).fadeOut(800);
+                            $('#browser5').delay(5100/7).fadeOut(800);
+                            $('#a').delay(3300/7).fadeOut(500);
                         });
                         // $("html, body").removeClass("not_scroll"); // 스크롤 가능 (position fixed 삭제)
-                        // 스크롤 가능은 #loadingWhite의 알파값이 0이 되면 실행되도록 p5.js에서 이벤트 캐치
+                        // '스크롤 가능'은 p5.js로 코드를 옮겼음. #loadingWhite의 알파값이 0이 되면 실행되도록 이벤트 캐치.
                     },false);
                 }
             },100);
@@ -338,10 +338,12 @@
     <img id="wt_2" src="assets/Story/B1_1 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error2.jpg">
     <img id="wt_1" src="assets/Story/B1_0 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error1.jpg">
     <img id="wt_0" src="assets/Story/B1_0 - 소망나무.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden; z-index: 2;" alt="error1.jpg">
-    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9300px; visibility: hidden; right: 60px;"></video>
-    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9300px; visibility: hidden; left: 60px;"></video>
-    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9900px; visibility: hidden; right: 60px;"></video>
-    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9900px; visibility: hidden; left: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9500px; visibility: hidden; right: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9500px; visibility: hidden; left: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 10200px; visibility: hidden; right: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 10200px; visibility: hidden; left: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 10900px; visibility: hidden; right: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 10900px; visibility: hidden; left: 60px;"></video>
     <!-- </div> -->
     <span id="B1_P">
         또 하나의 소망이 나무에 걸린다. 소망나무가 새로운 소망을 바라보며 활짝 미소짓는다. 우체통이 묻는다. 
@@ -420,6 +422,10 @@
       
         빨간 불빛을 단 담배꽁초는 꺼지지 않은 채 우체통의 입구를 헤집고 들어왔다. 어딘가 익숙한 손이었다. 우체통은 고개를 들었다. 그 아이였다. 좀 더 자란 모습이었지만 한눈에 알아볼 수 있었다. 담배 연기로 우체통이 차올랐다. 퇴근하던 국수 가게 할머니의 신고로 우체통이 열렸을 땐 소중한 편지들이 모두 잿더미가 되어버린 후였다.
     </span>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 14500px; visibility: hidden; right: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 14500px; visibility: hidden; left: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 15400px; visibility: hidden; right: 60px;"></video>
+    <video class="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 15400px; visibility: hidden; left: 60px;"></video>
 
     <div id="B3_S">
         <video src="assets/Story/Comp 1.webm" style="line-height: 24pt; transform: translate(-50%, 0%); position:absolute; left:50%;" muted autoplay loop></video>
