@@ -30,7 +30,7 @@ var controller = new ScrollMagic.Controller();
 // { visibility: 'hidden' }));
 var tl_1 = new TimelineMax() // 하늘배경
 .add(TweenMax.fromTo('#mainpage_1', 1, 
-{ xPercent: -50, yPercent: -12 }, {  xPercent: -50, yPercent: -16 }))
+{ xPercent: -50, yPercent: 0 }, {  xPercent: -50, yPercent: -26 }))
 .add(TweenMax.to('#mainpage_1', 1.2,
 {  filter: 'brightness(1)' }))
 .add(TweenMax.to('#mainpage_1', 1,
@@ -142,14 +142,14 @@ var logoOpac = new ScrollMagic.Scene({
   triggerElement: '#trig_Wishtreelogo',
   triggerHook: 0.3,
   // offset: 0,
-  duration: '100%'
+  duration: '200%'
 })
 .setTween(Wishtreelogo)
 .addTo(controller);
 
 var upper_cover_move = TweenMax.fromTo(
   '#p_cover_upper', 2,
-  {xPercent: 10, yPercent: 30}, 
+  {xPercent: -20, yPercent: 7}, 
   {xPercent: -50, yPercent: 7}
 );
 var covermove_1 = new ScrollMagic.Scene({
@@ -166,8 +166,8 @@ var covermove_1 = new ScrollMagic.Scene({
 
 var under_cover_move = TweenMax.fromTo(
   '#p_cover_under', 2, 
-  {xPercent: -65, yPercent: 0}, 
-  {xPercent: -30, yPercent: 0}
+  {xPercent: -60, yPercent: 0}, 
+  {xPercent: -40, yPercent: 0}
 );
 var covermove_2 = new ScrollMagic.Scene({
   triggerElement: '#trig_covers',
@@ -180,7 +180,7 @@ var covermove_2 = new ScrollMagic.Scene({
 
 
 var first_story = new TimelineMax()
-.add(TweenMax.to('#A1_S', 3, 
+.add(TweenMax.to('#A1_S', 1 , 
 { opacity: 0 }))
 .add(TweenMax.to('#A1_S', 1, 
 { opacity: 1 }));
@@ -189,7 +189,7 @@ var first_story_reveal = new ScrollMagic.Scene({
   triggerElement: '#trig_first_story',
   triggerHook: 1,
   // offset: 0,
-  duration: '240%'
+  duration: '300%'
 })
 .setTween(first_story)
 .addTo(controller);

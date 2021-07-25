@@ -605,8 +605,21 @@ function setup() {
     //-------------------------sound ready
 }
 
+let loadingWhite_flag = true;
 
 function draw() {
+  // if(document.getElementById( 'loadingwhite' ).getAttribute( 'opacity' ))
+  if(loadingWhite_flag){
+    var em = document.getElementById("loadingwhite");
+    var tempL = window.getComputedStyle(em).getPropertyValue("opacity") 
+    // console.log(tempL);
+    if(tempL < 0.3){
+      $("html, body").removeClass("not_scroll"); // 스크롤 가능 (position fixed 삭제)
+      loadingWhite_flag = false;
+    }
+  }
+  
+
   $(window).scroll(function (){
     scrollValue = $(document).scrollTop();
   })

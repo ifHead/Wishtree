@@ -16,6 +16,7 @@ function inputButton(){
 		document.getElementById('wt_3').style.visibility = 'visible';
 		document.getElementById('wt_4').style.visibility = 'visible';
 		document.getElementById('B1_P').style.visibility = 'visible';
+		document.getElementById('wt_scroll_guide').style.visibility = 'visible';
 		currentWishText = document.getElementById('wishtext').value;
 	}
 	let d = new Date();

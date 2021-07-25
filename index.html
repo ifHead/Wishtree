@@ -30,6 +30,8 @@
     
     
     <script>
+        history.scrollRestoration = "manual"; // 로딩 시 스크롤을 맨 위로
+
         console.log('Mobile Device? : '+jQuery.browser.mobile);
         console.log(location.href);
         if(jQuery.browser.mobile == true){
@@ -123,14 +125,21 @@
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <!-- loading screen -->
-    <!-- <div id="loadingwhite"></div>
+    <script>
+        window.onload = function() {
+            setTimeout (function () {               
+                // 확실하게 한 번 더 맨 위로 보내기
+                
+            },100);
+        }
+    </script>
+    <div id="loadingwhite"></div>
     <img id="browser1" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-129px); width: 25px; z-index: 11000;" src="assets/Logo/chrome.jpg"></img>
     <img id="browser2" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-68px); width: 25px; z-index: 11000;" src="assets/Logo/edge.jpg"></img>
     <img id="browser3" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-7px); width: 25px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
     <img id="browser4" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(52px); width: 25px; z-index: 11000;" src="assets/Logo/whale.jpg"></img>
     <img id="browser5" style="position:fixed; bottom: 89px; left: 50%; transform:translate(108px, 3px); width: 25px; z-index: 11000;" src="assets/Logo/brave.jpg"></img>
     <video id="loadingicon" style="position: fixed; top:50%; left: 50%; transform: translate(-50%, -170px);" autoplay loop muted src="assets/Page/소망나무 로딩창.webm"></video>
-    <img id="Wishtreelogo" style="position: fixed; top:300px; left:50%; transform: translateX(-50%); width: 400px;" src="assets/Page/로고.png">
     <div id="a" style="position: fixed; bottom: 40px; width: 264px; height: 25px; transform:translateX(-50%); 
     left: 50%; background-image: linear-gradient(40deg, #83184a 0%, #11288f 100%); opacity: 50%; z-index: 11001;"></div>
     <p id="loadingtext" style="color: #fff; z-index: 11002;">크롬 브라우저와 전체화면 사용을 권장합니다</p>
@@ -139,23 +148,40 @@
     <script>
         var loading = true;
         $('#loadingicon').fadeTo(1000, 1);
-        $(document).ready(function(){
-            setTimeout(function(){
-                loading = true;
-                $('#loadingicon').delay(6900).fadeOut(800);
-                $('#loadingwhite').delay(8600).fadeOut(1500);
-                $('#loadingtext').delay(6500).fadeOut(500);
-                $('#loadingVid').delay(8300).fadeOut(300);
-                $('#browser1').delay(6500).fadeOut(800);
-                $('#browser2').delay(6600).fadeOut(800);
-                $('#browser3').delay(6700).fadeOut(800);
-                $('#browser4').delay(6800).fadeOut(800);
-                $('#browser5').delay(6900).fadeOut(800);
-                $('#a').delay(6300).fadeOut(500);
-            });
-        });
-    </script> -->
-    <!-- loading screen end -->
+        
+        $("html, body").addClass("not_scroll"); // 스크롤 불가능 (position fixed 이용)
+
+        var ve = document.getElementById("loadingVid"); // 비디오 엔드 이벤트를 감지하기 위함
+        window.onload = function() { // 모든 것이 실제로 로딩완료되면,
+            setTimeout (function () {   
+                if( ve != null && ve.addEventListener) { // 그리고 비디오가 끝나면 아래 실행
+                    // 로딩소망나무 영상보다 로딩이 빨리 끝나는 것을 방지
+                    ve.addEventListener('ended', function() {
+                        setTimeout(function(){
+                            window.scrollTo({ //뷰를 확실하게 한 번 더 맨 위로
+                                top: 0
+                            });
+                            loading = true;
+                            //로딩 관련 페이드아웃
+                            $('#loadingicon').delay(5900/5).fadeOut(800);
+                            $('#loadingwhite').delay(9300/5).fadeOut(1500);
+                            $('#loadingtext').delay(4500/5).fadeOut(500);
+                            $('#loadingVid').delay(6400/5).fadeOut(300);
+                            $('#browser1').delay(3500/5).fadeOut(800);
+                            $('#browser2').delay(3900/5).fadeOut(800);
+                            $('#browser3').delay(4300/5).fadeOut(800);
+                            $('#browser4').delay(4700/5).fadeOut(800);
+                            $('#browser5').delay(5100/5).fadeOut(800);
+                            $('#a').delay(3300/5).fadeOut(500);
+                        });
+                        // $("html, body").removeClass("not_scroll"); // 스크롤 가능 (position fixed 삭제)
+                        // 스크롤 가능은 #loadingWhite의 알파값이 0이 되면 실행되도록 p5.js에서 이벤트 캐치
+                    },false);
+                }
+            },100);
+        }
+    </script>
+    <!-- loading screen end-->
     <!-- <audio src="assets/le_festin.ogg" autoplay type="audio/ogg"></audio> -->
     <!-- <video src="assets/video/opqr.webm?" autoplay muted loop style="position: fixed; z-index: 10; width:100%;top:0px; left: 0px;
     filter: brightness(4);"></video> -->
@@ -193,6 +219,7 @@
         <img src="assets/hamburger_menu.png">
     </label>
 
+    
     <div class="sidebar_content">
         <ul>
             <li class="with_margin" style="margin-top: 3px;"><a></a></li>
@@ -210,13 +237,14 @@
     <video src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; bottom: 50px; right: 60px;"></video>
     <div style="top: 3000px;"></div>
 
+    <img id="Wishtreelogo" style="position: fixed; top:50vh; left:50%; transform: translate(-50%, -50%); width: 400px;" src="assets/Page/로고.png">
     <img id="mainpage_1" src="assets/Page/mainpage/Main_1.jpg" alt="assets/error.jpg">
     <img id="mainpage_2" src="assets/Page/mainpage/Main_2.png" alt="assets/error.jpg">
     <img id="mainpage_3" src="assets/Page/mainpage/Main_3.png" alt="assets/error.jpg">
     <img id="mainpage_4" src="assets/Page/mainpage/Main_4.png" alt="assets/error.jpg">
     
-    <img id="p_cover_under" src="assets/parallax_cover2.png" style="position: absolute; top: 1600px; left:50%;" alt="assets/error.jpg">
-    <img id="p_cover_upper" src="assets/parallax_cover_up.png" style="position: absolute; top: 1700px; left:50%;" alt="assets/error.jpg"> 
+    <img id="p_cover_under" src="assets/parallax_cover2.png" style="position: absolute; top: 1600px; left: 50%;" alt="assets/error.jpg">
+    <img id="p_cover_upper" src="assets/parallax_cover_up.png" style="position: absolute; top: 1700px; left: 50%;" alt="assets/error.jpg"> 
     
     <div id="A1_S">
         <video src="assets/Story/A1 - 첫 소망_3.webm" autoplay loop muted style="position: absolute; top:0; left:50%; transform:translateX(-50%);"></video>
@@ -310,7 +338,10 @@
     <img id="wt_2" src="assets/Story/B1_1 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error2.jpg">
     <img id="wt_1" src="assets/Story/B1_0 - 소망나무 Glow.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden;" alt="error1.jpg">
     <img id="wt_0" src="assets/Story/B1_0 - 소망나무.jpg" style="left:50%; transform:translateX(-420px); position:absolute; width:350px; top:9230px; visibility: hidden; z-index: 2;" alt="error1.jpg">
-    
+    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9300px; visibility: hidden; right: 60px;"></video>
+    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9300px; visibility: hidden; left: 60px;"></video>
+    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9900px; visibility: hidden; right: 60px;"></video>
+    <video id="wt_scroll_guide" src="assets/scrollDownGuide_3_2.webm" autoplay loop muted style="position: absolute; top: 9900px; visibility: hidden; left: 60px;"></video>
     <!-- </div> -->
     <span id="B1_P">
         또 하나의 소망이 나무에 걸린다. 소망나무가 새로운 소망을 바라보며 활짝 미소짓는다. 우체통이 묻는다. 
