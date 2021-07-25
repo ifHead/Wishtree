@@ -608,7 +608,7 @@ function setup() {
 let loadingWhite_flag = true;
 
 function draw() {
-  if(document.getElementById( 'loadingwhite' ).getAttribute( 'opacity' ))
+  
   if(loadingWhite_flag){
     var em = document.getElementById("loadingwhite");
     var tempL = window.getComputedStyle(em).getPropertyValue("opacity") 
