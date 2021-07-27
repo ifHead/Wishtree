@@ -14,10 +14,29 @@
 	TeamNoob,wishtreegithub,githubwishtree,팀눕,인터랙티브,디지털아트전시,북2.0,전자책">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
+	<!-- 대표 데스크톱 URL -->
+	<link rel="canonical" href="http://www.mysite.com/article/article1.html">
+	<!-- 모바일 URL -->
+	<link rel="alternate" href="http://www.mysite.com/article/article1.html">
+
 	<!--firebase-->
 	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyAADRvSuIsu2goGziC7qYW9BBzW43w_h-s",
+			authDomain: "wishtree-f4fc4.firebaseapp.com",
+			databaseURL: "https://wishtree-f4fc4-default-rtdb.firebaseio.com",
+			projectId: "wishtree-f4fc4",
+			storageBucket: "wishtree-f4fc4.appspot.com",
+			messagingSenderId: "805037767612",
+			appId: "1:805037767612:web:8af525548c577f352709b9"
+		};	
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
+
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
@@ -82,8 +101,26 @@
 	</script>
 	
 	<link rel="stylesheet" hef="m_style.css"></link>
+	<!-- Sound control according to the amount of scrolling  -->
+	<script>
+		let sound = new Array(5);
+		let scroll_amount;
+		let volume_inc = 0.001;
+		var chapter_1_volume = 0;
+
+		for(let i = 0; i < 4; i++){
+				sound[i] = new Audio('./assets/audio/chapter_'+(i+1)+'.ogg');
+				sound[i].volume = 0;
+				sound[i].loop = true;
+		}
+		sound[4] = new Audio('./assets/audio/rain2.ogg');
+		sound[4].volume = 0;
+		sound[4].loop = true;
+	</script>
+	<script src="js/p5.js/canvas.js"></script>
 </head>
-<body>
+
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 
 </body>
 </html>
