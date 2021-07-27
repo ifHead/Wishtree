@@ -30,7 +30,7 @@ var controller = new ScrollMagic.Controller();
 // { visibility: 'hidden' }));
 var tl_1 = new TimelineMax() // 하늘배경
 .add(TweenMax.fromTo('#mainpage_1', 1, 
-{ xPercent: -50, yPercent: 0 }, {  xPercent: -50, yPercent: -26 }))
+{ xPercent: -50, yPercent: -5 }, {  xPercent: -50, yPercent: -26 }))
 .add(TweenMax.to('#mainpage_1', 1.2,
 {  filter: 'brightness(1)' }))
 .add(TweenMax.to('#mainpage_1', 1,

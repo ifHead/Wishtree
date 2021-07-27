@@ -1,35 +1,89 @@
 <!DOCTYPE html>
 <html xml:lang>
 <head>
+	<meta name="google-site-verification" content="Iy1FmRhN16JQIWJQNrvL-AGsa1grrb4q4CEe6pUlAqY" />
 	<title>Wishtree</title>
-
 	<meta charset ="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0", user-scalable=no, maximum-scale=1.0, minimum-scale=1.0>
-	<meta name="keywords" content="위시트리,Wishtree,Interactive story,TeamNoob,wishtreegithub,githubwishtree">
+	<meta name="viewport" content="width=device-width, 
+							initial-scale=1.0, maximum-scale=1.0, 
+							minimum-scale=1.0, user-scalable=no"/>
+	
+	<meta name="keywords" content="소망나무,디지털아트페스티벌,서울예대디지털아트,디지털아트,
+	digitalart,위시트리,wishtree,InteractiveStory,웹소설,
+	TeamNoob,wishtreegithub,githubwishtree,팀눕,인터랙티브,디지털아트전시,북2.0,전자책">
 	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!--firebase-->
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.3/p5.js" integrity="sha512-QuSeD8RXxJYZirU5MKtvgyHOU9CYS2+kZuO5BB+ailoSyB2r7DyG9QkyW75GotODrWpC2jAI8dBluGQ3MXAeIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="../libraries/detectmobilebrowser.js"></script>
-  <script>
-		console.log(jQuery.browser.mobile);
-		console.log(location.href);
-		if(jQuery.browser.mobile == false){
-				location.href = "../index.html";
+
+	<script>
+		history.scrollRestoration = "manual"; // 로딩 시 스크롤을 맨 위로
+	</script>
+
+	<!-- start custom head snippets -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png?">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png?">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png?">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png?">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png?">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png?">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png?">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png?">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png?">
+	<link rel="icon" type="image/png?" sizes="192x192" href="/assets/favicon.ico/android-icon-192x192.png?">
+	<link rel="icon" type="image/png?" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png?">
+	<link rel="icon" type="image/png?" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png?">
+	<link rel="icon" type="image/png?" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png?">
+	<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/favicon.ico/ms-icon-144x144.png?">
+	<meta name="theme-color" content="#ffffff">
+	<!-- end custom head snippets -->
+
+	<!-- Prevent Drag Copy -->
+	<script type="text/javascript">
+		var omitformtags=["input", "textarea", "select"]
+		omitformtags=omitformtags.join("|")
+		function disableselect(e){
+			if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1){
+				return false
+			}
+			function reEnable(){
+				return true
+			}
+			if (typeof document.onselectstart!="undefined"){
+				document.onselectstart=new Function ("return false")
+			} else {
+				document.onmousedown=disableselect
+				document.onmouseup=reEnable
+			}
 		}
-  </script>
+	</script>
+
+	<!-- Prevent Android Right Click -->
+	<script type="text/javascript">
+		$(document).bind("contextmenu", function (e) {
+				return false;
+		});
+		document.oncontextmenu=function(){return false;}
+		document.onselectstart=function(){return false;}
+		document.ondragstart=function(){return false;}
+	</script>
+	
+	<link rel="stylesheet" hef="m_style.css"></link>
 </head>
 <body>
-	<img src="./모바일 공사중.jpg" style="position: fixed; height : 320px; top: 50%; left: 50%; transform: translate(-50%,-50%);">
-	<!-- <div id="disqus_thread">
-		<script>
-				(function() { // DON'T EDIT BELOW THIS LINE
-				var d = document, s = d.createElement('script');
-				s.src = 'https://wishtree.disqus.com/embed.js';
-				s.setAttribute('data-timestamp', +new Date());
-				(d.head || d.body).appendChild(s);
-				})();
-		</script>
-	</div> -->
+
 </body>
 </html>
 

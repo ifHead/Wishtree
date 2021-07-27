@@ -1,126 +1,146 @@
 <!DOCTYPE html>
 <html xml:lang>
 <head>
-    <title>Wishtree</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="google-site-verification" content="Iy1FmRhN16JQIWJQNrvL-AGsa1grrb4q4CEe6pUlAqY" />
+	<title>Wishtree</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="keywords" content="위시트리,wishtree,InteractiveStory,TeamNoob,wishtreegithub,githubwishtree">
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-    
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    
-    <script src="libraries/detectmobilebrowser.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.3/p5.js" integrity="sha512-QuSeD8RXxJYZirU5MKtvgyHOU9CYS2+kZuO5BB+ailoSyB2r7DyG9QkyW75GotODrWpC2jAI8dBluGQ3MXAeIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.3/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    
-    <link rel="stylesheet" hef="style.css">
-    
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    
-    
-    <script>
-        history.scrollRestoration = "manual"; // 로딩 시 스크롤을 맨 위로
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	
+	<script src="libraries/detectmobilebrowser.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.3/p5.js" integrity="sha512-QuSeD8RXxJYZirU5MKtvgyHOU9CYS2+kZuO5BB+ailoSyB2r7DyG9QkyW75GotODrWpC2jAI8dBluGQ3MXAeIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+	<link rel="stylesheet" hef="style.css">
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	
+	<!-- Detect Mobile -->
+	<script>
+		function isMobile() {
+			var filter = "win16|win32|win64|macintel|mac|";
+			let ratio = window.devicePixelRatio; 
+			let mobileArr = new Array("iPhone", "iPod", "BlackBerry", "Android", "Windows CE", "LG", "MOT", "SAMSUNG", "SonyEricsson");
+			function hasMobileBrowser(){
+				return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+			}
+			// 1. 네비게이터가 이 브라우저를 모바일 브라우저라고 함.
+			if (hasMobileBrowser()){
+				return true;
+			}
+			// 2. 접속한 기기의 모바일 기종이 검색됨.
+			for(let txt in mobileArr){
+				if(navigator.userAgent.match(mobileArr[txt]) != null){
+					return true;
+				}
+			}
+			// 3. 화면 밀도가 모바일임
+			if(ratio > 1){
+				return true;
+			}
+			// 4. 운영체제가 모바일임
+			if(0 > filter.indexOf(navigator.platform.toLowerCase())){
+				return true;
+			}
+			// 5. 제이쿼리가 보기에 브라우저가 모바일임
+			if(jQuery.browser.mobile){
+				return true;
+			}
+			return false;
+		}
+			
+		if( isMobile() ){
+				console.log(location.href);
+				location.href = "m/";
+		}
+		
+		history.scrollRestoration = "manual"; // 로딩 시 스크롤을 맨 위로
+	</script>
 
-        console.log('Mobile Device? : '+jQuery.browser.mobile);
-        console.log(location.href);
-        if(jQuery.browser.mobile == true){
-            console.log(location.href);
-            location.href = "m/";
-        }
-    </script>
+	<!-- start custom head snippets -->
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/favicon.ico/apple-icon-57x57.png?">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/favicon.ico/apple-icon-60x60.png?">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/favicon.ico/apple-icon-72x72.png?">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/favicon.ico/apple-icon-76x76.png?">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/favicon.ico/apple-icon-114x114.png?">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/favicon.ico/apple-icon-120x120.png?">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/favicon.ico/apple-icon-144x144.png?">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/favicon.ico/apple-icon-152x152.png?">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.ico/apple-icon-180x180.png?">
+	<link rel="icon" type="image/png?" sizes="192x192" href="assets/favicon.ico/android-icon-192x192.png?">
+	<link rel="icon" type="image/png?" sizes="32x32" href="assets/favicon.ico/favicon-32x32.png?">
+	<link rel="icon" type="image/png?" sizes="96x96" href="assets/favicon.ico/favicon-96x96.png?">
+	<link rel="icon" type="image/png?" sizes="16x16" href="assets/favicon.ico/favicon-16x16.png?">
+	<link rel="manifest" href="assets/favicon.ico/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="assets/favicon.ico/ms-icon-144x144.png?">
+	<meta name="theme-color" content="#ffffff">
+	<!-- end custom head snippets -->
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- start custom head snippets -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon.ico/apple-icon-57x57.png?">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon.ico/apple-icon-60x60.png?">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon.ico/apple-icon-72x72.png?">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon.ico/apple-icon-76x76.png?">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon.ico/apple-icon-114x114.png?">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon.ico/apple-icon-120x120.png?">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon.ico/apple-icon-144x144.png?">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon.ico/apple-icon-152x152.png?">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.ico/apple-icon-180x180.png?">
-    <link rel="icon" type="image/png?" sizes="192x192" href="assets/favicon.ico/android-icon-192x192.png?">
-    <link rel="icon" type="image/png?" sizes="32x32" href="assets/favicon.ico/favicon-32x32.png?">
-    <link rel="icon" type="image/png?" sizes="96x96" href="assets/favicon.ico/favicon-96x96.png?">
-    <link rel="icon" type="image/png?" sizes="16x16" href="assets/favicon.ico/favicon-16x16.png?">
-    <link rel="manifest" href="assets/favicon.ico/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/favicon.ico/ms-icon-144x144.png?">
-    <meta name="theme-color" content="#ffffff">
-    <!-- end custom head snippets -->
-    
-    <link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Prevent Drag Copy -->
+	<script type="text/javascript">
+			var omitformtags=["input", "textarea", "select"]
+			omitformtags=omitformtags.join("|")
+			function disableselect(e){
+					if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1){
+							return false
+					}
+					function reEnable(){
+							return true
+					}
+					if (typeof document.onselectstart!="undefined"){
+							document.onselectstart=new Function ("return false")
+					} else {
+							document.onmousedown=disableselect
+							document.onmouseup=reEnable
+					}
+			}
+	</script>
 
-    <script type="text/javascript">
-        var omitformtags=["input", "textarea", "select"]
-        omitformtags=omitformtags.join("|")
-        function disableselect(e){
-            if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1){
-                return false
-            }
-            function reEnable(){
-                return true
-            }
-            if (typeof document.onselectstart!="undefined"){
-                document.onselectstart=new Function ("return false")
-            } else {
-                document.onmousedown=disableselect
-                document.onmouseup=reEnable
-            }
-        }
-    </script>
-    <script type="text/javascript">
-        // 안드로이드 우측 버튼 비활성
-        $(document).bind("contextmenu", function (e) {
-            return false;
-        });
-        document.oncontextmenu=function(){return false;}
-        document.onselectstart=function(){return false;}
-        document.ondragstart=function(){return false;}
-    </script>
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyAADRvSuIsu2goGziC7qYW9BBzW43w_h-s",
+			authDomain: "wishtree-f4fc4.firebaseapp.com",
+			databaseURL: "https://wishtree-f4fc4-default-rtdb.firebaseio.com",
+			projectId: "wishtree-f4fc4",
+			storageBucket: "wishtree-f4fc4.appspot.com",
+			messagingSenderId: "805037767612",
+			appId: "1:805037767612:web:8af525548c577f352709b9"
+		};	
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
 
-    <script>
-    var firebaseConfig = {
-		apiKey: "AIzaSyAADRvSuIsu2goGziC7qYW9BBzW43w_h-s",
-		authDomain: "wishtree-f4fc4.firebaseapp.com",
-		databaseURL: "https://wishtree-f4fc4-default-rtdb.firebaseio.com",
-		projectId: "wishtree-f4fc4",
-		storageBucket: "wishtree-f4fc4.appspot.com",
-		messagingSenderId: "805037767612",
-		appId: "1:805037767612:web:8af525548c577f352709b9"
-	};	
-	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
-    </script>
+	<!-- Sound control according to the amount of scrolling  -->
+	<script>
+			let sound = new Array(5);
+			let scroll_amount;
+			let volume_inc = 0.001;
+			var chapter_1_volume = 0;
 
-    <!-- Sound control according to the amount of scrolling  -->
-    <script>
-        let sound = new Array(5);
-        let scroll_amount;
-        let volume_inc = 0.001;
-        var chapter_1_volume = 0;
-
-        for(let i = 0; i < 4; i++){
-            sound[i] = new Audio('./assets/audio/chapter_'+(i+1)+'.ogg');
-            sound[i].volume = 0;
-            sound[i].loop = true;
-        }
-        sound[4] = new Audio('./assets/audio/rain2.ogg');
-        sound[4].volume = 0;
-        sound[4].loop = true;
-    </script>
-    <script src="js/p5.js/canvas.js"></script>
+			for(let i = 0; i < 4; i++){
+					sound[i] = new Audio('./assets/audio/chapter_'+(i+1)+'.ogg');
+					sound[i].volume = 0;
+					sound[i].loop = true;
+			}
+			sound[4] = new Audio('./assets/audio/rain2.ogg');
+			sound[4].volume = 0;
+			sound[4].loop = true;
+	</script>
+	<script src="js/p5.js/canvas.js"></script>
 </head>
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
@@ -139,7 +159,7 @@
     <img id="browser3" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(-7px); width: 25px; z-index: 11000;" src="assets/Logo/firefox.jpg"></img>
     <img id="browser4" style="position:fixed; bottom: 89px; left: 50%; transform:translateX(52px); width: 25px; z-index: 11000;" src="assets/Logo/whale.jpg"></img>
     <img id="browser5" style="position:fixed; bottom: 89px; left: 50%; transform:translate(108px, 3px); width: 25px; z-index: 11000;" src="assets/Logo/brave.jpg"></img>
-    <video id="loadingicon" style="position: fixed; top:50%; left: 50%; transform: translate(-50%, -170px);" autoplay loop muted src="assets/Page/소망나무 로딩창.webm"></video>
+    <video id="loadingicon" style="position: fixed; top:50%; left: 50%; transform: translate(-50%, -170px);" autoplay loop muted src="assets/Page/wishtreeLoading.webm"></video>
     <div id="a" style="position: fixed; bottom: 40px; width: 264px; height: 25px; transform:translateX(-50%); 
     left: 50%; background-image: linear-gradient(40deg, #83184a 0%, #11288f 100%); opacity: 50%; z-index: 11001;"></div>
     <p id="loadingtext" style="color: #fff; z-index: 11002;">크롬 브라우저와 전체화면 사용을 권장합니다</p>
