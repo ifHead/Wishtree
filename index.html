@@ -30,39 +30,38 @@
 	<script>
 		function isMobile() {
 			var filter = "win16|win32|win64|macintel|mac|";
-			let ratio = window.devicePixelRatio; 
 			let mobileArr = new Array("iPhone", "iPod", "BlackBerry", "Android", "Windows CE", "LG", "MOT", "SAMSUNG", "SonyEricsson");
 			function hasMobileBrowser(){
 				return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 			}
 			// 1. 네비게이터가 이 브라우저를 모바일 브라우저라고 함.
 			if (hasMobileBrowser()){
+				console.log('It\'s a moblie browser');
 				return true;
 			}
 			// 2. 접속한 기기의 모바일 기종이 검색됨.
 			for(let txt in mobileArr){
 				if(navigator.userAgent.match(mobileArr[txt]) != null){
+					console.log('UserAgent says it\'s a moblie device');
 					return true;
 				}
 			}
-			// 3. 화면 밀도가 모바일임
-			if(ratio > 1){
-				return true;
-			}
-			// 4. 운영체제가 모바일임
+			// 3. 운영체제가 모바일임
 			if(0 > filter.indexOf(navigator.platform.toLowerCase())){
+				console.log('Navigator says it\'s a moblie device');
 				return true;
 			}
-			// 5. 제이쿼리가 보기에 브라우저가 모바일임
+			// 4. 제이쿼리가 보기에 브라우저가 모바일임
 			if(jQuery.browser.mobile){
+				console.log('jQuery says it\'s a moblie device');
 				return true;
 			}
 			return false;
 		}
 			
 		if( isMobile() ){
-				console.log(location.href);
-				location.href = "m/";
+				// console.log(location.href);
+				// location.href = "m/";
 		}
 		
 		history.scrollRestoration = "manual"; // 로딩 시 스크롤을 맨 위로
