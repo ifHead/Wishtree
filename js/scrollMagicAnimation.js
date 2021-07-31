@@ -19,7 +19,7 @@ var controller = new ScrollMagic.Controller();
 
 var tl_1 = new TimelineMax() // 하늘배경
 .add(TweenMax.fromTo('#mainpage_1', 1, 
-{ yPercent: -5 }, {  yPercent: -8 }))
+{ yPercent: 0 }, {  yPercent: -8 }))
 .add(TweenMax.to('#mainpage_1', 1.2,
 {  filter: 'brightness(1)' }))
 .add(TweenMax.to('#mainpage_1', 1,
@@ -40,7 +40,7 @@ var scene_m1 = new ScrollMagic.Scene({
 
 var tl_2 = new TimelineMax() // 건물배경
 .add(TweenMax.fromTo('#mainpage_2', 1, 
-{ yPercent: 75 }, { yPercent: -42 }))
+{ yPercent: 95}, { yPercent: -50 }))
 .add(TweenMax.to('#mainpage_2', 0.6, 
 {  filter: 'brightness(0.6)', ease: Sine.easeIn}))
 .add(TweenMax.to('#mainpage_2', 2, 
@@ -59,7 +59,7 @@ var scene_m2 = new ScrollMagic.Scene({
 
 var tl_3 = new TimelineMax() // 사장과 우체통과 소망나무
 .add(TweenMax.fromTo('#mainpage_3', 1.3, 
-{ yPercent: 120 }, { yPercent: -45 }))
+{ yPercent: 75 }, { yPercent: -30 }))
 .add(TweenMax.to('#mainpage_3', 1.3, 
 {  filter: 'brightness(0.6)', ease: Power2.easeOut }))
 .add(TweenMax.to('#mainpage_3', 2, 
@@ -78,7 +78,7 @@ var scene_m3 = new ScrollMagic.Scene({
 
 var tl_4 = new TimelineMax() // 전봇대
 .add(TweenMax.fromTo('#mainpage_4', 1, 
-{ yPercent: 5}, { yPercent: -64 }))
+{ yPercent: 0}, { yPercent: -50 }))
 .add(TweenMax.to('#mainpage_4', 0.5, 
 {  filter: 'brightness(0.6)', ease: Power1.easeOut  }))
 .add(TweenMax.to('#mainpage_4', 2, 
@@ -104,7 +104,7 @@ var logoOpac = new ScrollMagic.Scene({
   triggerElement: '#trig_Wishtreelogo',
   triggerHook: 0.3,
   // offset: 0,
-  duration: '50%'
+  duration: '80%'
 })
 .setTween(Wishtreelogo)
 .addTo(controller);
@@ -142,7 +142,7 @@ var covermove_2 = new ScrollMagic.Scene({
 
 
 var first_story = new TimelineMax()
-.add(TweenMax.to('#A1_S', 1 , 
+.add(TweenMax.to('#A1_S', 2 , 
 { opacity: 0 }))
 .add(TweenMax.to('#A1_S', 1, 
 { opacity: 1 }));
@@ -151,7 +151,7 @@ var first_story_reveal = new ScrollMagic.Scene({
   triggerElement: '#trig_first_story',
   triggerHook: 1,
   // offset: 0,
-  duration: '300%'
+  duration: '200%'
 })
 .setTween(first_story)
 .addTo(controller);
