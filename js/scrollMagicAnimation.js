@@ -17,20 +17,9 @@
 
 var controller = new ScrollMagic.Controller();
 
-// var tl_1 = new TimelineMax()
-// .add(TweenMax.fromTo('#mainpage_1', 1, 
-// { transform: 'translate(-50%, -120px)' }, {  transform: 'translate(-50%, -160px)' }))
-// .add(TweenMax.to('#mainpage_1', 1.2,
-// {  filter: 'brightness(1)' }))
-// .add(TweenMax.to('#mainpage_1', 1,
-// {  filter: 'brightness(0.6)'}))
-// .add(TweenMax.to('#mainpage_1', 1,
-// {  filter: 'brightness(0.61)' }))
-// .add(TweenMax.to('#mainpage_1', 3,
-// { visibility: 'hidden' }));
 var tl_1 = new TimelineMax() // 하늘배경
 .add(TweenMax.fromTo('#mainpage_1', 1, 
-{ xPercent: -50, yPercent: -5 }, {  xPercent: -50, yPercent: -26 }))
+{ yPercent: -5 }, {  yPercent: -8 }))
 .add(TweenMax.to('#mainpage_1', 1.2,
 {  filter: 'brightness(1)' }))
 .add(TweenMax.to('#mainpage_1', 1,
@@ -49,18 +38,9 @@ var scene_m1 = new ScrollMagic.Scene({
 .setTween(tl_1)
 .addTo(controller);
 
-// var tl_2 = new TimelineMax()
-// .add(TweenMax.fromTo('#mainpage_2', 1, 
-// { transform: 'translate(-50%, 5vh)' }, {  transform: 'translate(-50%, -52vh)' }))
-// .add(TweenMax.to('#mainpage_2', 0.6, 
-// {  filter: 'brightness(0.6)', ease: Sine.easeIn}))
-// .add(TweenMax.to('#mainpage_2', 2, 
-// {  filter: 'brightness(0.61)', ease: Sine.easeIn}))
-// .add(TweenMax.to('#mainpage_2', 3, 
-// { visibility: 'hidden' }));
 var tl_2 = new TimelineMax() // 건물배경
 .add(TweenMax.fromTo('#mainpage_2', 1, 
-{ xPercent: -50, yPercent: 25 }, { xPercent: -50, yPercent: -42 }))
+{ yPercent: 75 }, { yPercent: -42 }))
 .add(TweenMax.to('#mainpage_2', 0.6, 
 {  filter: 'brightness(0.6)', ease: Sine.easeIn}))
 .add(TweenMax.to('#mainpage_2', 2, 
@@ -77,18 +57,9 @@ var scene_m2 = new ScrollMagic.Scene({
 .setTween(tl_2)
 .addTo(controller);
 
-// var tl_3 = new TimelineMax()
-// .add(TweenMax.fromTo('#mainpage_3', 1.3, 
-// { transform: 'translate(-50%, 40vh)' }, {  transform: 'translate(-50%, -50vh)' }))
-// .add(TweenMax.to('#mainpage_3', 1.3, 
-// {  filter: 'brightness(0.6)', ease: Power2.easeOut }))
-// .add(TweenMax.to('#mainpage_3', 2, 
-// {  filter: 'brightness(0.61)'  }))
-// .add(TweenMax.to('#mainpage_3', 3, 
-// { visibility: 'hidden' }));
 var tl_3 = new TimelineMax() // 사장과 우체통과 소망나무
 .add(TweenMax.fromTo('#mainpage_3', 1.3, 
-{ xPercent: -50, yPercent: 40 }, {xPercent: -50, yPercent: -25}))
+{ yPercent: 120 }, { yPercent: -45 }))
 .add(TweenMax.to('#mainpage_3', 1.3, 
 {  filter: 'brightness(0.6)', ease: Power2.easeOut }))
 .add(TweenMax.to('#mainpage_3', 2, 
@@ -105,18 +76,9 @@ var scene_m3 = new ScrollMagic.Scene({
 .setTween(tl_3)
 .addTo(controller);
 
-// var tl_4 = new TimelineMax()
-// .add(TweenMax.fromTo('#mainpage_4', 1, 
-// { transform: 'translate(-50%, 0vh)' }, {  transform: 'translate(-50%, -104vh)' }))
-// .add(TweenMax.to('#mainpage_4', 0.5, 
-// {  filter: 'brightness(0.6)', ease: Power1.easeOut  }))
-// .add(TweenMax.to('#mainpage_4', 2, 
-// {  filter: 'brightness(0.61)'  }))
-// .add(TweenMax.to('#mainpage_4', 3,
-// { visibility: 'hidden' }));
 var tl_4 = new TimelineMax() // 전봇대
 .add(TweenMax.fromTo('#mainpage_4', 1, 
-{ xPercent:-50, yPercent: 0}, {xPercent: -50, yPercent: -44}))
+{ yPercent: 5}, { yPercent: -64 }))
 .add(TweenMax.to('#mainpage_4', 0.5, 
 {  filter: 'brightness(0.6)', ease: Power1.easeOut  }))
 .add(TweenMax.to('#mainpage_4', 2, 
@@ -134,7 +96,7 @@ var scene_m4 = new ScrollMagic.Scene({
 .addTo(controller);
 
 var Wishtreelogo = TweenMax.fromTo(
-  '#Wishtreelogo', 2,
+  '#Wishtreelogo', 1,
   {opacity: 1}, 
   {opacity: 0}
 );
@@ -142,7 +104,7 @@ var logoOpac = new ScrollMagic.Scene({
   triggerElement: '#trig_Wishtreelogo',
   triggerHook: 0.3,
   // offset: 0,
-  duration: '200%'
+  duration: '50%'
 })
 .setTween(Wishtreelogo)
 .addTo(controller);
