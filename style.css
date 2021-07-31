@@ -832,8 +832,8 @@ input #menuicon {
   opacity: 1;
 }
 .wt_scroll_guide {
-  min-width: 100px;
-  width: 5vw;
+  min-width: 40px;
+  width: 3vw;
 }
 .top_scroll_guide {
   min-width: 60px;

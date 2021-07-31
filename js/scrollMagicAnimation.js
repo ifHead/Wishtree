@@ -245,7 +245,7 @@ var scene4 = new ScrollMagic;
 for(let i = 0; i < 6; i++){
   scene4 = new ScrollMagic.Scene({
     triggerElement: "#trig_wishtree_pin",
-    duration: '430%',
+    duration: '3230',
     triggerHook: 0.5,
   })
   .setPin(pinObj[i])
@@ -269,7 +269,7 @@ var tl_6 = new TimelineMax().add(TweenMax.to('#ut_1',1,
 for(let i = 0; i < 3; i++){
   var scene5 = new ScrollMagic.Scene({
     triggerElement: "#trig_postbox_pin",
-    duration: '200%',
+    duration: '1600',
     triggerHook: 0.5,
   })
   .setPin(pinObj2[i])
